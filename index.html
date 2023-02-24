@@ -1,9 +1,11 @@
 <html>
 <head>
     <link rel='stylesheet' type='text/css' href='https://cdn-dev.securiti.xyz/consent/cookie-consent.css' />
+  
+    <script type="text/javascript" src="https://cdn-dev.securiti.xyz/consent/sdk-stub.js" defer></script>
     <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer. -->
     <script>
-    document.cookie = "myCookie=myCookieValue";
+        document.cookie = "myCookie=myCookieValue";
     (function () {
         var s = document.createElement('script');
         s.src = 'https://cdn-dev.securiti.xyz/consent/cookie-consent-sdk.js';
@@ -16,6 +18,9 @@
         s.addEventListener('load', function() { window.initCmp(); });
     })()
     </script>
+    
+    <!-- You may style the button by overriding class "cmp-revoke-consent" -->
+    <button class="cmp-revoke-consent">Revoke Consent</button>
 </head>
 <body>
   Hello World
