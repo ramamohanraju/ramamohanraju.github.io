@@ -499,7 +499,7 @@ td,th {
     border: 1px solid;
     border-color: var(--ast-border-color);
     border-radius: 2px;
-    background: #e6e6e6;
+    background: #008CBA;
     padding: .6em 1em .4em;
     color: #fff
 }
