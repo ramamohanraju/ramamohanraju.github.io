@@ -457,7 +457,8 @@ hr {
     font-weight: 400;
     font-size: 100%;
     margin: 0;
-    vertical-align: baseline
+    vertical-align: baseline;
+    background: #008CBA;
 }
 
 button,input {
