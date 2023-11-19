@@ -11,6 +11,7 @@
             s.setAttribute('data-tenant-uuid', '792ac81b-7715-45c8-b8c1-2c549ba457c0');
             s.setAttribute('data-domain-uuid', '35391cd6-e761-454c-a651-78a6aa00fc6a');
             s.setAttribute('data-backend-url', 'https://dev.securiti.xyz');
+            s.setAttribute('data-securiti-staging-mode', 'true');
             s.setAttribute('data-skip-css', 'false');
             s.defer = true;
             var parent_node = document.head || document.body;
@@ -25,39 +26,13 @@
         document.cookie = "consentRecovery1Cat4=consentRecovery1Cat4Value";
         document.cookie = "consentRecovery1Cat5=consentRecovery1Cat5Value";
     </script>
-
-    <script>
-        getAllCookies = () => document.cookie.split(';').reduce((ac, str) => Object.assign(ac, {[str.split('=')[0].trim()]: str.split('=')[1]}), {});
-
-        printCookies = () => {
-            const cookiesList = getAllCookies();
-            document.getElementById('cookieList').innerHTML = JSON.stringify(cookiesList, undefined, 4);
-        }
-
-        clearCookies = () => {
-            var cookies = document.cookie.split("; ");
-            for (var c = 0; c < cookies.length; c++) {
-                var d = window.location.hostname.split(".");
-                while (d.length > 0) {
-                    var cookieBase = encodeURIComponent(cookies[c].split(";")[0].split("=")[0]) + '=; expires=Thu, 01-Jan-1970 00:00:01 GMT; domain=' + d.join('.') + ' ;path=';
-                    var p = location.pathname.split('/');
-                    document.cookie = cookieBase + '/';
-                    while (p.length > 0) {
-                        document.cookie = cookieBase + p.join('/');
-                        p.pop();
-                    }
-                    d.shift();
-                }
-            }
-            printCookies();
-        }
-    </script>
 </head>
-<body onload="printCookies()">
+<body>
+
   Hello World - Cookie consent recovery 1
   <br><br>
   <div>
-      This page drops following cookies on page load:
+      This page drops following cookies:
       <ol>
           <li>consentRecovery1Cat1</li>
           <li>consentRecovery1Cat2</li>
@@ -66,21 +41,10 @@
           <li>consentRecovery1Cat5</li>
       </ol>
   </div>
-  <br>
-  <div>
-      List of cookies found on this session:
-      <button onclick="printCookies()">Print Cookies</button>
-      <button onclick="clearCookies()">Clear Cookies</button>
-      <br>
-      ---------------------------------------------
-      <pre id="cookieList"></pre>
-      <br>
-      ---------------------------------------------
-  </div>
-
   <br><br><a href="www.google.com">Link to Google</a>
 
   <!-- You may style the button by overriding class "cmp-revoke-consent" -->
   <br><br><br><button class="cmp-revoke-consent">Revoke Consent</button>
 </body>
 </html>
+
