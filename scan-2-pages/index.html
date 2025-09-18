@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan 2 Pages Test | Privacy Testing Hub</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Multi-Page Cookie Test</h1>
+            <p class="hero-subtitle">2 Pages × 2 Cookies Each</p>
+            <p class="hero-description">
+                Navigate through 2 different pages, each dropping 2 unique cookies for page-to-page tracking analysis.
+            </p>
+        </div>
+    </section>
+
+    <div class="main-container">
+        <section class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Multi-Page Testing Environment</h2>
+                <p class="section-description">
+                    Click each page to visit and accumulate cookies • Total potential: 4 cookies across 2 pages
+                </p>
+            </div>
+
+            <div class="url-grid">
+                <div class="url-item" style="border-left-color: #10b981;">
+                    <div class="url-header">
+                        <div class="url-path">Page 1 (Current)</div>
+                        <div class="url-type">Active</div>
+                    </div>
+                    <div class="url-description">Main navigation page - 2 cookies dropped automatically</div>
+                    <div class="url-features">
+                        <span class="url-feature">2 Cookies</span>
+                        <span class="url-feature">Current Page</span>
+                    </div>
+                </div>
+
+                <div class="url-item" onclick="window.location.href='page2.html'" style="cursor: pointer;">
+                    <div class="url-header">
+                        <div class="url-path">page2.html</div>
+                        <div class="url-type">Page 2</div>
+                    </div>
+                    <div class="url-description">Privacy policy test page - drops 2 unique cookies</div>
+                    <div class="url-features">
+                        <span class="url-feature">2 Cookies</span>
+                        <span class="url-feature">Click to Visit</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button onclick="showCurrentCookies()" class="btn-primary" style="background: #10b981;">
+                    View Current Cookies
+                </button>
+                <button onclick="clearAllTestCookies()" class="btn-primary" style="background: #ef4444;">
+                    Clear All Test Cookies
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 class="footer-title">Multi-Page Testing Environment</h3>
+            <p class="footer-description">
+                Test cross-page cookie tracking with 2 interconnected pages.
+                Perfect for analyzing page-to-page tracking patterns and privacy tool effectiveness.
+            </p>
+            <p class="footer-note">
+                Navigate through all pages to accumulate up to 4 test cookies
+            </p>
+        </div>
+    </footer>
+
+    <!-- Load JavaScript modules -->
+    <script src="../assets/js/cookie-manager.js"></script>
+    <script src="../assets/js/ui-manager.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <script>
+        // Use case configuration
+        const USE_CASE_CONFIG = {
+            name: 'scan-2-pages',
+            pageNumber: 1,
+            cookieCount: 2,
+            totalPages: 2
+        };
+
+        // Drop cookies for page 1 when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            CookieManager.dropCookies(`${USE_CASE_CONFIG.name}-page1`, USE_CASE_CONFIG.cookieCount);
+            UIManager.showUseCaseStatus(
+                `${USE_CASE_CONFIG.name}-page1`,
+                `Dropped 2 cookies on main page`
+            );
+        });
+
+        function showCurrentCookies() {
+            const allCookies = CookieManager.getAllCookies();
+            const testCookies = CookieManager.getCookiesByPattern(USE_CASE_CONFIG.name);
+
+            let content = `<h4>Multi-Page Test Cookies (${Object.keys(testCookies).length}):</h4>`;
+            content += '<pre style="background: #f0f9ff; padding: 1rem; border-radius: 4px; overflow-x: auto; margin-bottom: 1rem;">';
+            content += JSON.stringify(testCookies, null, 2);
+            content += '</pre>';
+
+            content += `<h4>Progress: ${Object.keys(testCookies).length} / 4 possible cookies</h4>`;
+            content += '<div style="background: #f1f5f9; padding: 1rem; border-radius: 4px; margin: 1rem 0;">';
+            content += '<p>Visit all 2 pages to collect the full set of 4 test cookies.</p>';
+            content += '</div>';
+
+            UIManager.showModal('Multi-Page Cookie Progress', content, [
+                { text: 'Close', onClick: () => {} }
+            ]);
+        }
+
+        function clearAllTestCookies() {
+            const testCookiesBefore = CookieManager.getCookiesByPattern(USE_CASE_CONFIG.name);
+            const count = Object.keys(testCookiesBefore).length;
+
+            CookieManager.deleteCookiesByPattern(USE_CASE_CONFIG.name);
+            UIManager.showToast(`Cleared ${count} multi-page test cookies`, 'success');
+        }
+
+        // Debug function
+        window.debugMultiPageTest = function() {
+            console.group('Multi-Page Test Debug');
+            console.log('Use Case Config:', USE_CASE_CONFIG);
+            console.log('Test Cookies:', CookieManager.getCookiesByPattern(USE_CASE_CONFIG.name));
+            console.log('Cookie Count:', Object.keys(CookieManager.getCookiesByPattern(USE_CASE_CONFIG.name)).length);
+            console.groupEnd();
+        };
+    </script>
+</body>
+</html>

@@ -21,7 +21,42 @@
     <div class="main-container">
         <section class="content-section">
             <div class="section-header">
-                <h2 class="section-title">Privacy Solutions</h2>
+                <h2 class="section-title">Static Use Cases</h2>
+                <p class="section-description">
+                    Professional testing environments with dedicated cookie deployment scenarios
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card" style="cursor: pointer; transition: all 0.3s ease; position: relative;">
+                    <div class="feature-icon">🍪</div>
+                    <h3 class="feature-title">Cookie Scanning Test</h3>
+                    <p class="feature-description">
+                        <strong>URL:</strong> <code>/scan-10-cookies/</code><br>
+                        <strong>Action:</strong> Drops 10 test cookies instantly<br>
+                        Perfect for testing cookie detection tools and privacy scanners with a controlled set of identifiable cookies.
+                    </p>
+                    <div class="copy-indicator" onclick="event.stopPropagation(); copyToClipboard('https://ramamohanraju.github.io/scan-10-cookies/', this.parentElement)" style="opacity: 1; background: #667eea;">Copy URL</div>
+                    <div onclick="window.location.href='scan-10-cookies/'" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1;"></div>
+                </div>
+
+                <div class="feature-card" style="cursor: pointer; transition: all 0.3s ease; position: relative;">
+                    <div class="feature-icon">📄</div>
+                    <h3 class="feature-title">Multi-Page Scanning Test</h3>
+                    <p class="feature-description">
+                        <strong>URL:</strong> <code>/scan-2-pages/</code><br>
+                        <strong>Action:</strong> 2 pages × 2 cookies each (4 total)<br>
+                        Navigate through interconnected pages to test cross-page tracking detection and analysis tools.
+                    </p>
+                    <div class="copy-indicator" onclick="event.stopPropagation(); copyToClipboard('https://ramamohanraju.github.io/scan-2-pages/', this.parentElement)" style="opacity: 1; background: #667eea;">Copy URL</div>
+                    <div onclick="window.location.href='scan-2-pages/'" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1;"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Privacy Framework Overview</h2>
                 <p class="section-description">
                     Advanced tools for GDPR, CCPA, and global privacy regulation compliance testing
                 </p>
@@ -194,80 +229,11 @@
 
     <section class="content-section" style="background: #f8fafc;">
         <div class="main-container">
-            <div class="section-header">
-                <h2 class="section-title">Dynamic Use Cases</h2>
-                <p class="section-description">
-                    Trigger specific testing scenarios by modifying the URL path
-                </p>
-            </div>
-
-            <div class="features-grid">
-                <div class="feature-card" onclick="window.location.href='scan-10-cookies/'" style="cursor: pointer; transition: all 0.3s ease;">
-                    <div class="feature-icon">🍪</div>
-                    <h3 class="feature-title">Cookie Scanning</h3>
-                    <p class="feature-description">
-                        <strong>URL:</strong> <code>/scan-10-cookies/</code><br>
-                        <strong>Action:</strong> Drops 10 test cookies instantly<br>
-                        Perfect for testing cookie detection tools and privacy scanners with a controlled set of identifiable cookies.
-                    </p>
-                </div>
-
-                <div class="feature-card" onclick="window.location.href='scan-10-pages/'" style="cursor: pointer; transition: all 0.3s ease;">
-                    <div class="feature-icon">📄</div>
-                    <h3 class="feature-title">Multi-Page Scanning</h3>
-                    <p class="feature-description">
-                        <strong>URL:</strong> <code>/scan-10-pages/</code><br>
-                        <strong>Action:</strong> 10 pages × 2 cookies each (20 total)<br>
-                        Navigate through interconnected pages to test cross-page tracking detection and analysis tools.
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🛡️</div>
-                    <h3 class="feature-title">GDPR Testing</h3>
-                    <p class="feature-description">
-                        <strong>URL:</strong> <code>/gdpr-test</code><br>
-                        Sets GDPR consent preferences in localStorage with configurable consent categories (necessary, analytics, marketing).
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🏛️</div>
-                    <h3 class="feature-title">CCPA Testing</h3>
-                    <p class="feature-description">
-                        <strong>URL:</strong> <code>/ccpa-test</code><br>
-                        Activates CCPA opt-out signals in both localStorage and cookies for California privacy compliance testing.
-                    </p>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">🔧</div>
-                    <h3 class="feature-title">IAB TCF Testing</h3>
-                    <p class="feature-description">
-                        <strong>URL:</strong> <code>/iab-tcf-test</code><br>
-                        Configures IAB Transparency & Consent Framework strings and GDPR applicability flags in localStorage.
-                    </p>
-                </div>
-            </div>
-
-            <div style="background: white; border-radius: 12px; padding: 2rem; border: 1px solid #e5e7eb; margin-top: 2rem;">
+            <div style="background: white; border-radius: 12px; padding: 2rem; border: 1px solid #e5e7eb;">
                 <h3 style="color: #1a1a1a; margin-bottom: 1rem; font-size: 1.25rem; font-weight: 600;">How to Use</h3>
-                <div style="display: grid; gap: 1.5rem; margin-bottom: 2rem;">
-                    <div style="padding: 1rem; background: #f0f9ff; border-radius: 8px; border-left: 4px solid #0ea5e9;">
-                        <h4 style="color: #1a1a1a; margin-bottom: 0.5rem;">Static Use Cases (Recommended)</h4>
-                        <p style="color: #666; margin-bottom: 0.5rem;">Click the cards above or visit directly:</p>
-                        <code style="background: white; padding: 4px 8px; border-radius: 4px; font-family: monospace;">https://ramamohanraju.github.io/scan-10-cookies/</code><br>
-                        <code style="background: white; padding: 4px 8px; border-radius: 4px; font-family: monospace;">https://ramamohanraju.github.io/scan-10-pages/</code>
-                    </div>
-                    <div style="padding: 1rem; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #6b7280;">
-                        <h4 style="color: #1a1a1a; margin-bottom: 0.5rem;">Dynamic Use Cases (Legacy)</h4>
-                        <p style="color: #666; margin-bottom: 0.5rem;">URL-based triggers still work:</p>
-                        <code style="background: white; padding: 4px 8px; border-radius: 4px; font-family: monospace;">https://ramamohanraju.github.io/gdpr-test</code><br>
-                        <code style="background: white; padding: 4px 8px; border-radius: 4px; font-family: monospace;">https://ramamohanraju.github.io/ccpa-test</code>
-                    </div>
-                </div>
                 <ol style="color: #666; line-height: 1.8; padding-left: 1.5rem;">
-                    <li>Visit any of the test environments using the URLs above</li>
+                    <li>Click the test environment cards above to visit the testing pages</li>
+                    <li>Use the "Copy URL" button to copy the direct link for sharing or reference</li>
                     <li>A green status indicator will appear confirming cookie deployment</li>
                     <li>Use browser DevTools → Application → Cookies to verify the test data</li>
                     <li>Run your privacy scanning tools to detect the generated cookies</li>
