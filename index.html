@@ -28,7 +28,7 @@
             </div>
 
             <div class="features-grid">
-                <div class="feature-card" style="cursor: pointer; transition: all 0.3s ease; position: relative;">
+                <div class="feature-card" onclick="copyToClipboard('https://ramamohanraju.github.io/scan-10-cookies/', this)" style="cursor: pointer; transition: all 0.3s ease; position: relative;">
                     <div class="feature-icon">🍪</div>
                     <h3 class="feature-title">Cookie Scanning Test</h3>
                     <p class="feature-description">
@@ -36,11 +36,10 @@
                         <strong>Action:</strong> Drops 10 test cookies instantly<br>
                         Perfect for testing cookie detection tools and privacy scanners with a controlled set of identifiable cookies.
                     </p>
-                    <div class="copy-indicator" onclick="event.stopPropagation(); copyToClipboard('https://ramamohanraju.github.io/scan-10-cookies/', this.parentElement)" style="opacity: 1; background: #667eea;">Copy URL</div>
-                    <div onclick="window.location.href='scan-10-cookies/'" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1;"></div>
+                    <div class="copy-indicator" style="opacity: 1; background: #667eea; position: relative; z-index: 2;">Copy URL</div>
                 </div>
 
-                <div class="feature-card" style="cursor: pointer; transition: all 0.3s ease; position: relative;">
+                <div class="feature-card" onclick="copyToClipboard('https://ramamohanraju.github.io/scan-2-pages/', this)" style="cursor: pointer; transition: all 0.3s ease; position: relative;">
                     <div class="feature-icon">📄</div>
                     <h3 class="feature-title">Multi-Page Scanning Test</h3>
                     <p class="feature-description">
@@ -48,8 +47,7 @@
                         <strong>Action:</strong> 2 pages × 2 cookies each (4 total)<br>
                         Navigate through interconnected pages to test cross-page tracking detection and analysis tools.
                     </p>
-                    <div class="copy-indicator" onclick="event.stopPropagation(); copyToClipboard('https://ramamohanraju.github.io/scan-2-pages/', this.parentElement)" style="opacity: 1; background: #667eea;">Copy URL</div>
-                    <div onclick="window.location.href='scan-2-pages/'" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 1;"></div>
+                    <div class="copy-indicator" style="opacity: 1; background: #667eea; position: relative; z-index: 2;">Copy URL</div>
                 </div>
             </div>
         </section>
