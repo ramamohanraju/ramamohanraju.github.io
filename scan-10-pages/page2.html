@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 2 - Privacy Policy | Scan 10 Pages Test</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Privacy Policy</h1>
+            <p class="hero-subtitle">Page 2 of 10</p>
+            <p class="hero-description">
+                Privacy policy testing page - automatically drops 2 unique cookies
+            </p>
+        </div>
+    </section>
+
+    <div class="main-container">
+        <section class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Privacy Policy Test Page</h2>
+                <p class="section-description">
+                    This page simulates a privacy policy page with cookie deployment
+                </p>
+            </div>
+
+            <div style="background: white; border-radius: 12px; padding: 2rem; border: 1px solid #e5e7eb; margin: 2rem 0;">
+                <h3 style="color: #1a1a1a; margin-bottom: 1rem;">Sample Privacy Policy Content</h3>
+                <p style="color: #666; line-height: 1.6;">
+                    This is a simulated privacy policy page for testing purposes. In a real application, this would contain
+                    comprehensive information about data collection, usage, and user rights. For testing purposes, this page
+                    automatically drops 2 cookies when loaded.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🍪</div>
+                    <h3 class="feature-title">Page 2 Cookies</h3>
+                    <p class="feature-description">
+                        <strong>Cookie 1:</strong> scan-10-pages-page2-cookie1<br>
+                        <strong>Cookie 2:</strong> scan-10-pages-page2-cookie2<br>
+                        Both with unique timestamp values
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔗</div>
+                    <h3 class="feature-title">Navigation</h3>
+                    <p class="feature-description">
+                        Continue to the next page or return to the main navigation
+                        to explore all 10 pages in this test scenario.
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button onclick="location.href='index.html'" class="btn-primary">
+                    ← Back to Navigation
+                </button>
+                <button onclick="location.href='page3.html'" class="btn-primary" style="background: #10b981;">
+                    Next Page →
+                </button>
+                <button onclick="location.href='../'" class="btn-primary" style="background: #6b7280;">
+                    Main Site
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 class="footer-title">Page 2: Privacy Policy</h3>
+            <p class="footer-description">
+                Part of the 10-page cookie testing scenario. 2 cookies deployed.
+            </p>
+        </div>
+    </footer>
+
+    <script src="../assets/js/cookie-manager.js"></script>
+    <script src="../assets/js/ui-manager.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            CookieManager.dropCookies('scan-10-pages-page2', 2);
+            UIManager.showUseCaseStatus('scan-10-pages-page2', 'Page 2: Dropped 2 cookies');
+        });
+    </script>
+</body>
+</html>

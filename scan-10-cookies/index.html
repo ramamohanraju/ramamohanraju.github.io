@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scan 10 Cookies Test | Privacy Testing Hub</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">Cookie Scanning Test</h1>
+            <p class="hero-subtitle">10 Cookies Deployment</p>
+            <p class="hero-description">
+                This page automatically drops 10 unique cookies for comprehensive cookie detection testing.
+            </p>
+        </div>
+    </section>
+
+    <div class="main-container">
+        <section class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">10 Cookies Successfully Deployed</h2>
+                <p class="section-description">
+                    Your privacy scanning tools should now detect 10 test cookies on this domain
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🍪</div>
+                    <h3 class="feature-title">Cookies Deployed</h3>
+                    <p class="feature-description">
+                        <strong>Count:</strong> 10 cookies<br>
+                        <strong>Pattern:</strong> <code>scan-10-cookies-cookie[1-10]</code><br>
+                        <strong>Values:</strong> Unique timestamp-based identifiers<br>
+                        <strong>Expiration:</strong> 24 hours from creation
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3 class="feature-title">Detection Methods</h3>
+                    <p class="feature-description">
+                        • Browser DevTools → Application → Cookies<br>
+                        • Privacy scanner browser extensions<br>
+                        • Cookie consent management platforms<br>
+                        • Network monitoring tools
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Cookie Specifications</h3>
+                    <p class="feature-description">
+                        <strong>Domain:</strong> ramamohanraju.github.io<br>
+                        <strong>Path:</strong> / (site-wide)<br>
+                        <strong>SameSite:</strong> Lax<br>
+                        <strong>Secure:</strong> HTTPS only<br>
+                        <strong>HttpOnly:</strong> No (accessible via JavaScript)
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🧪</div>
+                    <h3 class="feature-title">Testing Purpose</h3>
+                    <p class="feature-description">
+                        This controlled environment allows you to test:<br>
+                        • Cookie detection accuracy<br>
+                        • Privacy scanner sensitivity<br>
+                        • Consent management responses<br>
+                        • Compliance tool effectiveness
+                    </p>
+                </div>
+            </div>
+
+            <div style="background: white; border-radius: 12px; padding: 2rem; border: 1px solid #e5e7eb; margin: 2rem 0;">
+                <h3 style="color: #1a1a1a; margin-bottom: 1rem; font-size: 1.25rem; font-weight: 600;">Cookie List</h3>
+                <div id="cookie-list" style="font-family: 'SF Mono', monospace; font-size: 0.9rem; color: #666; line-height: 1.8;">
+                    Loading cookie information...
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button onclick="location.href='../'" class="btn-primary">
+                    ← Return to Main Site
+                </button>
+                <button onclick="showAllCookies()" class="btn-primary" style="background: #10b981;">
+                    View All Cookies
+                </button>
+                <button onclick="clearTestCookies()" class="btn-primary" style="background: #ef4444;">
+                    Clear Test Cookies
+                </button>
+                <button onclick="refreshCookies()" class="btn-primary" style="background: #f59e0b;">
+                    Refresh Cookies
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 class="footer-title">10 Cookie Testing Environment</h3>
+            <p class="footer-description">
+                Professional cookie detection testing with 10 precisely configured test cookies.
+                Perfect for validating privacy scanning tools and compliance systems.
+            </p>
+            <p class="footer-note">
+                Test cookies expire in 24 hours • No personal data • Privacy-compliant testing
+            </p>
+        </div>
+    </footer>
+
+    <!-- Load JavaScript modules -->
+    <script src="../assets/js/cookie-manager.js"></script>
+    <script src="../assets/js/ui-manager.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <script>
+        // Use case configuration
+        const USE_CASE_CONFIG = {
+            name: 'scan-10-cookies',
+            cookieCount: 10,
+            description: '10 Cookie Detection Test'
+        };
+
+        // Drop cookies when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Drop 10 test cookies
+            CookieManager.dropCookies(USE_CASE_CONFIG.name, USE_CASE_CONFIG.cookieCount);
+
+            // Show success notification
+            UIManager.showUseCaseStatus(
+                USE_CASE_CONFIG.name,
+                `Successfully deployed ${USE_CASE_CONFIG.cookieCount} test cookies`
+            );
+
+            // Display cookie list
+            displayCookieList();
+        });
+
+        function displayCookieList() {
+            const testCookies = CookieManager.getCookiesByPattern(USE_CASE_CONFIG.name);
+            const cookieListElement = document.getElementById('cookie-list');
+
+            if (Object.keys(testCookies).length > 0) {
+                let listHtml = '';
+                Object.entries(testCookies).forEach(([name, value], index) => {
+                    listHtml += `${index + 1}. <strong>${name}</strong> = ${value.substring(0, 20)}...<br>`;
+                });
+                cookieListElement.innerHTML = listHtml;
+            } else {
+                cookieListElement.innerHTML = '<em>No test cookies found. They may have been cleared or blocked.</em>';
+            }
+        }
+
+        function showAllCookies() {
+            const allCookies = CookieManager.getAllCookies();
+            const testCookies = CookieManager.getCookiesByPattern(USE_CASE_CONFIG.name);
+
+            let content = `<h4>Test Cookies (${Object.keys(testCookies).length}):</h4>`;
+            content += '<pre style="background: #f0f9ff; padding: 1rem; border-radius: 4px; overflow-x: auto; margin-bottom: 1rem;">';
+            content += JSON.stringify(testCookies, null, 2);
+            content += '</pre>';
+
+            content += `<h4>All Cookies (${Object.keys(allCookies).length}):</h4>`;
+            content += '<pre style="background: #f8f9fa; padding: 1rem; border-radius: 4px; overflow-x: auto;">';
+            content += JSON.stringify(allCookies, null, 2);
+            content += '</pre>';
+
+            UIManager.showModal('Cookie Analysis', content, [
+                { text: 'Close', onClick: () => {} }
+            ]);
+        }
+
+        function clearTestCookies() {
+            const testCookiesBefore = CookieManager.getCookiesByPattern(USE_CASE_CONFIG.name);
+            const count = Object.keys(testCookiesBefore).length;
+
+            CookieManager.deleteCookiesByPattern(USE_CASE_CONFIG.name);
+
+            UIManager.showToast(`Cleared ${count} test cookies`, 'success');
+
+            // Update the display
+            setTimeout(() => {
+                displayCookieList();
+            }, 500);
+        }
+
+        function refreshCookies() {
+            // Clear existing test cookies
+            CookieManager.deleteCookiesByPattern(USE_CASE_CONFIG.name);
+
+            // Wait a moment, then create new ones
+            setTimeout(() => {
+                CookieManager.dropCookies(USE_CASE_CONFIG.name, USE_CASE_CONFIG.cookieCount);
+                UIManager.showToast(`Refreshed ${USE_CASE_CONFIG.cookieCount} test cookies`, 'info');
+
+                // Update the display
+                setTimeout(() => {
+                    displayCookieList();
+                }, 500);
+            }, 500);
+        }
+
+        // Debug function
+        window.debugCookieTest = function() {
+            console.group('Cookie Test Debug');
+            console.log('Use Case Config:', USE_CASE_CONFIG);
+            console.log('Test Cookies:', CookieManager.getCookiesByPattern(USE_CASE_CONFIG.name));
+            console.log('All Cookies:', CookieManager.getAllCookies());
+            console.groupEnd();
+        };
+    </script>
+</body>
+</html>

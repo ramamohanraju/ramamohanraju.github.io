@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PAGE_TITLE}} | Privacy Testing Hub</title>
+    <link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">{{USE_CASE_TITLE}}</h1>
+            <p class="hero-subtitle">Test Page {{PAGE_NUMBER}}</p>
+            <p class="hero-description">
+                This page automatically drops {{COOKIE_COUNT}} unique cookies for testing purposes.
+            </p>
+        </div>
+    </section>
+
+    <div class="main-container">
+        <section class="content-section">
+            <div class="section-header">
+                <h2 class="section-title">Page {{PAGE_NUMBER}} Content</h2>
+                <p class="section-description">
+                    This page is part of the {{USE_CASE}} testing scenario
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🍪</div>
+                    <h3 class="feature-title">Cookies Dropped</h3>
+                    <p class="feature-description">
+                        This page automatically drops {{COOKIE_COUNT}} cookies with the naming pattern:
+                        <code>{{USE_CASE}}-page{{PAGE_NUMBER}}-cookie[1-{{COOKIE_COUNT}}]</code>
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔍</div>
+                    <h3 class="feature-title">Testing Purpose</h3>
+                    <p class="feature-description">
+                        Use your privacy scanning tools, browser extensions, or developer tools
+                        to detect and analyze the cookies dropped by this page.
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3 class="feature-title">Cookie Details</h3>
+                    <p class="feature-description">
+                        Each cookie contains:
+                        <br>• Unique timestamp-based values
+                        <br>• 24-hour expiration
+                        <br>• SameSite=Lax attribute
+                        <br>• Path=/ (site-wide)
+                    </p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3 class="feature-title">Navigation</h3>
+                    <p class="feature-description">
+                        Navigate between test pages to accumulate cookies or return to the
+                        homepage to access other testing scenarios.
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <button onclick="location.href='/'" class="btn-primary">
+                    ← Return to Homepage
+                </button>
+                <button onclick="showCurrentCookies()" class="btn-primary" style="background: #10b981;">
+                    Show Current Cookies
+                </button>
+                <button onclick="clearTestCookies()" class="btn-primary" style="background: #ef4444;">
+                    Clear Test Cookies
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <h3 class="footer-title">Test Page {{PAGE_NUMBER}}</h3>
+            <p class="footer-description">
+                Part of the {{USE_CASE}} privacy testing scenario.
+                This page helps test cookie detection and privacy scanning tools.
+            </p>
+            <p class="footer-note">
+                Privacy-compliant testing environment • No tracking • Local cookies only
+            </p>
+        </div>
+    </footer>
+
+    <!-- Load JavaScript modules -->
+    <script src="../assets/js/cookie-manager.js"></script>
+    <script src="../assets/js/ui-manager.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+    <script>
+        // Page-specific configuration
+        const PAGE_CONFIG = {
+            useCase: '{{USE_CASE}}',
+            pageNumber: {{PAGE_NUMBER}},
+            cookieCount: {{COOKIE_COUNT}},
+            baseName: '{{USE_CASE}}-page{{PAGE_NUMBER}}'
+        };
+
+        // Drop cookies when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            CookieManager.dropCookies(PAGE_CONFIG.baseName, PAGE_CONFIG.cookieCount);
+            UIManager.showUseCaseStatus(
+                `${PAGE_CONFIG.useCase}-page${PAGE_CONFIG.pageNumber}`,
+                `Dropped ${PAGE_CONFIG.cookieCount} cookies on page load`
+            );
+        });
+
+        // Show current cookies function
+        function showCurrentCookies() {
+            const allCookies = CookieManager.getAllCookies();
+            const testCookies = CookieManager.getCookiesByPattern(PAGE_CONFIG.useCase);
+
+            let content = '<h4>All Cookies:</h4><pre style="background: #f8f9fa; padding: 1rem; border-radius: 4px; overflow-x: auto;">';
+            content += JSON.stringify(allCookies, null, 2);
+            content += '</pre>';
+
+            if (Object.keys(testCookies).length > 0) {
+                content += '<h4 style="margin-top: 1rem;">Test Cookies for this scenario:</h4>';
+                content += '<pre style="background: #f8f9fa; padding: 1rem; border-radius: 4px; overflow-x: auto;">';
+                content += JSON.stringify(testCookies, null, 2);
+                content += '</pre>';
+            }
+
+            UIManager.showModal('Current Cookies', content, [
+                { text: 'Close', onClick: () => {} }
+            ]);
+        }
+
+        // Clear test cookies function
+        function clearTestCookies() {
+            CookieManager.deleteCookiesByPattern(PAGE_CONFIG.useCase);
+            UIManager.showToast(`Cleared all ${PAGE_CONFIG.useCase} test cookies`, 'success');
+        }
+
+        // Debug function for this page
+        window.debugPage = function() {
+            console.group(`Page ${PAGE_CONFIG.pageNumber} Debug`);
+            console.log('Page Config:', PAGE_CONFIG);
+            console.log('Test Cookies:', CookieManager.getCookiesByPattern(PAGE_CONFIG.useCase));
+            console.log('All Cookies:', CookieManager.getAllCookies());
+            console.groupEnd();
+        };
+    </script>
+</body>
+</html>
