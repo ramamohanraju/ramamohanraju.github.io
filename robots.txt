@@ -1,0 +1,44 @@
+# Privacy & Consent Management Testing Hub
+# Professional testing environment for data privacy compliance
+
+# Allow all crawlers access to public testing tools
+User-agent: *
+Allow: /
+
+# Specific allowances for important sections
+Allow: /scan-10-cookies/
+Allow: /scan-10-pages/
+Allow: /*.html$
+Allow: /assets/css/
+Allow: /assets/js/
+
+# Block crawling of sensitive or unnecessary files
+Disallow: /data/
+Disallow: /templates/
+Disallow: /pages/
+Disallow: /*.csv$
+Disallow: /.git/
+Disallow: /.github/
+Disallow: /.idea/
+Disallow: /.claude/
+
+# Block specific crawlers that might interfere with testing
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+# Crawl delay for well-behaved bots (to avoid interference with testing)
+Crawl-delay: 10
+
+# Sitemap locations
+Sitemap: https://ramamohanraju.github.io/sitemap.xml
+
+# Additional information
+# This site is designed for privacy compliance testing
+# Contact: Available through GitHub repository
+# Last updated: 2025-01-19
