@@ -4,12 +4,20 @@
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-  <!-- Cookie Scanning Use Case -->
+  <!-- Multi-Page Cookie Testing Use Case (2 Pages) -->
   <url>
-    <loc>https://ramamohanraju.github.io/scan-10-cookies/</loc>
+    <loc>https://ramamohanraju.github.io/scan-2-pages/</loc>
     <lastmod>2025-01-29T00:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- Individual Test Page -->
+  <url>
+    <loc>https://ramamohanraju.github.io/scan-2-pages/page2.html</loc>
+    <lastmod>2025-01-29T00:00:00+00:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 
 </urlset>
