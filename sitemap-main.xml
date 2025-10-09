@@ -12,6 +12,13 @@
     <priority>1.0</priority>
   </url>
 
+  <url>
+    <loc>https://securiti.ai/</loc>
+    <lastmod>2025-01-29T00:00:00+00:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
   <!-- Dynamic Use Case Endpoints -->
   <url>
     <loc>https://ramamohanraju.github.io/gdpr-test</loc>
