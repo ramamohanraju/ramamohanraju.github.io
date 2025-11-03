@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<urlset
+	xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+	<url>
+		<loc>https://www.google.com/</loc>
+		<lastmod>2025-11-03</lastmod>
+	</url>
+	<url>
+		<loc>https://www.wikipedia.org/</loc>
+		<lastmod>2025-11-03</lastmod>
+	</url>
+	<url>
+		<loc>https://www.youtube.com/</loc>
+		<lastmod>2025-11-03</lastmod>
+	</url>
+	<url>
+		<loc>https://www.reddit.com/</loc>
+		<lastmod>2025-11-03</lastmod>
+	</url>
+	<url>
+		<loc>https://www.github.com/</loc>
+		<lastmod>2025-11-03</lastmod>
+	</url>
+	<url>
+		<loc>https://www.stackoverflow.com/</loc>
+		<lastmod>2025-11-03</lastmod>
+	</url>
+	<url>
+		<loc>https://www.linkedin.com/</loc>
+		<lastmod>2025-11-03</lastmod>
+	</url>
+	<url>
+		<loc>https://www.apple.com/</loc>
+		<lastmod>2025-11-03</lastmod>
+	</url>
+	<url>
+		<loc>https://www.microsoft.com/</loc>
+		<lastmod>2025-11-03</lastmod>
+	</url>
+	<url>
+		<loc>https://www.nasa.gov/</loc>
+		<lastmod>2025-11-03</lastmod>
+	</url>
+</urlset>
