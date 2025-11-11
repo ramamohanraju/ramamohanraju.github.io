@@ -62,7 +62,21 @@
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td>1. Landing Page</td>
+                                    <td rowspan="3">1. Landing Page</td>
+                                    <td>page_visited</td>
+                                    <td>landing_page</td>
+                                    <td>Dropped automatically on page load</td>
+                                    <td id="status_page_visited">-</td>
+                                    <td id="value_page_visited">-</td>
+                                </tr>
+                                <tr>
+                                    <td>session_start</td>
+                                    <td>[ISO timestamp]</td>
+                                    <td>Session start timestamp dropped on page load</td>
+                                    <td id="status_session_start">-</td>
+                                    <td id="value_session_start">-</td>
+                                </tr>
+                                <tr>
                                     <td>book_a_flight</td>
                                     <td>step_1_landing</td>
                                     <td>Dropped when "Book a Flight" button is clicked</td>
@@ -348,6 +362,8 @@
 
         function populateCookieTable() {
             const cookieNames = [
+                'page_visited',
+                'session_start',
                 'book_a_flight',
                 'from_city',
                 'to_city',
