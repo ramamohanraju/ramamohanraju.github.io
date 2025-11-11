@@ -1,0 +1,379 @@
+{
+    "title": "flight-booking-demo",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1731,
+            "height": 615,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://ramamohanraju.github.io/flight-booking/index.html",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://ramamohanraju.github.io/flight-booking/index.html",
+                    "title": "Flight Booking - Home"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Book a Flight"
+                ],
+                [
+                    "button"
+                ],
+                [
+                    "xpath//html/body/div/div[1]/button"
+                ],
+                [
+                    "pierce/button"
+                ]
+            ],
+            "offsetY": 35.8253173828125,
+            "offsetX": 109.82244873046875,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://ramamohanraju.github.io/flight-booking/search.html",
+                    "title": "Flight Booking - Search"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/From *"
+                ],
+                [
+                    "#from"
+                ],
+                [
+                    "xpath///*[@id=\"from\"]"
+                ],
+                [
+                    "pierce/#from"
+                ]
+            ],
+            "offsetY": 15.210235595703125,
+            "offsetX": 169.27273559570312
+        },
+        {
+            "type": "change",
+            "value": "demo from",
+            "selectors": [
+                [
+                    "aria/From *"
+                ],
+                [
+                    "#from"
+                ],
+                [
+                    "xpath///*[@id=\"from\"]"
+                ],
+                [
+                    "pierce/#from"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "demo to",
+            "selectors": [
+                [
+                    "aria/To *"
+                ],
+                [
+                    "#to"
+                ],
+                [
+                    "xpath///*[@id=\"to\"]"
+                ],
+                [
+                    "pierce/#to"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/To *"
+                ],
+                [
+                    "#to"
+                ],
+                [
+                    "xpath///*[@id=\"to\"]"
+                ],
+                [
+                    "pierce/#to"
+                ],
+                [
+                    "text/demo to"
+                ]
+            ],
+            "offsetY": 35.808258056640625,
+            "offsetX": 91.27273559570312
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Date *"
+                ],
+                [
+                    "#date"
+                ],
+                [
+                    "xpath///*[@id=\"date\"]"
+                ],
+                [
+                    "pierce/#date"
+                ]
+            ],
+            "offsetY": 20.40625,
+            "offsetX": 1055.2727355957031
+        },
+        {
+            "type": "change",
+            "value": "2025-11-11",
+            "selectors": [
+                [
+                    "aria/Date *"
+                ],
+                [
+                    "#date"
+                ],
+                [
+                    "xpath///*[@id=\"date\"]"
+                ],
+                [
+                    "pierce/#date"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Find Flights"
+                ],
+                [
+                    "button.btn-primary"
+                ],
+                [
+                    "xpath///*[@id=\"searchForm\"]/button[1]"
+                ],
+                [
+                    "pierce/button.btn-primary"
+                ],
+                [
+                    "text/Find Flights"
+                ]
+            ],
+            "offsetY": 30.336669921875,
+            "offsetX": 69.27273559570312,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://ramamohanraju.github.io/flight-booking/results.html",
+                    "title": ""
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#flightsList > div:nth-of-type(1) button"
+                ],
+                [
+                    "xpath///*[@id=\"flightsList\"]/div[1]/div[2]/button"
+                ],
+                [
+                    "pierce/#flightsList > div:nth-of-type(1) button"
+                ]
+            ],
+            "offsetY": 27.8480224609375,
+            "offsetX": 42.1917724609375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/First Name *"
+                ],
+                [
+                    "#firstName"
+                ],
+                [
+                    "xpath///*[@id=\"firstName\"]"
+                ],
+                [
+                    "pierce/#firstName"
+                ]
+            ],
+            "offsetY": 27.323883056640625,
+            "offsetX": 238.09091186523438
+        },
+        {
+            "type": "change",
+            "value": "demo first name",
+            "selectors": [
+                [
+                    "aria/First Name *"
+                ],
+                [
+                    "#firstName"
+                ],
+                [
+                    "xpath///*[@id=\"firstName\"]"
+                ],
+                [
+                    "pierce/#firstName"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Last Name *"
+                ],
+                [
+                    "#lastName"
+                ],
+                [
+                    "xpath///*[@id=\"lastName\"]"
+                ],
+                [
+                    "pierce/#lastName"
+                ]
+            ],
+            "offsetY": 15.921875,
+            "offsetX": 195.09091186523438
+        },
+        {
+            "type": "change",
+            "value": "demo last name",
+            "selectors": [
+                [
+                    "aria/Last Name *"
+                ],
+                [
+                    "#lastName"
+                ],
+                [
+                    "xpath///*[@id=\"lastName\"]"
+                ],
+                [
+                    "pierce/#lastName"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Mobile Number *"
+                ],
+                [
+                    "#mobile"
+                ],
+                [
+                    "xpath///*[@id=\"mobile\"]"
+                ],
+                [
+                    "pierce/#mobile"
+                ]
+            ],
+            "offsetY": 23.5198974609375,
+            "offsetX": 178.09091186523438
+        },
+        {
+            "type": "change",
+            "value": "8888888888",
+            "selectors": [
+                [
+                    "aria/Mobile Number *"
+                ],
+                [
+                    "#mobile"
+                ],
+                [
+                    "xpath///*[@id=\"mobile\"]"
+                ],
+                [
+                    "pierce/#mobile"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Continue"
+                ],
+                [
+                    "#bookingForm button.btn-primary"
+                ],
+                [
+                    "xpath///*[@id=\"passengerForm\"]/button[1]"
+                ],
+                [
+                    "pierce/#bookingForm button.btn-primary"
+                ],
+                [
+                    "text/Continue"
+                ]
+            ],
+            "offsetY": 41.228729248046875,
+            "offsetX": 85.09091186523438
+        }
+    ]
+}
