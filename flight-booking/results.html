@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking - Results</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="results-section">
+            <h1>Available Flights</h1>
+            <div id="searchInfo" class="search-info"></div>
+
+            <div id="flightsList" class="flights-list"></div>
+
+            <div id="bookingForm" class="booking-form" style="display: none;">
+                <h2>Passenger Details</h2>
+                <form id="passengerForm" onsubmit="handleBooking(event)">
+                    <div id="selectedFlightInfo" class="selected-flight-info"></div>
+
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required placeholder="Enter first name" onchange="dropFormCookie('passenger_first_name', this.value)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="lastName">Last Name *</label>
+                        <input type="text" id="lastName" name="lastName" required placeholder="Enter last name" onchange="dropFormCookie('passenger_last_name', this.value)">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mobile">Mobile Number *</label>
+                        <input type="tel" id="mobile" name="mobile" required placeholder="Enter mobile number" pattern="[0-9]{10}" onchange="dropFormCookie('passenger_mobile', this.value)">
+                        <small>Please enter a 10-digit mobile number</small>
+                    </div>
+
+                    <button type="submit" class="btn-primary">Continue</button>
+                    <button type="button" class="btn-secondary" onclick="cancelBooking()">Cancel</button>
+                </form>
+            </div>
+
+            <div id="confirmation" class="confirmation" style="display: none;">
+                <div class="confirmation-icon">✓</div>
+                <h2>Booking Confirmed!</h2>
+                <div id="confirmationDetails" class="confirmation-details"></div>
+
+                <div class="cookie-reference">
+                    <h2>Cookie Reference - Complete Journey</h2>
+                    <p class="cookie-note">Below is a list of all cookies that were dropped during your flight booking journey:</p>
+                    <div class="table-container">
+                        <table class="cookie-table">
+                            <thead>
+                                <tr>
+                                    <th>Step</th>
+                                    <th>Cookie Name</th>
+                                    <th>Expected Value</th>
+                                    <th>Description</th>
+                                    <th>Status</th>
+                                    <th>Actual Value</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1. Landing Page</td>
+                                    <td>book_a_flight</td>
+                                    <td>step_1_landing</td>
+                                    <td>Dropped when "Book a Flight" button is clicked</td>
+                                    <td id="status_book_a_flight">-</td>
+                                    <td id="value_book_a_flight">-</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="4">2. Search Page</td>
+                                    <td>from_city</td>
+                                    <td>[user entered value]</td>
+                                    <td>Departure city entered by user</td>
+                                    <td id="status_from_city">-</td>
+                                    <td id="value_from_city">-</td>
+                                </tr>
+                                <tr>
+                                    <td>to_city</td>
+                                    <td>[user entered value]</td>
+                                    <td>Destination city entered by user</td>
+                                    <td id="status_to_city">-</td>
+                                    <td id="value_to_city">-</td>
+                                </tr>
+                                <tr>
+                                    <td>travel_date</td>
+                                    <td>[user selected date]</td>
+                                    <td>Travel date selected by user</td>
+                                    <td id="status_travel_date">-</td>
+                                    <td id="value_travel_date">-</td>
+                                </tr>
+                                <tr>
+                                    <td>find_flights</td>
+                                    <td>step_2_search</td>
+                                    <td>Dropped when "Find Flights" button is clicked</td>
+                                    <td id="status_find_flights">-</td>
+                                    <td id="value_find_flights">-</td>
+                                </tr>
+                                <tr>
+                                    <td rowspan="5">3. Results Page</td>
+                                    <td>select_flight</td>
+                                    <td>step_3_flight_selected</td>
+                                    <td>Dropped when a flight is selected</td>
+                                    <td id="status_select_flight">-</td>
+                                    <td id="value_select_flight">-</td>
+                                </tr>
+                                <tr>
+                                    <td>selected_flight_id</td>
+                                    <td>[flight ID]</td>
+                                    <td>ID of the selected flight</td>
+                                    <td id="status_selected_flight_id">-</td>
+                                    <td id="value_selected_flight_id">-</td>
+                                </tr>
+                                <tr>
+                                    <td>passenger_first_name</td>
+                                    <td>[user entered value]</td>
+                                    <td>Passenger's first name</td>
+                                    <td id="status_passenger_first_name">-</td>
+                                    <td id="value_passenger_first_name">-</td>
+                                </tr>
+                                <tr>
+                                    <td>passenger_last_name</td>
+                                    <td>[user entered value]</td>
+                                    <td>Passenger's last name</td>
+                                    <td id="status_passenger_last_name">-</td>
+                                    <td id="value_passenger_last_name">-</td>
+                                </tr>
+                                <tr>
+                                    <td>passenger_mobile</td>
+                                    <td>[user entered value]</td>
+                                    <td>Passenger's mobile number</td>
+                                    <td id="status_passenger_mobile">-</td>
+                                    <td id="value_passenger_mobile">-</td>
+                                </tr>
+                                <tr>
+                                    <td>4. Confirmation</td>
+                                    <td>continue_booking</td>
+                                    <td>step_4_booking_confirmed</td>
+                                    <td>Dropped when booking is confirmed</td>
+                                    <td id="status_continue_booking">-</td>
+                                    <td id="value_continue_booking">-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <button class="btn-primary" onclick="window.location.href='index.html'">Book Another Flight</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedFlight = null;
+        let searchData = null;
+
+        // Static flight data
+        const flights = [
+            { id: 1, airline: "SkyWings", departure: "08:00 AM", arrival: "10:30 AM", duration: "2h 30m", price: "$250" },
+            { id: 2, airline: "AeroFly", departure: "09:15 AM", arrival: "11:45 AM", duration: "2h 30m", price: "$220" },
+            { id: 3, airline: "CloudAir", departure: "10:30 AM", arrival: "01:00 PM", duration: "2h 30m", price: "$280" },
+            { id: 4, airline: "JetStream", departure: "12:00 PM", arrival: "02:30 PM", duration: "2h 30m", price: "$240" },
+            { id: 5, airline: "FastWings", departure: "01:45 PM", arrival: "04:15 PM", duration: "2h 30m", price: "$260" },
+            { id: 6, airline: "SkyHigh", departure: "03:30 PM", arrival: "06:00 PM", duration: "2h 30m", price: "$230" },
+            { id: 7, airline: "BlueJet", departure: "05:00 PM", arrival: "07:30 PM", duration: "2h 30m", price: "$270" },
+            { id: 8, airline: "GlobalAir", departure: "06:15 PM", arrival: "08:45 PM", duration: "2h 30m", price: "$245" },
+            { id: 9, airline: "SwiftFly", departure: "07:30 PM", arrival: "10:00 PM", duration: "2h 30m", price: "$255" },
+            { id: 10, airline: "StarWings", departure: "09:00 PM", arrival: "11:30 PM", duration: "2h 30m", price: "$235" }
+        ];
+
+        function setCookie(name, value, days = 7) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + encodeURIComponent(value) + ";" + expires + ";path=/";
+        }
+
+        function dropFormCookie(cookieName, value) {
+            if (value) {
+                setCookie(cookieName, value);
+            }
+        }
+
+        // Load search data and display flights
+        window.onload = function() {
+            searchData = JSON.parse(sessionStorage.getItem('flightSearch'));
+
+            if (!searchData) {
+                window.location.href = 'search.html';
+                return;
+            }
+
+            // Display search info
+            document.getElementById('searchInfo').innerHTML = `
+                <p><strong>From:</strong> ${searchData.from} <strong>To:</strong> ${searchData.to} <strong>Date:</strong> ${searchData.date}</p>
+            `;
+
+            // Display flights
+            const flightsList = document.getElementById('flightsList');
+            flights.forEach(flight => {
+                const flightCard = document.createElement('div');
+                flightCard.className = 'flight-card';
+                flightCard.innerHTML = `
+                    <div class="flight-info">
+                        <h3>${flight.airline}</h3>
+                        <div class="flight-times">
+                            <span class="time">${flight.departure}</span>
+                            <span class="arrow">→</span>
+                            <span class="time">${flight.arrival}</span>
+                        </div>
+                        <p class="duration">Duration: ${flight.duration}</p>
+                    </div>
+                    <div class="flight-price">
+                        <div class="price">${flight.price}</div>
+                        <button class="btn-select" onclick="selectFlight(${flight.id})">Select</button>
+                    </div>
+                `;
+                flightsList.appendChild(flightCard);
+            });
+        };
+
+        function selectFlight(flightId) {
+            selectedFlight = flights.find(f => f.id === flightId);
+
+            // Drop cookies when flight is selected
+            setCookie('select_flight', 'step_3_flight_selected');
+            setCookie('selected_flight_id', flightId);
+
+            // Hide flights list
+            document.getElementById('flightsList').style.display = 'none';
+
+            // Show booking form
+            document.getElementById('bookingForm').style.display = 'block';
+
+            // Display selected flight info
+            document.getElementById('selectedFlightInfo').innerHTML = `
+                <div class="selected-flight">
+                    <h3>Selected Flight</h3>
+                    <p><strong>${selectedFlight.airline}</strong></p>
+                    <p>${selectedFlight.departure} - ${selectedFlight.arrival}</p>
+                    <p>Price: ${selectedFlight.price}</p>
+                </div>
+            `;
+
+            // Scroll to form
+            document.getElementById('bookingForm').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function cancelBooking() {
+            // Show flights list
+            document.getElementById('flightsList').style.display = 'block';
+
+            // Hide booking form
+            document.getElementById('bookingForm').style.display = 'none';
+
+            selectedFlight = null;
+
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function handleBooking(event) {
+            event.preventDefault();
+
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const mobile = document.getElementById('mobile').value;
+
+            // Drop cookies for passenger details (in case onchange didn't fire)
+            setCookie('passenger_first_name', firstName);
+            setCookie('passenger_last_name', lastName);
+            setCookie('passenger_mobile', mobile);
+
+            // Drop cookie when booking is confirmed
+            setCookie('continue_booking', 'step_4_booking_confirmed');
+
+            // Hide booking form
+            document.getElementById('bookingForm').style.display = 'none';
+
+            // Show confirmation
+            const confirmation = document.getElementById('confirmation');
+            confirmation.style.display = 'block';
+
+            // Display confirmation details
+            document.getElementById('confirmationDetails').innerHTML = `
+                <div class="detail-row">
+                    <span class="label">Booking Reference:</span>
+                    <span class="value">${generateBookingRef()}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Passenger:</span>
+                    <span class="value">${firstName} ${lastName}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Mobile:</span>
+                    <span class="value">${mobile}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Flight:</span>
+                    <span class="value">${selectedFlight.airline}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Route:</span>
+                    <span class="value">${searchData.from} → ${searchData.to}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Date:</span>
+                    <span class="value">${searchData.date}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Departure:</span>
+                    <span class="value">${selectedFlight.departure}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Arrival:</span>
+                    <span class="value">${selectedFlight.arrival}</span>
+                </div>
+                <div class="detail-row">
+                    <span class="label">Total Price:</span>
+                    <span class="value">${selectedFlight.price}</span>
+                </div>
+            `;
+
+            // Scroll to confirmation
+            confirmation.scrollIntoView({ behavior: 'smooth' });
+
+            // Populate cookie verification table
+            populateCookieTable();
+
+            // Clear session storage
+            sessionStorage.removeItem('flightSearch');
+        }
+
+        function generateBookingRef() {
+            return 'BK' + Math.random().toString(36).substring(2, 10).toUpperCase();
+        }
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) {
+                return decodeURIComponent(parts.pop().split(';').shift());
+            }
+            return null;
+        }
+
+        function populateCookieTable() {
+            const cookieNames = [
+                'book_a_flight',
+                'from_city',
+                'to_city',
+                'travel_date',
+                'find_flights',
+                'select_flight',
+                'selected_flight_id',
+                'passenger_first_name',
+                'passenger_last_name',
+                'passenger_mobile',
+                'continue_booking'
+            ];
+
+            cookieNames.forEach(cookieName => {
+                const cookieValue = getCookie(cookieName);
+                const statusCell = document.getElementById(`status_${cookieName}`);
+                const valueCell = document.getElementById(`value_${cookieName}`);
+
+                if (cookieValue !== null) {
+                    // Cookie exists
+                    statusCell.innerHTML = '<span class="status-dropped">✓ Dropped</span>';
+                    statusCell.classList.add('cookie-dropped');
+                    valueCell.textContent = cookieValue;
+                    valueCell.classList.add('cookie-value-exists');
+                } else {
+                    // Cookie does not exist
+                    statusCell.innerHTML = '<span class="status-not-dropped">✗ Not Dropped</span>';
+                    statusCell.classList.add('cookie-not-dropped');
+                    valueCell.textContent = 'N/A';
+                    valueCell.classList.add('cookie-value-na');
+                }
+            });
+        }
+    </script>
+</body>
+</html>

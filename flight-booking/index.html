@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="hero-section">
+            <h1>Welcome to Flight Booking</h1>
+            <p class="subtitle">Book your next adventure with us</p>
+            <button class="btn-primary" onclick="handleBookFlightClick()">
+                Book a Flight
+            </button>
+        </div>
+
+        <div class="cookie-reference">
+            <h2>Cookie Reference - Complete Journey</h2>
+            <p class="cookie-note">Below is a list of all cookies that will be dropped during the flight booking journey:</p>
+            <div class="table-container">
+                <table class="cookie-table">
+                    <thead>
+                        <tr>
+                            <th>Step</th>
+                            <th>Cookie Name</th>
+                            <th>Cookie Value</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. Landing Page</td>
+                            <td>book_a_flight</td>
+                            <td>step_1_landing</td>
+                            <td>Dropped when "Book a Flight" button is clicked</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">2. Search Page</td>
+                            <td>from_city</td>
+                            <td>[user entered value]</td>
+                            <td>Departure city entered by user</td>
+                        </tr>
+                        <tr>
+                            <td>to_city</td>
+                            <td>[user entered value]</td>
+                            <td>Destination city entered by user</td>
+                        </tr>
+                        <tr>
+                            <td>travel_date</td>
+                            <td>[user selected date]</td>
+                            <td>Travel date selected by user</td>
+                        </tr>
+                        <tr>
+                            <td>find_flights</td>
+                            <td>step_2_search</td>
+                            <td>Dropped when "Find Flights" button is clicked</td>
+                        </tr>
+                        <tr>
+                            <td rowspan="5">3. Results Page</td>
+                            <td>select_flight</td>
+                            <td>step_3_flight_selected</td>
+                            <td>Dropped when a flight is selected</td>
+                        </tr>
+                        <tr>
+                            <td>selected_flight_id</td>
+                            <td>[flight ID]</td>
+                            <td>ID of the selected flight</td>
+                        </tr>
+                        <tr>
+                            <td>passenger_first_name</td>
+                            <td>[user entered value]</td>
+                            <td>Passenger's first name</td>
+                        </tr>
+                        <tr>
+                            <td>passenger_last_name</td>
+                            <td>[user entered value]</td>
+                            <td>Passenger's last name</td>
+                        </tr>
+                        <tr>
+                            <td>passenger_mobile</td>
+                            <td>[user entered value]</td>
+                            <td>Passenger's mobile number</td>
+                        </tr>
+                        <tr>
+                            <td>4. Confirmation</td>
+                            <td>continue_booking</td>
+                            <td>step_4_booking_confirmed</td>
+                            <td>Dropped when booking is confirmed</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function setCookie(name, value, days = 7) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + value + ";" + expires + ";path=/";
+        }
+
+        function handleBookFlightClick() {
+            // Drop cookie when "Book a Flight" button is clicked
+            setCookie('book_a_flight', 'step_1_landing');
+
+            // Navigate to search page
+            window.location.href = 'search.html';
+        }
+    </script>
+</body>
+</html>

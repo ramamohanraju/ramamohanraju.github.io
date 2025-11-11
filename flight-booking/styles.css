@@ -1,0 +1,478 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 100px 20px;
+    color: white;
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Form Section */
+.form-section {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    margin-top: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.form-section h1 {
+    color: #667eea;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.form-group small {
+    display: block;
+    margin-top: 0.25rem;
+    color: #666;
+    font-size: 0.875rem;
+}
+
+/* Buttons */
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary {
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+    padding: 15px 40px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 600;
+    margin-left: 10px;
+}
+
+.btn-secondary:hover {
+    background: #667eea;
+    color: white;
+}
+
+.btn-select {
+    background: #667eea;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-weight: 600;
+}
+
+.btn-select:hover {
+    background: #764ba2;
+    transform: translateY(-2px);
+}
+
+/* Results Section */
+.results-section {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    margin-top: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.results-section h1 {
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.search-info {
+    background: #f5f7fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.search-info p {
+    margin: 0;
+    color: #555;
+}
+
+/* Flights List */
+.flights-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.flight-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    transition: all 0.3s;
+}
+
+.flight-card:hover {
+    border-color: #667eea;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+    transform: translateY(-2px);
+}
+
+.flight-info h3 {
+    color: #667eea;
+    margin-bottom: 0.5rem;
+}
+
+.flight-times {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+.time {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.arrow {
+    color: #667eea;
+    font-size: 1.5rem;
+}
+
+.duration {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.flight-price {
+    text-align: center;
+}
+
+.price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #667eea;
+    margin-bottom: 10px;
+}
+
+/* Booking Form */
+.booking-form {
+    margin-top: 3rem;
+    padding-top: 3rem;
+    border-top: 2px solid #e0e0e0;
+}
+
+.booking-form h2 {
+    color: #667eea;
+    margin-bottom: 1.5rem;
+}
+
+.selected-flight-info {
+    background: #f5f7fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.selected-flight h3 {
+    color: #667eea;
+    margin-bottom: 1rem;
+}
+
+.selected-flight p {
+    margin: 0.5rem 0;
+    color: #555;
+}
+
+/* Confirmation */
+.confirmation {
+    text-align: center;
+    padding: 40px;
+}
+
+.confirmation-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    margin: 0 auto 1.5rem;
+    animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.confirmation h2 {
+    color: #667eea;
+    margin-bottom: 2rem;
+}
+
+.confirmation-details {
+    background: #f5f7fa;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 600px;
+    text-align: left;
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+}
+
+.label {
+    font-weight: 600;
+    color: #555;
+}
+
+.value {
+    color: #333;
+    font-weight: 500;
+}
+
+/* Cookie Reference Section */
+.cookie-reference {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    margin-top: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.cookie-reference h2 {
+    color: #667eea;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.cookie-note {
+    text-align: center;
+    color: #666;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.table-container {
+    overflow-x: auto;
+    margin-top: 1.5rem;
+}
+
+.cookie-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.cookie-table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.cookie-table th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.cookie-table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #e0e0e0;
+    color: #555;
+    font-size: 0.9rem;
+}
+
+.cookie-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.cookie-table tbody tr:hover {
+    background: #f5f7fa;
+}
+
+.cookie-table tbody tr:nth-child(odd) {
+    background: #fafbfc;
+}
+
+.cookie-table tbody tr:nth-child(odd):hover {
+    background: #f5f7fa;
+}
+
+/* Cookie Status Styles */
+.status-dropped {
+    color: #10b981;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.status-not-dropped {
+    color: #ef4444;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cookie-dropped {
+    background: #d1fae5 !important;
+}
+
+.cookie-not-dropped {
+    background: #fee2e2 !important;
+}
+
+.cookie-value-exists {
+    font-weight: 600;
+    color: #333;
+    background: #f0fdf4;
+}
+
+.cookie-value-na {
+    color: #999;
+    font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .form-section,
+    .results-section {
+        padding: 20px;
+    }
+
+    .flight-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .flight-price {
+        width: 100%;
+    }
+
+    .btn-secondary {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .detail-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .cookie-reference {
+        padding: 20px;
+    }
+
+    .cookie-table {
+        font-size: 0.85rem;
+    }
+
+    .cookie-table th,
+    .cookie-table td {
+        padding: 10px;
+    }
+}

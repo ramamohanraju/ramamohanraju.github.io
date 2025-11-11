@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Booking - Search</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-section">
+            <h1>Search Flights</h1>
+            <form id="searchForm" onsubmit="handleSearch(event)">
+                <div class="form-group">
+                    <label for="from">From *</label>
+                    <input type="text" id="from" name="from" required placeholder="Enter departure city" onchange="dropFormCookie('from_city', this.value)">
+                </div>
+
+                <div class="form-group">
+                    <label for="to">To *</label>
+                    <input type="text" id="to" name="to" required placeholder="Enter destination city" onchange="dropFormCookie('to_city', this.value)">
+                </div>
+
+                <div class="form-group">
+                    <label for="date">Date *</label>
+                    <input type="date" id="date" name="date" required onchange="dropFormCookie('travel_date', this.value)">
+                </div>
+
+                <button type="submit" class="btn-primary">Find Flights</button>
+                <button type="button" class="btn-secondary" onclick="window.location.href='index.html'">Back</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Set minimum date to today
+        document.getElementById('date').min = new Date().toISOString().split('T')[0];
+
+        function setCookie(name, value, days = 7) {
+            const date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            const expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + encodeURIComponent(value) + ";" + expires + ";path=/";
+        }
+
+        function dropFormCookie(cookieName, value) {
+            if (value) {
+                setCookie(cookieName, value);
+            }
+        }
+
+        function handleSearch(event) {
+            event.preventDefault();
+
+            const from = document.getElementById('from').value;
+            const to = document.getElementById('to').value;
+            const date = document.getElementById('date').value;
+
+            // Drop cookies for form fields (in case onchange didn't fire)
+            setCookie('from_city', from);
+            setCookie('to_city', to);
+            setCookie('travel_date', date);
+
+            // Drop cookie when "Find Flights" button is clicked
+            setCookie('find_flights', 'step_2_search');
+
+            // Store search data in sessionStorage
+            sessionStorage.setItem('flightSearch', JSON.stringify({ from, to, date }));
+
+            // Navigate to results page
+            window.location.href = 'results.html';
+        }
+    </script>
+</body>
+</html>
