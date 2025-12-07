@@ -1,0 +1,610 @@
+{
+    "title": "united-flight-booking",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1478,
+            "height": 1034,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Navigated to: United Airlines Reservations - Book a Flight on More Than 80 Airlines",
+                    "aria/[role=\"main\"]"
+                ],
+                [
+                    "#main-content"
+                ],
+                [
+                    "xpath///*[@id=\"main-content\"]"
+                ],
+                [
+                    "pierce/#main-content"
+                ]
+            ],
+            "offsetY": 99,
+            "offsetX": 99
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/One-way"
+                ],
+                [
+                    "#\\37 284613b-197e-4b56-9e97-e4dec2ced190-tab-1"
+                ],
+                [
+                    "xpath///*[@id=\"7284613b-197e-4b56-9e97-e4dec2ced190-tab-1\"]"
+                ],
+                [
+                    "pierce/#\\37 284613b-197e-4b56-9e97-e4dec2ced190-tab-1"
+                ],
+                [
+                    "text/One-way"
+                ]
+            ],
+            "offsetY": 42.5,
+            "offsetX": 114.609375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Enter your departing city, airport name, or airport code."
+                ],
+                [
+                    "#originInput3"
+                ],
+                [
+                    "xpath///*[@id=\"originInput3\"]"
+                ],
+                [
+                    "pierce/#originInput3"
+                ]
+            ],
+            "offsetY": 22.5,
+            "offsetX": 74.5
+        },
+        {
+            "type": "change",
+            "value": "san fran",
+            "selectors": [
+                [
+                    "aria/Enter your departing city, airport name, or airport code."
+                ],
+                [
+                    "#originInput3"
+                ],
+                [
+                    "xpath///*[@id=\"originInput3\"]"
+                ],
+                [
+                    "pierce/#originInput3"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#originInput3-menu-item-0 div"
+                ],
+                [
+                    "xpath///*[@id=\"originInput3-menu-item-0\"]/button/div"
+                ],
+                [
+                    "pierce/#originInput3-menu-item-0 div"
+                ],
+                [
+                    "text/San Francisco, CA, US (SFO)"
+                ]
+            ],
+            "offsetY": 12.5,
+            "offsetX": 78.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Enter your destination city, airport name, or airport code."
+                ],
+                [
+                    "#destinationInput4"
+                ],
+                [
+                    "xpath///*[@id=\"destinationInput4\"]"
+                ],
+                [
+                    "pierce/#destinationInput4"
+                ]
+            ],
+            "offsetY": 25.5,
+            "offsetX": 81.171875
+        },
+        {
+            "type": "change",
+            "value": "denver",
+            "selectors": [
+                [
+                    "aria/Enter your destination city, airport name, or airport code."
+                ],
+                [
+                    "#destinationInput4"
+                ],
+                [
+                    "xpath///*[@id=\"destinationInput4\"]"
+                ],
+                [
+                    "pierce/#destinationInput4"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#destinationInput4-menu-item-0 div"
+                ],
+                [
+                    "xpath///*[@id=\"destinationInput4-menu-item-0\"]/button/div"
+                ],
+                [
+                    "pierce/#destinationInput4-menu-item-0 div"
+                ],
+                [
+                    "text/Denver, CO, US (DEN)"
+                ]
+            ],
+            "offsetY": 14.5,
+            "offsetX": 95.171875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Choose a date",
+                    "aria/[role=\"graphics-object\"]"
+                ],
+                [
+                    "div.atm-c-legacy-wrapper use"
+                ],
+                [
+                    "xpath///*[@id=\"DepartDate\"]/div[2]/button/svg/use"
+                ],
+                [
+                    "pierce/div.atm-c-legacy-wrapper use"
+                ]
+            ],
+            "offsetY": 6.49835205078125,
+            "offsetX": 2.502166748046875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(2) tr:nth-of-type(2) > td:nth-of-type(4) span.app-components-AtmosMigration-BookCalendar-bookCalendar__pricing--XI_do"
+                ],
+                [
+                    "xpath///*[@id=\"floating-ui-lzva3\"]/div/div/div[1]/div[2]/table/tbody/tr[2]/td[4]/button/div/span[2]"
+                ],
+                [
+                    "pierce/div:nth-of-type(2) tr:nth-of-type(2) > td:nth-of-type(4) span.app-components-AtmosMigration-BookCalendar-bookCalendar__pricing--XI_do"
+                ]
+            ],
+            "offsetY": 1.25,
+            "offsetX": 11.40625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Find flights",
+                    "aria/[role=\"generic\"]"
+                ],
+                [
+                    "form > button > span"
+                ],
+                [
+                    "xpath///*[@id=\"main-content\"]/div/div[2]/div[1]/div[3]/form/button/span"
+                ],
+                [
+                    "pierce/form > button > span"
+                ],
+                [
+                    "text/Find flights"
+                ]
+            ],
+            "offsetY": 4,
+            "offsetX": 50.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Accept cookies"
+                ],
+                [
+                    "a.cc-btn"
+                ],
+                [
+                    "xpath//html/body/div[2]/div[2]/a[1]"
+                ],
+                [
+                    "pierce/a.cc-btn"
+                ],
+                [
+                    "text/Accept cookies"
+                ]
+            ],
+            "offsetY": 19,
+            "offsetX": 79.8203125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.app-components-Shopping-ResultGrid-styles__flightsContainer--bPgd1 > div:nth-of-type(1) div:nth-of-type(1) > div.app-components-Shopping-PriceCard-styles__boxPriceButton--c_An2 div.app-components-Shopping-PriceCard-styles__bottom--fIwVX"
+                ],
+                [
+                    "xpath///*[@id=\"flightResults-content\"]/div[3]/div[1]/div/div[2]/div[1]/div[1]/div/div[1]/button/div[2]"
+                ],
+                [
+                    "pierce/div.app-components-Shopping-ResultGrid-styles__flightsContainer--bPgd1 > div:nth-of-type(1) div:nth-of-type(1) > div.app-components-Shopping-PriceCard-styles__boxPriceButton--c_An2 div.app-components-Shopping-PriceCard-styles__bottom--fIwVX"
+                ]
+            ],
+            "offsetY": 7,
+            "offsetX": 117.171875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.app-components-Shopping-BEModal-styles__economyButton--J6EDb div"
+                ],
+                [
+                    "xpath///*[@id=\"atm-c-modal-197031971-body\"]/div/div/div[1]/div[2]/div[2]/button/span/div"
+                ],
+                [
+                    "pierce/div.app-components-Shopping-BEModal-styles__economyButton--J6EDb div"
+                ],
+                [
+                    "text/Economy for$114"
+                ]
+            ],
+            "offsetY": 17.296875,
+            "offsetX": 54.7578125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/First name required[role=\"textbox\"]"
+                ],
+                [
+                    "#\\39 92787fa-fe48-4bf7-bd91-e72d6160ac97"
+                ],
+                [
+                    "xpath///*[@id=\"992787fa-fe48-4bf7-bd91-e72d6160ac97\"]"
+                ],
+                [
+                    "pierce/#\\39 92787fa-fe48-4bf7-bd91-e72d6160ac97"
+                ]
+            ],
+            "offsetY": 20.390625,
+            "offsetX": 72.5
+        },
+        {
+            "type": "change",
+            "value": "test fn",
+            "selectors": [
+                [
+                    "aria/First name required[role=\"textbox\"]"
+                ],
+                [
+                    "#\\39 92787fa-fe48-4bf7-bd91-e72d6160ac97"
+                ],
+                [
+                    "xpath///*[@id=\"992787fa-fe48-4bf7-bd91-e72d6160ac97\"]"
+                ],
+                [
+                    "pierce/#\\39 92787fa-fe48-4bf7-bd91-e72d6160ac97"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Tab"
+        },
+        {
+            "type": "keyUp",
+            "key": "Tab",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "rtest ln",
+            "selectors": [
+                [
+                    "aria/Last name required[role=\"textbox\"]"
+                ],
+                [
+                    "#\\35 6e19bbb-3391-4b0a-bbe8-59f1f6d73a7e"
+                ],
+                [
+                    "xpath///*[@id=\"56e19bbb-3391-4b0a-bbe8-59f1f6d73a7e\"]"
+                ],
+                [
+                    "pierce/#\\35 6e19bbb-3391-4b0a-bbe8-59f1f6d73a7e"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Month"
+                ],
+                [
+                    "div.atm-c-box-section__body > div:nth-of-type(2) > div:nth-of-type(1) > div > div > div:nth-of-type(4) select"
+                ],
+                [
+                    "xpath///*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[1]/div[3]/div[2]/div/div/div[2]/div[4]/div[1]/form/div[4]/section/div[2]/div[2]/div[1]/div/div/div[4]/fieldset/div[1]/span[1]/div/div[2]/div/select"
+                ],
+                [
+                    "pierce/div.atm-c-box-section__body > div:nth-of-type(2) > div:nth-of-type(1) > div > div > div:nth-of-type(4) select"
+                ]
+            ],
+            "offsetY": 32.390625,
+            "offsetX": 94.5
+        },
+        {
+            "type": "change",
+            "value": "1",
+            "selectors": [
+                [
+                    "aria/Month"
+                ],
+                [
+                    "div.atm-c-box-section__body > div:nth-of-type(2) > div:nth-of-type(1) > div > div > div:nth-of-type(4) select"
+                ],
+                [
+                    "xpath///*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[1]/div[3]/div[2]/div/div/div[2]/div[4]/div[1]/form/div[4]/section/div[2]/div[2]/div[1]/div/div/div[4]/fieldset/div[1]/span[1]/div/div[2]/div/select"
+                ],
+                [
+                    "pierce/div.atm-c-box-section__body > div:nth-of-type(2) > div:nth-of-type(1) > div > div > div:nth-of-type(4) select"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/DD"
+                ],
+                [
+                    "span.app-components-Form-Atmos-DateOfBirth-styles__dayField--z6NsW input"
+                ],
+                [
+                    "xpath///*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[1]/div[3]/div[2]/div/div/div[2]/div[4]/div[1]/form/div[4]/section/div[2]/div[2]/div[1]/div/div/div[4]/fieldset/div[1]/span[2]/div/div[2]/input"
+                ],
+                [
+                    "pierce/span.app-components-Form-Atmos-DateOfBirth-styles__dayField--z6NsW input"
+                ]
+            ],
+            "offsetY": 25.390625,
+            "offsetX": 16.5
+        },
+        {
+            "type": "change",
+            "value": "01",
+            "selectors": [
+                [
+                    "aria/DD"
+                ],
+                [
+                    "span.app-components-Form-Atmos-DateOfBirth-styles__dayField--z6NsW input"
+                ],
+                [
+                    "xpath///*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[1]/div[3]/div[2]/div/div/div[2]/div[4]/div[1]/form/div[4]/section/div[2]/div[2]/div[1]/div/div/div[4]/fieldset/div[1]/span[2]/div/div[2]/input"
+                ],
+                [
+                    "pierce/span.app-components-Form-Atmos-DateOfBirth-styles__dayField--z6NsW input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/YYYY"
+                ],
+                [
+                    "span:nth-of-type(3) input"
+                ],
+                [
+                    "xpath///*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[1]/div[3]/div[2]/div/div/div[2]/div[4]/div[1]/form/div[4]/section/div[2]/div[2]/div[1]/div/div/div[4]/fieldset/div[1]/span[3]/div/div[2]/input"
+                ],
+                [
+                    "pierce/span:nth-of-type(3) input"
+                ]
+            ],
+            "offsetY": 15.390625,
+            "offsetX": 19.34375
+        },
+        {
+            "type": "change",
+            "value": "1990",
+            "selectors": [
+                [
+                    "aria/YYYY"
+                ],
+                [
+                    "span:nth-of-type(3) input"
+                ],
+                [
+                    "xpath///*[@id=\"app\"]/div/div/div/div[2]/div[2]/div[1]/div[3]/div[2]/div/div/div[2]/div[4]/div[1]/form/div[4]/section/div[2]/div[2]/div[1]/div/div/div[4]/fieldset/div[1]/span[3]/div/div[2]/input"
+                ],
+                [
+                    "pierce/span:nth-of-type(3) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Gender required[role=\"combobox\"]"
+                ],
+                [
+                    "#c326738d-75fc-4387-8b10-7659ca210f10"
+                ],
+                [
+                    "xpath///*[@id=\"c326738d-75fc-4387-8b10-7659ca210f10\"]"
+                ],
+                [
+                    "pierce/#c326738d-75fc-4387-8b10-7659ca210f10"
+                ]
+            ],
+            "offsetY": 17.390625,
+            "offsetX": 88.34375
+        },
+        {
+            "type": "change",
+            "value": "M",
+            "selectors": [
+                [
+                    "aria/Gender required[role=\"combobox\"]"
+                ],
+                [
+                    "#c326738d-75fc-4387-8b10-7659ca210f10"
+                ],
+                [
+                    "xpath///*[@id=\"c326738d-75fc-4387-8b10-7659ca210f10\"]"
+                ],
+                [
+                    "pierce/#c326738d-75fc-4387-8b10-7659ca210f10"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Continue",
+                    "aria/[role=\"generic\"]"
+                ],
+                [
+                    "div.atm-u-padding-left-medium span"
+                ],
+                [
+                    "xpath///*[@id=\"parentCommonShoppingCartContainer\"]/div/div[2]/div[2]/button/span"
+                ],
+                [
+                    "pierce/div.atm-u-padding-left-medium span"
+                ],
+                [
+                    "text/Continue"
+                ]
+            ],
+            "offsetY": 4.6640625,
+            "offsetX": 60.7109375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Continue to seats"
+                ],
+                [
+                    "[data-test-id='btnContinue']"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"btnContinue\"]"
+                ],
+                [
+                    "pierce/[data-test-id='btnContinue']"
+                ]
+            ],
+            "offsetY": 5.2734375,
+            "offsetX": 217.75
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Continue to checkout",
+                    "aria/[role=\"generic\"]"
+                ],
+                [
+                    "div.app-components-Seatmap-SeatMapFooter-SeatMapFooter__section--cta-row--TiN2q span"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"confirm-seats-button\"]/span"
+                ],
+                [
+                    "pierce/div.app-components-Seatmap-SeatMapFooter-SeatMapFooter__section--cta-row--TiN2q span"
+                ],
+                [
+                    "text/Continue to checkout"
+                ]
+            ],
+            "offsetY": 23.5,
+            "offsetX": 51.6640625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Next step"
+                ],
+                [
+                    "[data-test-id='btnNextStep']"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"btnNextStep\"]"
+                ],
+                [
+                    "pierce/[data-test-id='btnNextStep']"
+                ]
+            ],
+            "offsetY": 23.0390625,
+            "offsetX": 72.671875
+        }
+    ]
+}
