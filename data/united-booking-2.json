@@ -1,0 +1,593 @@
+{
+    "title": "united-booking-2",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1478,
+            "height": 1034,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.united.com/en/in",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.united.com/en/in",
+                    "title": "United Airlines - Airline Tickets, Travel Deals and Flights"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Accept cookies"
+                ],
+                [
+                    "a.cc-btn"
+                ],
+                [
+                    "xpath//html/body/div[2]/div[2]/a[1]"
+                ],
+                [
+                    "pierce/a.cc-btn"
+                ],
+                [
+                    "text/Accept cookies"
+                ]
+            ],
+            "offsetY": 17,
+            "offsetX": 34.8203125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Book",
+                    "aria/[role=\"generic\"]"
+                ],
+                [
+                    "div.app-components-GlobalHeader-styles__navbarItemsContainer--qQIeG li:nth-of-type(1) span"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"global-header-container\"]/div/section/div[1]/div[2]/nav/ul/li[1]/button/span"
+                ],
+                [
+                    "pierce/div.app-components-GlobalHeader-styles__navbarItemsContainer--qQIeG li:nth-of-type(1) span"
+                ]
+            ],
+            "offsetY": 15.96875,
+            "offsetX": 1
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Flights"
+                ],
+                [
+                    "header li:nth-of-type(1) li:nth-of-type(1) > a"
+                ],
+                [
+                    "xpath///*[@id=\"id_book_3\"]/li[1]/ul/li[1]/a"
+                ],
+                [
+                    "pierce/header li:nth-of-type(1) li:nth-of-type(1) > a"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 18.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/One-way"
+                ],
+                [
+                    "#\\37 fbb6876-99ab-4911-88ad-0775e8e299d8-tab-1"
+                ],
+                [
+                    "xpath///*[@id=\"7fbb6876-99ab-4911-88ad-0775e8e299d8-tab-1\"]"
+                ],
+                [
+                    "pierce/#\\37 fbb6876-99ab-4911-88ad-0775e8e299d8-tab-1"
+                ],
+                [
+                    "text/One-way"
+                ]
+            ],
+            "offsetY": 28,
+            "offsetX": 127.609375
+        },
+        {
+            "type": "doubleClick",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Enter your departing city, airport name, or airport code."
+                ],
+                [
+                    "#originInput14"
+                ],
+                [
+                    "xpath///*[@id=\"originInput14\"]"
+                ],
+                [
+                    "pierce/#originInput14"
+                ],
+                [
+                    "text/Hyderabad, IN"
+                ]
+            ],
+            "offsetY": 14,
+            "offsetX": 106.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Enter your departing city, airport name, or airport code."
+                ],
+                [
+                    "#originInput14"
+                ],
+                [
+                    "xpath///*[@id=\"originInput14\"]"
+                ],
+                [
+                    "pierce/#originInput14"
+                ],
+                [
+                    "text/Hyderabad, IN"
+                ]
+            ],
+            "offsetY": 14,
+            "offsetX": 106.5
+        },
+        {
+            "type": "change",
+            "value": "sfo",
+            "selectors": [
+                [
+                    "aria/Enter your departing city, airport name, or airport code."
+                ],
+                [
+                    "#originInput14"
+                ],
+                [
+                    "xpath///*[@id=\"originInput14\"]"
+                ],
+                [
+                    "pierce/#originInput14"
+                ],
+                [
+                    "text/Hyderabad, IN"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.app-components-AutoComplete-Atmos-styles__autocompleteListWrapper--fN7fZ > div div"
+                ],
+                [
+                    "xpath///*[@id=\"originInput14-menu-item-0\"]/button/div"
+                ],
+                [
+                    "pierce/div.app-components-AutoComplete-Atmos-styles__autocompleteListWrapper--fN7fZ > div div"
+                ],
+                [
+                    "text/San Francisco, CA, US (SFO)"
+                ]
+            ],
+            "offsetY": 6,
+            "offsetX": 83.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Enter your destination city, airport name, or airport code."
+                ],
+                [
+                    "#destinationInput15"
+                ],
+                [
+                    "xpath///*[@id=\"destinationInput15\"]"
+                ],
+                [
+                    "pierce/#destinationInput15"
+                ]
+            ],
+            "offsetY": 24,
+            "offsetX": 66.171875
+        },
+        {
+            "type": "change",
+            "value": "den",
+            "selectors": [
+                [
+                    "aria/Enter your destination city, airport name, or airport code."
+                ],
+                [
+                    "#destinationInput15"
+                ],
+                [
+                    "xpath///*[@id=\"destinationInput15\"]"
+                ],
+                [
+                    "pierce/#destinationInput15"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#destinationInput15-menu-item-0 div"
+                ],
+                [
+                    "xpath///*[@id=\"destinationInput15-menu-item-0\"]/button/div"
+                ],
+                [
+                    "pierce/#destinationInput15-menu-item-0 div"
+                ],
+                [
+                    "text/Denver, CO, US"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 57.171875
+        },
+        {
+            "type": "doubleClick",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Date"
+                ],
+                [
+                    "#DepartDate_start"
+                ],
+                [
+                    "xpath///*[@id=\"DepartDate_start\"]"
+                ],
+                [
+                    "pierce/#DepartDate_start"
+                ]
+            ],
+            "offsetY": 14,
+            "offsetX": 28.5
+        },
+        {
+            "type": "change",
+            "value": "dec 22",
+            "selectors": [
+                [
+                    "aria/Date"
+                ],
+                [
+                    "#DepartDate_start"
+                ],
+                [
+                    "xpath///*[@id=\"DepartDate_start\"]"
+                ],
+                [
+                    "pierce/#DepartDate_start"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.atm-l-sidebar__sidebar"
+                ],
+                [
+                    "xpath///*[@id=\"main-content\"]/div/div[2]/div[2]"
+                ],
+                [
+                    "pierce/div.atm-l-sidebar__sidebar"
+                ]
+            ],
+            "offsetY": 561,
+            "offsetX": 68.8359375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Date"
+                ],
+                [
+                    "#DepartDate_start"
+                ],
+                [
+                    "xpath///*[@id=\"DepartDate_start\"]"
+                ],
+                [
+                    "pierce/#DepartDate_start"
+                ]
+            ],
+            "offsetY": 7,
+            "offsetX": 30.5
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "d"
+        },
+        {
+            "type": "keyUp",
+            "key": "d",
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.atm-c-datepicker__input-container"
+                ],
+                [
+                    "xpath///*[@id=\"DepartDate\"]/div[2]"
+                ],
+                [
+                    "pierce/div.atm-c-datepicker__input-container"
+                ],
+                [
+                    "text/DepartureChoose"
+                ]
+            ],
+            "offsetY": 8,
+            "offsetX": 60.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Date"
+                ],
+                [
+                    "#DepartDate_start"
+                ],
+                [
+                    "xpath///*[@id=\"DepartDate_start\"]"
+                ],
+                [
+                    "pierce/#DepartDate_start"
+                ]
+            ],
+            "offsetY": 13,
+            "offsetX": 48.5
+        },
+        {
+            "type": "change",
+            "value": "dec 22",
+            "selectors": [
+                [
+                    "aria/Date"
+                ],
+                [
+                    "#DepartDate_start"
+                ],
+                [
+                    "xpath///*[@id=\"DepartDate_start\"]"
+                ],
+                [
+                    "pierce/#DepartDate_start"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.atm-c-tabs fieldset > div"
+                ],
+                [
+                    "xpath///*[@id=\"roundTrip26\"]/div/fieldset/div"
+                ],
+                [
+                    "pierce/div.atm-c-tabs fieldset > div"
+                ]
+            ],
+            "offsetY": 346,
+            "offsetX": 590.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Date"
+                ],
+                [
+                    "#DepartDate_start"
+                ],
+                [
+                    "xpath///*[@id=\"DepartDate_start\"]"
+                ],
+                [
+                    "pierce/#DepartDate_start"
+                ],
+                [
+                    "text/dec 22"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 10.5
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Shift"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "D"
+        },
+        {
+            "type": "keyUp",
+            "key": "D",
+            "target": "main"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "E"
+        },
+        {
+            "type": "keyUp",
+            "key": "E",
+            "target": "main"
+        },
+        {
+            "type": "keyUp",
+            "key": "Shift",
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Date"
+                ],
+                [
+                    "#DepartDate_start"
+                ],
+                [
+                    "xpath///*[@id=\"DepartDate_start\"]"
+                ],
+                [
+                    "pierce/#DepartDate_start"
+                ],
+                [
+                    "text/dec 22"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 10.5
+        },
+        {
+            "type": "change",
+            "value": "Dec 22",
+            "selectors": [
+                [
+                    "aria/Date"
+                ],
+                [
+                    "#DepartDate_start"
+                ],
+                [
+                    "xpath///*[@id=\"DepartDate_start\"]"
+                ],
+                [
+                    "pierce/#DepartDate_start"
+                ],
+                [
+                    "text/dec 22"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.atm-c-datepicker__input-container"
+                ],
+                [
+                    "xpath///*[@id=\"DepartDate\"]/div[2]"
+                ],
+                [
+                    "pierce/div.atm-c-datepicker__input-container"
+                ],
+                [
+                    "text/Dec 22Dec 22Change"
+                ]
+            ],
+            "offsetY": 17,
+            "offsetX": 179.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "td.rdp-focused > button > span"
+                ],
+                [
+                    "xpath///*[@id=\"floating-ui-noq56\"]/div/div/div/div[1]/table/tbody/tr[4]/td[2]/button/span"
+                ],
+                [
+                    "pierce/td.rdp-focused > button > span"
+                ]
+            ],
+            "offsetY": 12,
+            "offsetX": 2.4921875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Find flights"
+                ],
+                [
+                    "form > button"
+                ],
+                [
+                    "xpath///*[@id=\"main-content\"]/div/div[2]/div[1]/div[3]/form/button"
+                ],
+                [
+                    "pierce/form > button"
+                ]
+            ],
+            "offsetY": 38.5,
+            "offsetX": 113.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.app-components-Shopping-ResultGrid-styles__flightsContainer--bPgd1 > div:nth-of-type(1) div:nth-of-type(1) > div.app-components-Shopping-PriceCard-styles__boxPriceButton--c_An2 div.app-components-Shopping-PriceCard-styles__top--W4RTY"
+                ],
+                [
+                    "xpath///*[@id=\"flightResults-content\"]/div[3]/div[1]/div/div[2]/div[1]/div[1]/div/div[1]/button/div[1]"
+                ],
+                [
+                    "pierce/div.app-components-Shopping-ResultGrid-styles__flightsContainer--bPgd1 > div:nth-of-type(1) div:nth-of-type(1) > div.app-components-Shopping-PriceCard-styles__boxPriceButton--c_An2 div.app-components-Shopping-PriceCard-styles__top--W4RTY"
+                ]
+            ],
+            "offsetY": 56.390625,
+            "offsetX": 183.171875
+        }
+    ]
+}
