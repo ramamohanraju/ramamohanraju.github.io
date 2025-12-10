@@ -1,0 +1,306 @@
+{
+    "title": "united-booking-3-20251210_11_41_23",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1341,
+            "height": 1000,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "chrome://new-tab-page/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "chrome://new-tab-page/",
+                    "title": "New tab"
+                }
+            ]
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.united.com/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.united.com/",
+                    "title": ""
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Booking",
+                    "aria/[role=\"generic\"]"
+                ],
+                [
+                    "div.app-components-GlobalHeader-styles__navbarItemsContainer--qQIeG li:nth-of-type(1) span"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"global-header-container\"]/div/section/div[1]/div[2]/nav/ul/li[1]/button/span"
+                ],
+                [
+                    "pierce/div.app-components-GlobalHeader-styles__navbarItemsContainer--qQIeG li:nth-of-type(1) span"
+                ],
+                [
+                    "text/Booking"
+                ]
+            ],
+            "offsetY": 11.96875,
+            "offsetX": 29
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Book a flight"
+                ],
+                [
+                    "#id_booking_14 > li:nth-of-type(1) > a"
+                ],
+                [
+                    "xpath///*[@id=\"id_booking_14\"]/li[1]/a"
+                ],
+                [
+                    "pierce/#id_booking_14 > li:nth-of-type(1) > a"
+                ],
+                [
+                    "text/Book a flight"
+                ]
+            ],
+            "offsetY": 23,
+            "offsetX": 65.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/One-way"
+                ],
+                [
+                    "#\\38 8eaf73a-e42b-4100-a7a0-d5bf388e8877-tab-1"
+                ],
+                [
+                    "xpath///*[@id=\"88eaf73a-e42b-4100-a7a0-d5bf388e8877-tab-1\"]"
+                ],
+                [
+                    "pierce/#\\38 8eaf73a-e42b-4100-a7a0-d5bf388e8877-tab-1"
+                ],
+                [
+                    "text/One-way"
+                ]
+            ],
+            "offsetY": 35,
+            "offsetX": 109.609375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Enter your departing city, airport name, or airport code."
+                ],
+                [
+                    "#originInput26"
+                ],
+                [
+                    "xpath///*[@id=\"originInput26\"]"
+                ],
+                [
+                    "pierce/#originInput26"
+                ],
+                [
+                    "text/Hyderabad, IN"
+                ]
+            ],
+            "offsetY": 13,
+            "offsetX": 111.5
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "Meta"
+        },
+        {
+            "type": "keyDown",
+            "target": "main",
+            "key": "a"
+        },
+        {
+            "type": "keyUp",
+            "key": "Meta",
+            "target": "main"
+        },
+        {
+            "type": "change",
+            "value": "sfo",
+            "selectors": [
+                [
+                    "aria/Enter your departing city, airport name, or airport code."
+                ],
+                [
+                    "#originInput26"
+                ],
+                [
+                    "xpath///*[@id=\"originInput26\"]"
+                ],
+                [
+                    "pierce/#originInput26"
+                ],
+                [
+                    "text/Hyderabad, IN"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.app-components-AutoComplete-Atmos-styles__autocompleteListWrapper--fN7fZ > div div"
+                ],
+                [
+                    "xpath///*[@id=\"originInput26-menu-item-0\"]/button/div"
+                ],
+                [
+                    "pierce/div.app-components-AutoComplete-Atmos-styles__autocompleteListWrapper--fN7fZ > div div"
+                ],
+                [
+                    "text/San Francisco, CA, US (SFO)"
+                ]
+            ],
+            "offsetY": 5,
+            "offsetX": 106.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Enter your destination city, airport name, or airport code."
+                ],
+                [
+                    "#destinationInput27"
+                ],
+                [
+                    "xpath///*[@id=\"destinationInput27\"]"
+                ],
+                [
+                    "pierce/#destinationInput27"
+                ]
+            ],
+            "offsetY": 26,
+            "offsetX": 65.171875
+        },
+        {
+            "type": "change",
+            "value": "den",
+            "selectors": [
+                [
+                    "aria/Enter your destination city, airport name, or airport code."
+                ],
+                [
+                    "#destinationInput27"
+                ],
+                [
+                    "xpath///*[@id=\"destinationInput27\"]"
+                ],
+                [
+                    "pierce/#destinationInput27"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#destinationInput27-menu-item-0 div"
+                ],
+                [
+                    "xpath///*[@id=\"destinationInput27-menu-item-0\"]/button/div"
+                ],
+                [
+                    "pierce/#destinationInput27-menu-item-0 div"
+                ],
+                [
+                    "text/Denver, CO, US"
+                ]
+            ],
+            "offsetY": 7,
+            "offsetX": 71.171875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Date"
+                ],
+                [
+                    "#DepartDate_start"
+                ],
+                [
+                    "xpath///*[@id=\"DepartDate_start\"]"
+                ],
+                [
+                    "pierce/#DepartDate_start"
+                ]
+            ],
+            "offsetY": 8,
+            "offsetX": 11.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#floating-ui-d3996 > div > div > div > div:nth-of-type(1) tr:nth-of-type(4) > td:nth-of-type(3) > button > span"
+                ],
+                [
+                    "xpath///*[@id=\"floating-ui-d3996\"]/div/div/div/div[1]/table/tbody/tr[4]/td[3]/button/span"
+                ],
+                [
+                    "pierce/#floating-ui-d3996 > div > div > div > div:nth-of-type(1) tr:nth-of-type(4) > td:nth-of-type(3) > button > span"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 14.09375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Find flights",
+                    "aria/[role=\"generic\"]"
+                ],
+                [
+                    "form > button > span"
+                ],
+                [
+                    "xpath///*[@id=\"main-content\"]/div/div[2]/div[1]/div[3]/form/button/span"
+                ],
+                [
+                    "pierce/form > button > span"
+                ],
+                [
+                    "text/Find flights"
+                ]
+            ],
+            "offsetY": 21,
+            "offsetX": 76.5
+        }
+    ]
+}
