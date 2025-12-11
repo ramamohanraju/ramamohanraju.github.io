@@ -1,0 +1,245 @@
+{
+    "title": "united-booking-simple-20251211_05_09_43",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1478,
+            "height": 1034,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.united.com/en/gb/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.united.com/en/gb/",
+                    "title": "United Airlines - Airline Tickets, Travel Deals and Flights"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/From"
+                ],
+                [
+                    "#bookFlightOriginInput"
+                ],
+                [
+                    "xpath///*[@id=\"bookFlightOriginInput\"]"
+                ],
+                [
+                    "pierce/#bookFlightOriginInput"
+                ]
+            ],
+            "offsetY": 15,
+            "offsetX": 39
+        },
+        {
+            "type": "change",
+            "value": "sfo",
+            "selectors": [
+                [
+                    "aria/From"
+                ],
+                [
+                    "#bookFlightOriginInput"
+                ],
+                [
+                    "xpath///*[@id=\"bookFlightOriginInput\"]"
+                ],
+                [
+                    "pierce/#bookFlightOriginInput"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/San Francisco, CA, US (SFO)",
+                    "aria/[role=\"generic\"]"
+                ],
+                [
+                    "#autocomplete-item-0 span"
+                ],
+                [
+                    "xpath///*[@id=\"autocomplete-item-0\"]/p/span"
+                ],
+                [
+                    "pierce/#autocomplete-item-0 span"
+                ],
+                [
+                    "text/San Francisco, CA, US (SFO)"
+                ]
+            ],
+            "offsetY": 8.015625,
+            "offsetX": 56.40625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/To"
+                ],
+                [
+                    "#bookFlightDestinationInput"
+                ],
+                [
+                    "xpath///*[@id=\"bookFlightDestinationInput\"]"
+                ],
+                [
+                    "pierce/#bookFlightDestinationInput"
+                ]
+            ],
+            "offsetY": 17,
+            "offsetX": 50
+        },
+        {
+            "type": "change",
+            "value": "den",
+            "selectors": [
+                [
+                    "aria/To"
+                ],
+                [
+                    "#bookFlightDestinationInput"
+                ],
+                [
+                    "xpath///*[@id=\"bookFlightDestinationInput\"]"
+                ],
+                [
+                    "pierce/#bookFlightDestinationInput"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Denver, CO, US (DEN)",
+                    "aria/[role=\"generic\"]"
+                ],
+                [
+                    "#autocomplete-item-0 span"
+                ],
+                [
+                    "xpath///*[@id=\"autocomplete-item-0\"]/p/span"
+                ],
+                [
+                    "pierce/#autocomplete-item-0 span"
+                ],
+                [
+                    "text/Denver, CO, US"
+                ]
+            ],
+            "offsetY": 9.015625,
+            "offsetX": 70.40625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/One Way Flight search[role=\"radio\"]"
+                ],
+                [
+                    "#radiofield-item-id-flightType-1"
+                ],
+                [
+                    "xpath///*[@id=\"radiofield-item-id-flightType-1\"]"
+                ],
+                [
+                    "pierce/#radiofield-item-id-flightType-1"
+                ]
+            ],
+            "offsetY": 7,
+            "offsetX": 8.8203125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Date"
+                ],
+                [
+                    "#DepartDate_start"
+                ],
+                [
+                    "xpath///*[@id=\"DepartDate_start\"]"
+                ],
+                [
+                    "pierce/#DepartDate_start"
+                ]
+            ],
+            "offsetY": 12,
+            "offsetX": 43
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#floating-ui-75pu3 > div > div > div > div:nth-of-type(1) tr:nth-of-type(3) > td:nth-of-type(5) > button > span"
+                ],
+                [
+                    "xpath///*[@id=\"floating-ui-75pu3\"]/div/div/div/div[1]/table/tbody/tr[3]/td[5]/button/span"
+                ],
+                [
+                    "pierce/#floating-ui-75pu3 > div > div > div > div:nth-of-type(1) tr:nth-of-type(3) > td:nth-of-type(5) > button > span"
+                ]
+            ],
+            "offsetY": 18,
+            "offsetX": 10.65625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#passengersSlidingInputContainer"
+                ],
+                [
+                    "xpath///*[@id=\"passengersSlidingInputContainer\"]"
+                ],
+                [
+                    "pierce/#passengersSlidingInputContainer"
+                ]
+            ],
+            "offsetY": 74,
+            "offsetX": 247
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Find flights"
+                ],
+                [
+                    "button.app-components-BookFlightForm-bookFlightForm__findFlightBtn--wBfJd"
+                ],
+                [
+                    "xpath///*[@id=\"bookFlightForm\"]/div[5]/div/div[1]/div/div/div[2]/button[1]"
+                ],
+                [
+                    "pierce/button.app-components-BookFlightForm-bookFlightForm__findFlightBtn--wBfJd"
+                ]
+            ],
+            "offsetY": 37,
+            "offsetX": 170
+        }
+    ]
+}
