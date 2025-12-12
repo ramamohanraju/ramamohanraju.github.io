@@ -1,0 +1,149 @@
+{
+    "title": "united-simple-clicks",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1478,
+            "height": 1034,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.united.com/en/gb",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.united.com/en/gb",
+                    "title": "United Airlines - Airline Tickets, Travel Deals and Flights"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Accept cookies"
+                ],
+                [
+                    "a.cc-btn"
+                ],
+                [
+                    "xpath//html/body/div[2]/div[2]/a[1]"
+                ],
+                [
+                    "pierce/a.cc-btn"
+                ],
+                [
+                    "text/Accept cookies"
+                ]
+            ],
+            "offsetY": 20,
+            "offsetX": 45.8203125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "li.app-components-GlobalHeader-UserMenu-styles__userMenuLocalizeButton--mbovF button > span"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"global-header-container\"]/div/section/div[1]/nav/ul/li[1]/div/div/button/span"
+                ],
+                [
+                    "pierce/li.app-components-GlobalHeader-UserMenu-styles__userMenuLocalizeButton--mbovF button > span"
+                ],
+                [
+                    "text/English - GB\t£"
+                ]
+            ],
+            "offsetY": 20,
+            "offsetX": 19.71875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Select language Selected English"
+                ],
+                [
+                    "#localization-language-selector"
+                ],
+                [
+                    "xpath///*[@id=\"localization-language-selector\"]"
+                ],
+                [
+                    "pierce/#localization-language-selector"
+                ]
+            ],
+            "offsetY": 22,
+            "offsetX": 225.71875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#localization-content-wrapper"
+                ],
+                [
+                    "xpath///*[@id=\"localization-content-wrapper\"]"
+                ],
+                [
+                    "pierce/#localization-content-wrapper"
+                ]
+            ],
+            "offsetY": 215,
+            "offsetX": 93.71875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Ändern",
+                    "aria/[role=\"generic\"]"
+                ],
+                [
+                    "div.app-containers-LocalizationContent-localizationContent__dialogActions--G7FnU span"
+                ],
+                [
+                    "xpath///*[@id=\"localization-content-wrapper\"]/div[3]/button/span"
+                ],
+                [
+                    "pierce/div.app-containers-LocalizationContent-localizationContent__dialogActions--G7FnU span"
+                ],
+                [
+                    "text/Ändern"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 28.9453125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "li.app-components-GlobalHeader-UserMenu-styles__userMenuLocalizeButton--mbovF button > span"
+                ],
+                [
+                    "xpath///*[@data-test-id=\"global-header-container\"]/div/section/div[1]/nav/ul/li[1]/div/div/button/span"
+                ],
+                [
+                    "pierce/li.app-components-GlobalHeader-UserMenu-styles__userMenuLocalizeButton--mbovF button > span"
+                ],
+                [
+                    "text/Deutsch - DE\t€"
+                ]
+            ],
+            "offsetY": 8,
+            "offsetX": 32.6328125
+        }
+    ]
+}
