@@ -1,0 +1,242 @@
+{
+    "title": "yatra1",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1493,
+            "height": 1034,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.yatra.com/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.yatra.com/",
+                    "title": "Flight, Cheap Air Tickets , Hotels, Holiday, Trains Package Booking - Yatra.com"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/cross"
+                ],
+                [
+                    "div.css-1d3fqvd > div.MuiBackdrop-root span > img"
+                ],
+                [
+                    "xpath///*[@id=\"__next\"]/div/div[1]/div[1]/div[2]/div/section[2]/span/img"
+                ],
+                [
+                    "pierce/div.css-1d3fqvd > div.MuiBackdrop-root span > img"
+                ]
+            ],
+            "offsetY": 8.4453125,
+            "offsetX": 12.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.searchBox > div:nth-of-type(1) p.css-j7m7g0"
+                ],
+                [
+                    "xpath///*[@id=\"__next\"]/div/div[1]/div[2]/div[3]/div/div[2]/div[1]/div[1]/div[1]/div[1]/p[2]"
+                ],
+                [
+                    "pierce/div.searchBox > div:nth-of-type(1) p.css-j7m7g0"
+                ],
+                [
+                    "text/new delhi"
+                ]
+            ],
+            "offsetY": 14.5,
+            "offsetX": 67.5
+        },
+        {
+            "type": "change",
+            "value": "hyd",
+            "selectors": [
+                [
+                    "aria/Departure From"
+                ],
+                [
+                    "#input-with-icon-adornment"
+                ],
+                [
+                    "xpath///*[@id=\"input-with-icon-adornment\"]"
+                ],
+                [
+                    "pierce/#input-with-icon-adornment"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(1) > li > div > div > div span"
+                ],
+                [
+                    "xpath///*[@id=\"__next\"]/div/div[1]/div[2]/div[3]/div/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/div/div[1]/div/ul/div[1]/li/div/div/div/div[1]/span"
+                ],
+                [
+                    "pierce/div:nth-of-type(1) > li > div > div > div span"
+                ]
+            ],
+            "offsetY": 13,
+            "offsetX": 62.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.searchBox > div:nth-of-type(3) p.css-j7m7g0"
+                ],
+                [
+                    "xpath///*[@id=\"__next\"]/div/div[1]/div[2]/div[3]/div/div[2]/div[1]/div[1]/div[3]/div[1]/p[2]"
+                ],
+                [
+                    "pierce/div.searchBox > div:nth-of-type(3) p.css-j7m7g0"
+                ],
+                [
+                    "text/mumbai"
+                ]
+            ],
+            "offsetY": 30.5,
+            "offsetX": 79.5
+        },
+        {
+            "type": "change",
+            "value": "blr",
+            "selectors": [
+                [
+                    "aria/Going To"
+                ],
+                [
+                    "#input-with-icon-adornment"
+                ],
+                [
+                    "xpath///*[@id=\"input-with-icon-adornment\"]"
+                ],
+                [
+                    "pierce/#input-with-icon-adornment"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "li > div > div > div span"
+                ],
+                [
+                    "xpath///*[@id=\"__next\"]/div/div[1]/div[2]/div[3]/div/div[2]/div[1]/div[1]/div[3]/div[3]/div[2]/div/div[1]/div/ul/div/li/div/div/div/div[1]/span"
+                ],
+                [
+                    "pierce/li > div > div > div span"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 40.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.css-13lub7m"
+                ],
+                [
+                    "xpath///*[@id=\"__next\"]/div/div[1]/div[2]/div[3]/div/div[2]/div[1]/div[2]/div/div[1]/div[2]"
+                ],
+                [
+                    "pierce/div.css-13lub7m"
+                ]
+            ],
+            "offsetY": 24.75,
+            "offsetX": 52.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Choose Saturday, December 27th, 2025",
+                    "aria/MAHA SHIVARATHIRI"
+                ],
+                [
+                    "div.css-1kq7cc0 > div > div.MuiBox-root > div > div > div > div > div > div > div:nth-of-type(2) div.react-datepicker__day--027 > span"
+                ],
+                [
+                    "xpath///*[@id=\"__next\"]/div/div[1]/div[2]/div[3]/div/div[2]/div[1]/div[2]/div/div[4]/div/div/div/div/div/div/div[2]/div[2]/div[4]/div[6]/span"
+                ],
+                [
+                    "pierce/div.css-1kq7cc0 > div > div.MuiBox-root > div > div > div > div > div > div > div:nth-of-type(2) div.react-datepicker__day--027 > span"
+                ],
+                [
+                    "text/27₹4,375"
+                ]
+            ],
+            "offsetY": 22.3515625,
+            "offsetX": 17.4765625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Search"
+                ],
+                [
+                    "div.css-cp8bg9 button"
+                ],
+                [
+                    "xpath///*[@id=\"__next\"]/div/div[1]/div[2]/div[3]/div/div[2]/div[1]/div[4]/div/button"
+                ],
+                [
+                    "pierce/div.css-cp8bg9 button"
+                ]
+            ],
+            "offsetY": 37,
+            "offsetX": 52.6953125,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://flight.yatra.com/air-search-ui/dom2/trigger?flex=0&viewName=normal&source=fresco-flights&type=O&class=Economy&ADT=1&CHD=0&INF=0&noOfSegments=1&origin=HYD&originCountry=IN&destination=BLR&destinationCountry=IN&flight_depart_date=27/12/2025&arrivalDate=",
+                    "title": ""
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#HYDBLRIX2019EP20251227_AIRASIAAPI div.selected button"
+                ],
+                [
+                    "xpath///*[@id=\"HYDBLRIX2019EP20251227_AIRASIAAPI\"]/div/div[3]/div[2]/div[2]/div/div[1]/div[1]/div[2]/button"
+                ],
+                [
+                    "pierce/#HYDBLRIX2019EP20251227_AIRASIAAPI div.selected button"
+                ]
+            ],
+            "offsetY": 10.640625,
+            "offsetX": 115
+        }
+    ]
+}
