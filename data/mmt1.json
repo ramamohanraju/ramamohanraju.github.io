@@ -1,0 +1,252 @@
+{
+    "title": "mmt1",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1478,
+            "height": 1034,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.makemytrip.com/flights/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.makemytrip.com/flights/",
+                    "title": "Flight Booking, Cheap Flights , Air Ticket Booking at Lowest Airfare | MakeMyTrip"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/From DEL, Delhi Airport India"
+                ],
+                [
+                    "[data-cy='fromCity']"
+                ],
+                [
+                    "xpath///*[@data-cy=\"fromCity\"]"
+                ],
+                [
+                    "pierce/[data-cy='fromCity']"
+                ]
+            ],
+            "offsetY": 3,
+            "offsetX": 97
+        },
+        {
+            "type": "change",
+            "value": "hydera",
+            "selectors": [
+                [
+                    "aria/From"
+                ],
+                [
+                    "div.searchCity > div:nth-of-type(1) input"
+                ],
+                [
+                    "xpath///*[@data-cy=\"flightSW\"]/div[2]/div[1]/div[1]/div[1]/div/div/div/input"
+                ],
+                [
+                    "pierce/div.searchCity > div:nth-of-type(1) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#react-autowhatever-1-section-0-item-0 p.font12"
+                ],
+                [
+                    "xpath///*[@id=\"react-autowhatever-1-section-0-item-0\"]/div/div/p[2]"
+                ],
+                [
+                    "pierce/#react-autowhatever-1-section-0-item-0 p.font12"
+                ],
+                [
+                    "text/Rajiv Gandhi"
+                ]
+            ],
+            "offsetY": 2.5,
+            "offsetX": 72
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.searchToCity"
+                ],
+                [
+                    "xpath///*[@data-cy=\"flightSW\"]/div[2]/div[1]/div[2]"
+                ],
+                [
+                    "pierce/div.searchToCity"
+                ]
+            ],
+            "offsetY": 66,
+            "offsetX": 130
+        },
+        {
+            "type": "change",
+            "value": "blr",
+            "selectors": [
+                [
+                    "aria/To"
+                ],
+                [
+                    "div.searchToCity > div:nth-of-type(1) input"
+                ],
+                [
+                    "xpath///*[@data-cy=\"flightSW\"]/div[2]/div[1]/div[2]/div[1]/div/div/div[1]/input"
+                ],
+                [
+                    "pierce/div.searchToCity > div:nth-of-type(1) input"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#react-autowhatever-1-section-0-item-0 span.makeFlex"
+                ],
+                [
+                    "xpath///*[@id=\"react-autowhatever-1-section-0-item-0\"]/div/div/p[1]/span[1]"
+                ],
+                [
+                    "pierce/#react-autowhatever-1-section-0-item-0 span.makeFlex"
+                ]
+            ],
+            "offsetY": 6.5,
+            "offsetX": 106
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.DayPicker-Months > div:nth-of-type(1) div:nth-of-type(5) > div:nth-of-type(4) p.todayPrice"
+                ],
+                [
+                    "xpath///*[@data-cy=\"flightSW\"]/div[2]/div[1]/div[3]/div[1]/div/div/div/div[2]/div/div[2]/div[1]/div[3]/div[5]/div[4]/div/p[2]"
+                ],
+                [
+                    "pierce/div.DayPicker-Months > div:nth-of-type(1) div:nth-of-type(5) > div:nth-of-type(4) p.todayPrice"
+                ]
+            ],
+            "offsetY": 1,
+            "offsetX": 6.6640625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/SEARCH"
+                ],
+                [
+                    "div.fsw a"
+                ],
+                [
+                    "xpath///*[@data-cy=\"submit\"]/a"
+                ],
+                [
+                    "pierce/div.fsw a"
+                ],
+                [
+                    "text/Search"
+                ]
+            ],
+            "offsetY": 30,
+            "offsetX": 93,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.makemytrip.com/flight/search?itinerary=HYD-BLR-31/12/2025&tripType=O&paxType=A-1_C-0_I-0&intl=false&cabinClass=E&lang=eng",
+                    "title": ""
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "html > body > #root > div > div:nth-of-type(2) > div.flightBody > div > div.listingRhs > #left-side--wrapper > #listing-id > [data-test='component-listingV2ClusterView'] > div.clusterContent > div > [data-test='component-clusterItem'] [data-test='component-buttonText']"
+                ],
+                [
+                    "xpath///*[@data-test=\"component-buttonText\"]"
+                ],
+                [
+                    "pierce/html > body > #root > div > div:nth-of-type(2) > div.flightBody > div > div.listingRhs > #left-side--wrapper > #listing-id > [data-test='component-listingV2ClusterView'] > div.clusterContent > div > [data-test='component-clusterItem'] [data-test='component-buttonText']"
+                ]
+            ],
+            "offsetY": 10.75,
+            "offsetX": 41.3671875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.number-slide1 button.buttonPrimary"
+                ],
+                [
+                    "xpath///*[@id=\"ffWrapper\"]/div/div[3]/div/div/div/div[1]/div[3]/div/button[2]"
+                ],
+                [
+                    "pierce/div.number-slide1 button.buttonPrimary"
+                ]
+            ],
+            "offsetY": 18.7734375,
+            "offsetX": 40.3359375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.number-slide1 button.buttonSecondry"
+                ],
+                [
+                    "xpath///*[@id=\"ffWrapper\"]/div/div[3]/div/div/div/div[1]/div[3]/div/button[1]"
+                ],
+                [
+                    "pierce/div.number-slide1 button.buttonSecondry"
+                ]
+            ],
+            "offsetY": 25.7734375,
+            "offsetX": 31.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "[data-cy='closeModal']"
+                ],
+                [
+                    "xpath///*[@data-cy=\"closeModal\"]"
+                ],
+                [
+                    "pierce/[data-cy='closeModal']"
+                ]
+            ],
+            "offsetY": 19.5,
+            "offsetX": 17
+        }
+    ]
+}
