@@ -1,0 +1,463 @@
+{
+    "title": "rb1",
+    "steps": [
+        {
+            "type": "setViewport",
+            "width": 1493,
+            "height": 1034,
+            "deviceScaleFactor": 1,
+            "isMobile": false,
+            "hasTouch": false,
+            "isLandscape": false
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.redbus.in/",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.redbus.in/",
+                    "title": "Bus Booking Online and Train Tickets at Lowest Price - redBus"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Bus tickets",
+                    "aria/[role=\"generic\"]"
+                ],
+                [
+                    "li:nth-of-type(1) span"
+                ],
+                [
+                    "xpath///*[@id=\"root\"]/div/header/div/div[1]/ul/li[1]/a/span"
+                ],
+                [
+                    "pierce/li:nth-of-type(1) span"
+                ],
+                [
+                    "text/Bus tickets"
+                ]
+            ],
+            "offsetY": 10,
+            "offsetX": 17.53125,
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.redbus.in/bus-tickets",
+                    "title": ""
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/FROM"
+                ],
+                [
+                    "#txtSource"
+                ],
+                [
+                    "xpath///*[@id=\"txtSource\"]"
+                ],
+                [
+                    "pierce/#txtSource"
+                ]
+            ],
+            "offsetY": 26.25,
+            "offsetX": 61
+        },
+        {
+            "type": "change",
+            "value": "hyd",
+            "selectors": [
+                [
+                    "aria/FROM"
+                ],
+                [
+                    "#txtSource"
+                ],
+                [
+                    "xpath///*[@id=\"txtSource\"]"
+                ],
+                [
+                    "pierce/#txtSource"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#C120_suggestion-wrap > li > div > div"
+                ],
+                [
+                    "xpath///*[@id=\"C120_suggestion-wrap\"]/li/div/div"
+                ],
+                [
+                    "pierce/#C120_suggestion-wrap > li > div > div"
+                ]
+            ],
+            "offsetY": 3,
+            "offsetX": 59.34375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/TO"
+                ],
+                [
+                    "#txtDestination"
+                ],
+                [
+                    "xpath///*[@id=\"txtDestination\"]"
+                ],
+                [
+                    "pierce/#txtDestination"
+                ]
+            ],
+            "offsetY": 26.25,
+            "offsetX": 47.53125
+        },
+        {
+            "type": "change",
+            "value": "bang",
+            "selectors": [
+                [
+                    "aria/TO"
+                ],
+                [
+                    "#txtDestination"
+                ],
+                [
+                    "xpath///*[@id=\"txtDestination\"]"
+                ],
+                [
+                    "pierce/#txtDestination"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "li.C120_suggestion-active > div > div"
+                ],
+                [
+                    "xpath///*[@id=\"C120_suggestion-wrap\"]/li[1]/div/div"
+                ],
+                [
+                    "pierce/li.C120_suggestion-active > div > div"
+                ]
+            ],
+            "offsetY": 9,
+            "offsetX": 66.875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/ONWARD DATE"
+                ],
+                [
+                    "#txtOnwardCalendar"
+                ],
+                [
+                    "xpath///*[@id=\"txtOnwardCalendar\"]"
+                ],
+                [
+                    "pierce/#txtOnwardCalendar"
+                ]
+            ],
+            "offsetY": 27.25,
+            "offsetX": 31.0625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "span.today"
+                ],
+                [
+                    "xpath///*[@id=\"onward\"]/div/div[3]/span[23]"
+                ],
+                [
+                    "pierce/span.today"
+                ],
+                [
+                    "text/23"
+                ]
+            ],
+            "offsetY": 18,
+            "offsetX": 20.921875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/SEARCH BUSES"
+                ],
+                [
+                    "#DC120_sw_main > button"
+                ],
+                [
+                    "xpath///*[@id=\"DC120_sw_main\"]/button"
+                ],
+                [
+                    "pierce/#DC120_sw_main > button"
+                ]
+            ],
+            "offsetY": 68,
+            "offsetX": 129.59375
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/View seats for Mythri Tours And Travels"
+                ],
+                [
+                    "#\\34 1955188 > button"
+                ],
+                [
+                    "xpath///*[@id=\"41955188\"]/button"
+                ],
+                [
+                    "pierce/#\\34 1955188 > button"
+                ]
+            ],
+            "offsetY": 18,
+            "offsetX": 38.2421875
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Seat number E2, upper deck, seat type sleeper, unreserved, price 2019 rupees, seat status available"
+                ],
+                [
+                    "#E2"
+                ],
+                [
+                    "xpath///*[@id=\"E2\"]"
+                ],
+                [
+                    "pierce/#E2"
+                ]
+            ],
+            "offsetY": 43.5,
+            "offsetX": 6.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Select boarding & dropping points"
+                ],
+                [
+                    "div.priceWrap__ind-seat-styles-module-scss-4T6Qn button"
+                ],
+                [
+                    "xpath///*[@id=\"leaner-funnel-popup\"]/div[3]/div/div[2]/div/div/div/div[1]/div/div/button"
+                ],
+                [
+                    "pierce/div.priceWrap__ind-seat-styles-module-scss-4T6Qn button"
+                ],
+                [
+                    "text/Select boarding"
+                ]
+            ],
+            "offsetY": 27,
+            "offsetX": 70.015625
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(1) > div.bpdpList___abd2e1 > div:nth-of-type(1) label"
+                ],
+                [
+                    "xpath///*[@id=\"bp-point-0\"]/div[3]/div/label"
+                ],
+                [
+                    "pierce/div:nth-of-type(1) > div.bpdpList___abd2e1 > div:nth-of-type(1) label"
+                ]
+            ],
+            "offsetY": 2.5,
+            "offsetX": 3.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div:nth-of-type(2) > div.bpdpList___abd2e1 > div:nth-of-type(1) label"
+                ],
+                [
+                    "xpath///*[@id=\"bp-point-0\"]/div[3]/div/label"
+                ],
+                [
+                    "pierce/div:nth-of-type(2) > div.bpdpList___abd2e1 > div:nth-of-type(1) label"
+                ]
+            ],
+            "offsetY": 16.5,
+            "offsetX": 13.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.detailsWrap___140a45 > div:nth-of-type(1) > div > div"
+                ],
+                [
+                    "xpath///*[@id=\"0_contactDetails\"]/div[2]/div[1]/div/div"
+                ],
+                [
+                    "pierce/div.detailsWrap___140a45 > div:nth-of-type(1) > div > div"
+                ]
+            ],
+            "offsetY": 40.5,
+            "offsetX": 140.3203125
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#\\30 _6"
+                ],
+                [
+                    "xpath///*[@id=\"0_6\"]"
+                ],
+                [
+                    "pierce/#\\30 _6"
+                ]
+            ],
+            "offsetY": 1.5,
+            "offsetX": 129.3203125
+        },
+        {
+            "type": "change",
+            "value": "8888",
+            "selectors": [
+                [
+                    "aria/Phone *"
+                ],
+                [
+                    "#\\30 _6"
+                ],
+                [
+                    "xpath///*[@id=\"0_6\"]"
+                ],
+                [
+                    "pierce/#\\30 _6"
+                ]
+            ],
+            "target": "main"
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "#\\30 _contactDetails div.inputErrorWrap___f45190 > div"
+                ],
+                [
+                    "xpath///*[@id=\"0_contactDetails\"]/div[2]/div[2]/div"
+                ],
+                [
+                    "pierce/#\\30 _contactDetails div.inputErrorWrap___f45190 > div"
+                ]
+            ],
+            "offsetY": 6.5,
+            "offsetX": 149.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.gstWrap___478b5c > div > div"
+                ],
+                [
+                    "xpath///*[@id=\"0_contactDetails\"]/div[2]/div[3]/div/div"
+                ],
+                [
+                    "pierce/div.gstWrap___478b5c > div > div"
+                ]
+            ],
+            "offsetY": 43.5,
+            "offsetX": 197.5
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "div.bottomSheetOverlay___e61510"
+                ],
+                [
+                    "xpath//html/body/div[5]"
+                ],
+                [
+                    "pierce/div.bottomSheetOverlay___e61510"
+                ]
+            ],
+            "offsetY": 778,
+            "offsetX": 1096
+        },
+        {
+            "type": "navigate",
+            "url": "https://www.redbus.in/bus-tickets/hyderabad-to-bangalore?fromCityName=Hyderabad&fromCityId=124&toCityName=Bangalore&toCityId=122&busType=Any&onward=23-Dec-2025&step=CI&doj=23-Dec-2025",
+            "assertedEvents": [
+                {
+                    "type": "navigation",
+                    "url": "https://www.redbus.in/bus-tickets/hyderabad-to-bangalore?fromCityName=Hyderabad&fromCityId=124&toCityName=Bangalore&toCityId=122&busType=Any&onward=23-Dec-2025&step=CI&doj=23-Dec-2025",
+                    "title": "Hyderabad to Bangalore Bus - Book from 359 Buses, Get Up To 500 Off - Dec, 2025"
+                }
+            ]
+        },
+        {
+            "type": "click",
+            "target": "main",
+            "selectors": [
+                [
+                    "aria/Continue booking"
+                ],
+                [
+                    "#custInfoFooter button"
+                ],
+                [
+                    "xpath///*[@id=\"custInfoFooter\"]/div/div/div[2]/button"
+                ],
+                [
+                    "pierce/#custInfoFooter button"
+                ]
+            ],
+            "offsetY": 28.5,
+            "offsetX": 107.828125
+        }
+    ]
+}
