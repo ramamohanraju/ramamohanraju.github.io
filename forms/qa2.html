@@ -1,0 +1,68 @@
+<html>
+<head>
+
+    <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer. -->
+	
+    <script>
+        function setCookie(cname, cvalue, days, domain, path, secure) {
+            var a = new Date;
+            if (days === -1) {
+                // set no action cookie with expiry time set to same day 23:59:59
+                a = new Date(a.getFullYear(), a.getMonth(), a.getDate(), 23, 59, 59);
+            } else if (days === -2) {
+                // delete a cookie
+                a = new Date(Date.UTC(1970, 1, 1, 0, 0, 0));
+            } else {
+                a.setDate(a.getDate() + days);
+            }
+//             let url = bannerConfigUtils.getParams().domain_url
+//             let isUrlHttp =  (url.indexOf('http:') == 0)
+//             secure = !isUrlHttp ? true : secure
+            var s = [cname + "=" + cvalue, "expires=" + a.toUTCString(), "path=" + (path || "/")];
+            domain && s.push("domain=" + domain),
+            secure && s.push("SameSite=None","secure"),
+            document.cookie = s.join(";")
+        }
+        setCookie('myCookieSameSubdomain', 'myCookieValueSameSubdomain', 5, 'rammohanraju.github.io', undefined, true);
+        setCookie('myCookieBaseDomain', 'myCookieValueBaseDomain', 5, 'github.io', undefined, true);
+        setCookie('myCookieOtherSubdomain', 'myCookieValueOtherSubdomain', 5, 'ramamohanraju.github.io', undefined, true);
+        document.cookie = "_xsrf=testXsrf";
+        //document.cookie = "myCookieSameSubdomain=myCookieValueSameSubdomain;domain=rammohanraju.github.io";
+        //document.cookie = "myCookieBaseDomain=myCookieValueBaseDomain;domain=github.io";
+        //document.cookie = "myCookieOtherSubdomain=myCookieValueOtherSubdomain;domain=ramamohanraju.github.io";
+        </script>
+
+
+<body>
+    
+    <h1>Communication preferences(DEV)</h1>
+    <br> The below form is integrated with consent<br>
+    <form name="consent-form-name" id="consent-form-id">
+	  <label for="emailid">EmailId </label> <input type="text" id="emailid" name="emailid" value="EmailId"><br>
+	  <input type="checkbox" id="email" name="email" value="Email">
+	  <label for="email"> Email</label><br>
+	  <input type="checkbox" id="Phone" name="phone" value="Phone">
+	  <label for="phone"> Phone</label><br>
+	  <input type="checkbox" id="sms" name="sms" value="SMS">
+	  <label for="sms"> SMS</label><br><br>
+	  <input type="submit" value="Submit">
+    </form>
+
+
+<script src='https://cdn-qa.securiti.xyz/consent/form-consent-sdk.js'></script>
+<script>window.addEventListener('load', function() {
+    FormConsentSDK.initialize({
+        codeGenMetadata:{"formPropertyId":"1","formSelector":"[name*=\"consent-form-name\"]","subjectIdentifiers":[{"name":"EmailId ","selector":"[name = \"emailid\"]","isPrimary":true}],"consentIdentifiers":[{"type":"checkbox","name":"email","selector":"[name = \"email\"]","propertyId":25161,"consentValue":"checked"},{"type":"checkbox","name":"phone","selector":"[name = \"phone\"]","propertyId":25162,"consentValue":"checked"},{"type":"checkbox","name":"sms","selector":"[name = \"sms\"]","propertyId":25163,"consentValue":"checked"}],"consentTrigger":{"action":"click","selector":"[type=\"submit\"]"}},
+        url: 'https://qa.securiti.xyz/privaci/v1/',
+        authToken:'6254f74f-4e85-45b7-974c-f3f0ae4f7058',
+        orgId:'null',
+        onConsentSuccess: null,
+        onConsentFailure: null
+    })
+})</script>
+
+
+
+                    
+</body>
+</html>
