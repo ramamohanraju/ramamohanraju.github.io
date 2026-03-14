@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: #1a1a2e;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    grid-template-rows: 90vh 10vh;
+    width: 100%;
+    height: 100vh;
+    gap: 2px;
+    background: #333;
+}
+
+/* Main content iframe: 60% width, 90% height */
+.main-frame {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Right sidebar grid of square iframes: 40% width, 90% height */
+.sidebar-grid {
+    grid-column: 2;
+    grid-row: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2px;
+    width: 100%;
+    height: 100%;
+}
+
+.grid-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Bottom tab bar: full width, 10% height */
+.tab-bar {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    width: 100%;
+    height: 100%;
+}
+
+.tab-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}

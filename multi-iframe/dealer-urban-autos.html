@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Urban Autos</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #fffaf0; color: #7b341e; padding: 10px; font-size: 13px; }
+        .dealer-badge { display: inline-block; background: #dd6b20; color: #fff; padding: 3px 8px; border-radius: 3px; font-size: 11px; margin-bottom: 6px; }
+        h3 { font-size: 14px; margin-bottom: 4px; }
+        .tagline { font-size: 11px; color: #4a5568; margin-bottom: 8px; }
+        .cookie-item { font-family: monospace; font-size: 11px; padding: 2px 0; }
+        .tag { font-size: 9px; font-weight: bold; padding: 1px 4px; border-radius: 2px; color: #fff; }
+        .tag-strict { background: #e53e3e; }
+        .tag-none { background: #805ad5; }
+        #all-cookies { background: #feebc8; border-radius: 4px; padding: 6px; margin-top: 6px; font-family: monospace; font-size: 10px; word-break: break-all; max-height: 60px; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <span class="dealer-badge">DEALER: Urban Autos</span>
+    <h3>Urban Autos</h3>
+    <p class="tagline">Luxury & Electric Vehicles</p>
+    <div class="cookie-item">urban_wishlist = urban_wl_tesla_m3 <span class="tag tag-strict">Strict</span></div>
+    <div class="cookie-item">urban_referral = urban_ref_friend22 <span class="tag tag-none">None; Secure</span></div>
+    <div id="all-cookies"></div>
+    <script>
+        document.cookie = "urban_wishlist=urban_wl_tesla_m3; path=/; SameSite=Strict";
+        document.cookie = "urban_referral=urban_ref_friend22; path=/; SameSite=None; Secure";
+        function showCookies() { document.getElementById('all-cookies').textContent = document.cookie || '(none)'; }
+        showCookies(); setInterval(showCookies, 2000);
+    </script>
+</body>
+</html>

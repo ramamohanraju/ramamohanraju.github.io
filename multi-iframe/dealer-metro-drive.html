@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Metro Drive</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #fff5f5; color: #742a2a; padding: 10px; font-size: 13px; }
+        .dealer-badge { display: inline-block; background: #e53e3e; color: #fff; padding: 3px 8px; border-radius: 3px; font-size: 11px; margin-bottom: 6px; }
+        h3 { font-size: 14px; margin-bottom: 4px; }
+        .tagline { font-size: 11px; color: #4a5568; margin-bottom: 8px; }
+        .cookie-item { font-family: monospace; font-size: 11px; padding: 2px 0; }
+        .tag { font-size: 9px; font-weight: bold; padding: 1px 4px; border-radius: 2px; color: #fff; }
+        .tag-lax { background: #d69e2e; }
+        .tag-strict { background: #e53e3e; }
+        #all-cookies { background: #fed7d7; border-radius: 4px; padding: 6px; margin-top: 6px; font-family: monospace; font-size: 10px; word-break: break-all; max-height: 60px; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <span class="dealer-badge">DEALER: Metro Drive</span>
+    <h3>Metro Drive</h3>
+    <p class="tagline">City Compacts & EVs</p>
+    <div class="cookie-item">metro_cart = metro_cart_2items <span class="tag tag-lax">Lax</span></div>
+    <div class="cookie-item">metro_location = metro_loc_nyc <span class="tag tag-strict">Strict</span></div>
+    <div id="all-cookies"></div>
+    <script>
+        document.cookie = "metro_cart=metro_cart_2items; path=/; SameSite=Lax";
+        document.cookie = "metro_location=metro_loc_nyc; path=/; SameSite=Strict";
+        function showCookies() { document.getElementById('all-cookies').textContent = document.cookie || '(none)'; }
+        showCookies(); setInterval(showCookies, 2000);
+    </script>
+</body>
+</html>

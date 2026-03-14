@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Compare</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #2d3748; color: #e2e8f0; padding: 6px 12px; font-size: 12px; display: flex; align-items: center; gap: 12px; height: 100vh; }
+        .tab-badge { background: #4a5568; padding: 2px 8px; border-radius: 3px; font-size: 10px; white-space: nowrap; }
+        .cookie-item { font-family: monospace; font-size: 10px; white-space: nowrap; }
+        .tag { font-size: 9px; font-weight: bold; }
+        .tag-lax { color: #fbd38d; }
+        .tag-strict { color: #fc8181; }
+        #all-cookies { font-family: monospace; font-size: 9px; color: #a0aec0; max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    </style>
+</head>
+<body>
+    <span class="tab-badge">TAB: Compare</span>
+    <div>
+        <div class="cookie-item">cmp_selection = cmp_sel_3cars <span class="tag tag-lax">Lax</span></div>
+        <div class="cookie-item">cmp_sort = cmp_sort_price <span class="tag tag-strict">Strict</span></div>
+    </div>
+    <div id="all-cookies"></div>
+    <script>
+        document.cookie = "cmp_selection=cmp_sel_3cars; path=/; SameSite=Lax";
+        document.cookie = "cmp_sort=cmp_sort_price; path=/; SameSite=Strict";
+        function showCookies() { document.getElementById('all-cookies').textContent = document.cookie || '(none)'; }
+        showCookies(); setInterval(showCookies, 2000);
+    </script>
+</body>
+</html>

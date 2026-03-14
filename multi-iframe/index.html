@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Dealer Orchestrator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="layout">
+        <!-- Main orchestrator: 60% width, 90% height -->
+        <iframe class="main-frame" src="main-content.html" title="Orchestrator Hub"></iframe>
+
+        <!-- Dealer grid: 40% width, 90% height — each square is a dealer -->
+        <div class="sidebar-grid">
+            <iframe class="grid-frame" src="dealer-apex-motors.html" title="Apex Motors"></iframe>
+            <iframe class="grid-frame" src="dealer-summit-auto.html" title="Summit Auto"></iframe>
+            <iframe class="grid-frame" src="dealer-coastal-cars.html" title="Coastal Cars"></iframe>
+            <iframe class="grid-frame" src="dealer-metro-drive.html" title="Metro Drive"></iframe>
+            <iframe class="grid-frame" src="dealer-valley-wheels.html" title="Valley Wheels"></iframe>
+            <iframe class="grid-frame" src="dealer-urban-autos.html" title="Urban Autos"></iframe>
+        </div>
+
+        <!-- Bottom tab bar: cross-dealer services -->
+        <div class="tab-bar">
+            <iframe class="tab-frame" src="tab-compare.html" title="Compare"></iframe>
+            <iframe class="tab-frame" src="tab-financing.html" title="Financing"></iframe>
+            <iframe class="tab-frame" src="tab-insurance.html" title="Insurance"></iframe>
+            <iframe class="tab-frame" src="tab-support.html" title="Support"></iframe>
+        </div>
+    </div>
+</body>
+</html>

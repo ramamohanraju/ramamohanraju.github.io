@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Car Dealer Orchestrator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f4f8;
+            color: #2d3748;
+            padding: 24px;
+        }
+        h1 { color: #1a365d; margin-bottom: 4px; }
+        h2 { color: #2b6cb0; font-size: 16px; margin-top: 20px; margin-bottom: 8px; }
+        .subtitle { color: #718096; margin-bottom: 16px; }
+        .frame-label {
+            display: inline-block;
+            background: #1a365d;
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            margin-bottom: 16px;
+        }
+        .samesite-tag {
+            display: inline-block;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 11px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .tag-strict { background: #e53e3e; }
+        .tag-lax { background: #d69e2e; }
+        .tag-none { background: #805ad5; }
+        .cookie-list {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 12px;
+        }
+        .cookie-item {
+            font-family: monospace;
+            font-size: 13px;
+            padding: 4px 0;
+            border-bottom: 1px solid #edf2f7;
+        }
+        .cookie-item:last-child { border-bottom: none; }
+        #all-cookies {
+            background: #edf2f7;
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 12px;
+            font-family: monospace;
+            font-size: 12px;
+            word-break: break-all;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .links-section { margin-top: 20px; }
+        .links-group { margin-bottom: 12px; }
+        .links-group h3 { color: #2d3748; font-size: 13px; margin-bottom: 6px; }
+        .links-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .links-grid a {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #fff;
+            transition: opacity 0.2s;
+        }
+        .links-grid a:hover { opacity: 0.85; }
+        .link-dealer { background: #2b6cb0; }
+        .link-tab { background: #4a5568; }
+        table { width: 100%; border-collapse: collapse; margin-top: 12px; font-size: 12px; }
+        th { background: #2b6cb0; color: #fff; padding: 6px 10px; text-align: left; }
+        td { padding: 5px 10px; border-bottom: 1px solid #e2e8f0; font-family: monospace; }
+        tr:nth-child(even) { background: #f7fafc; }
+    </style>
+</head>
+<body>
+    <span class="frame-label">ORCHESTRATOR HUB</span>
+    <h1>Car Dealer Orchestrator</h1>
+    <p class="subtitle">Central hub managing 6 dealer iframes and 4 cross-dealer service tabs. Each dealer drops cookies with varying SameSite policies to observe cookie sharing behaviour across same-origin iframes.</p>
+
+    <div class="cookie-list">
+        <h3>Cookies dropped by the orchestrator:</h3>
+        <div class="cookie-item">orch_session = orch_sess_hub001 <span class="samesite-tag tag-lax">SameSite=Lax</span></div>
+        <div class="cookie-item">orch_visitor = orch_vis_new <span class="samesite-tag tag-strict">SameSite=Strict</span></div>
+        <div class="cookie-item">orch_platform = orch_plat_web <span class="samesite-tag tag-none">SameSite=None; Secure</span></div>
+    </div>
+
+    <div class="links-section">
+        <h2>All Iframe Pages</h2>
+        <div class="links-group">
+            <h3>Dealers</h3>
+            <div class="links-grid">
+                <a class="link-dealer" href="dealer-apex-motors.html" target="_blank">Apex Motors</a>
+                <a class="link-dealer" href="dealer-summit-auto.html" target="_blank">Summit Auto</a>
+                <a class="link-dealer" href="dealer-coastal-cars.html" target="_blank">Coastal Cars</a>
+                <a class="link-dealer" href="dealer-metro-drive.html" target="_blank">Metro Drive</a>
+                <a class="link-dealer" href="dealer-valley-wheels.html" target="_blank">Valley Wheels</a>
+                <a class="link-dealer" href="dealer-urban-autos.html" target="_blank">Urban Autos</a>
+            </div>
+        </div>
+        <div class="links-group">
+            <h3>Services</h3>
+            <div class="links-grid">
+                <a class="link-tab" href="tab-compare.html" target="_blank">Compare</a>
+                <a class="link-tab" href="tab-financing.html" target="_blank">Financing</a>
+                <a class="link-tab" href="tab-insurance.html" target="_blank">Insurance</a>
+                <a class="link-tab" href="tab-support.html" target="_blank">Support</a>
+            </div>
+        </div>
+    </div>
+
+    <h2>All cookies visible to orchestrator (refreshes every 2s):</h2>
+    <div id="all-cookies"></div>
+
+    <h2>Cookie Reference — All Frames</h2>
+    <table>
+        <thead>
+            <tr><th>Frame</th><th>Cookie Name</th><th>Value</th><th>SameSite</th></tr>
+        </thead>
+        <tbody>
+            <tr><td>orchestrator</td><td>orch_session</td><td>orch_sess_hub001</td><td><span class="samesite-tag tag-lax">Lax</span></td></tr>
+            <tr><td>orchestrator</td><td>orch_visitor</td><td>orch_vis_new</td><td><span class="samesite-tag tag-strict">Strict</span></td></tr>
+            <tr><td>orchestrator</td><td>orch_platform</td><td>orch_plat_web</td><td><span class="samesite-tag tag-none">None</span></td></tr>
+            <tr><td>Apex Motors</td><td>apex_inventory</td><td>apex_inv_suv42</td><td><span class="samesite-tag tag-lax">Lax</span></td></tr>
+            <tr><td>Apex Motors</td><td>apex_lead</td><td>apex_lead_7f3a</td><td><span class="samesite-tag tag-strict">Strict</span></td></tr>
+            <tr><td>Summit Auto</td><td>summit_promo</td><td>summit_promo_spring</td><td><span class="samesite-tag tag-none">None</span></td></tr>
+            <tr><td>Summit Auto</td><td>summit_branch</td><td>summit_br_downtown</td><td><span class="samesite-tag tag-lax">Lax</span></td></tr>
+            <tr><td>Coastal Cars</td><td>coastal_testdrive</td><td>coastal_td_booked</td><td><span class="samesite-tag tag-strict">Strict</span></td></tr>
+            <tr><td>Coastal Cars</td><td>coastal_currency</td><td>coastal_cur_usd</td><td><span class="samesite-tag tag-none">None</span></td></tr>
+            <tr><td>Metro Drive</td><td>metro_cart</td><td>metro_cart_2items</td><td><span class="samesite-tag tag-lax">Lax</span></td></tr>
+            <tr><td>Metro Drive</td><td>metro_location</td><td>metro_loc_nyc</td><td><span class="samesite-tag tag-strict">Strict</span></td></tr>
+            <tr><td>Valley Wheels</td><td>valley_tradein</td><td>valley_ti_honda08</td><td><span class="samesite-tag tag-none">None</span></td></tr>
+            <tr><td>Valley Wheels</td><td>valley_finance</td><td>valley_fin_preappr</td><td><span class="samesite-tag tag-lax">Lax</span></td></tr>
+            <tr><td>Urban Autos</td><td>urban_wishlist</td><td>urban_wl_tesla_m3</td><td><span class="samesite-tag tag-strict">Strict</span></td></tr>
+            <tr><td>Urban Autos</td><td>urban_referral</td><td>urban_ref_friend22</td><td><span class="samesite-tag tag-none">None</span></td></tr>
+            <tr><td>tab-compare</td><td>cmp_selection</td><td>cmp_sel_3cars</td><td><span class="samesite-tag tag-lax">Lax</span></td></tr>
+            <tr><td>tab-compare</td><td>cmp_sort</td><td>cmp_sort_price</td><td><span class="samesite-tag tag-strict">Strict</span></td></tr>
+            <tr><td>tab-financing</td><td>fin_calculator</td><td>fin_calc_60mo</td><td><span class="samesite-tag tag-none">None</span></td></tr>
+            <tr><td>tab-financing</td><td>fin_creditcheck</td><td>fin_cc_pending</td><td><span class="samesite-tag tag-lax">Lax</span></td></tr>
+            <tr><td>tab-insurance</td><td>ins_quote</td><td>ins_qt_full_cov</td><td><span class="samesite-tag tag-strict">Strict</span></td></tr>
+            <tr><td>tab-insurance</td><td>ins_provider</td><td>ins_prov_geico</td><td><span class="samesite-tag tag-none">None</span></td></tr>
+            <tr><td>tab-support</td><td>sup_ticket</td><td>sup_tkt_open_12</td><td><span class="samesite-tag tag-lax">Lax</span></td></tr>
+            <tr><td>tab-support</td><td>sup_chat</td><td>sup_chat_active</td><td><span class="samesite-tag tag-strict">Strict</span></td></tr>
+        </tbody>
+    </table>
+
+    <script>
+        document.cookie = "orch_session=orch_sess_hub001; path=/; SameSite=Lax";
+        document.cookie = "orch_visitor=orch_vis_new; path=/; SameSite=Strict";
+        document.cookie = "orch_platform=orch_plat_web; path=/; SameSite=None; Secure";
+
+        function showCookies() {
+            document.getElementById('all-cookies').textContent = document.cookie || '(no cookies)';
+        }
+        showCookies();
+        setInterval(showCookies, 2000);
+    </script>
+</body>
+</html>

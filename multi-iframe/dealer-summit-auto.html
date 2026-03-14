@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Summit Auto</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #fefcbf; color: #744210; padding: 10px; font-size: 13px; }
+        .dealer-badge { display: inline-block; background: #d69e2e; color: #fff; padding: 3px 8px; border-radius: 3px; font-size: 11px; margin-bottom: 6px; }
+        h3 { font-size: 14px; margin-bottom: 4px; }
+        .tagline { font-size: 11px; color: #4a5568; margin-bottom: 8px; }
+        .cookie-item { font-family: monospace; font-size: 11px; padding: 2px 0; }
+        .tag { font-size: 9px; font-weight: bold; padding: 1px 4px; border-radius: 2px; color: #fff; }
+        .tag-lax { background: #d69e2e; }
+        .tag-none { background: #805ad5; }
+        #all-cookies { background: #fefcbf; border: 1px solid #d69e2e; border-radius: 4px; padding: 6px; margin-top: 6px; font-family: monospace; font-size: 10px; word-break: break-all; max-height: 60px; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <span class="dealer-badge">DEALER: Summit Auto</span>
+    <h3>Summit Auto</h3>
+    <p class="tagline">Downtown Sedans & Hybrids</p>
+    <div class="cookie-item">summit_promo = summit_promo_spring <span class="tag tag-none">None; Secure</span></div>
+    <div class="cookie-item">summit_branch = summit_br_downtown <span class="tag tag-lax">Lax</span></div>
+    <div id="all-cookies"></div>
+    <script>
+        document.cookie = "summit_promo=summit_promo_spring; path=/; SameSite=None; Secure";
+        document.cookie = "summit_branch=summit_br_downtown; path=/; SameSite=Lax";
+        function showCookies() { document.getElementById('all-cookies').textContent = document.cookie || '(none)'; }
+        showCookies(); setInterval(showCookies, 2000);
+    </script>
+</body>
+</html>

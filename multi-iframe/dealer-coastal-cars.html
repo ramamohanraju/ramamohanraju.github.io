@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coastal Cars</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f0fff4; color: #22543d; padding: 10px; font-size: 13px; }
+        .dealer-badge { display: inline-block; background: #38a169; color: #fff; padding: 3px 8px; border-radius: 3px; font-size: 11px; margin-bottom: 6px; }
+        h3 { font-size: 14px; margin-bottom: 4px; }
+        .tagline { font-size: 11px; color: #4a5568; margin-bottom: 8px; }
+        .cookie-item { font-family: monospace; font-size: 11px; padding: 2px 0; }
+        .tag { font-size: 9px; font-weight: bold; padding: 1px 4px; border-radius: 2px; color: #fff; }
+        .tag-strict { background: #e53e3e; }
+        .tag-none { background: #805ad5; }
+        #all-cookies { background: #c6f6d5; border-radius: 4px; padding: 6px; margin-top: 6px; font-family: monospace; font-size: 10px; word-break: break-all; max-height: 60px; overflow-y: auto; }
+    </style>
+</head>
+<body>
+    <span class="dealer-badge">DEALER: Coastal Cars</span>
+    <h3>Coastal Cars</h3>
+    <p class="tagline">Convertibles & Sports Cars</p>
+    <div class="cookie-item">coastal_testdrive = coastal_td_booked <span class="tag tag-strict">Strict</span></div>
+    <div class="cookie-item">coastal_currency = coastal_cur_usd <span class="tag tag-none">None; Secure</span></div>
+    <div id="all-cookies"></div>
+    <script>
+        document.cookie = "coastal_testdrive=coastal_td_booked; path=/; SameSite=Strict";
+        document.cookie = "coastal_currency=coastal_cur_usd; path=/; SameSite=None; Secure";
+        function showCookies() { document.getElementById('all-cookies').textContent = document.cookie || '(none)'; }
+        showCookies(); setInterval(showCookies, 2000);
+    </script>
+</body>
+</html>
