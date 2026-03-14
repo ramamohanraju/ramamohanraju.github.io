@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CT-1002 - Site with Pre-Consent Tracking</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f9f9f9; }
+    .info-box { background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 6px; padding: 20px; margin-bottom: 24px; }
+    .info-box h2 { margin-top: 0; color: #721c24; }
+    h1 { color: #333; }
+    .placeholder-banner { background: #e2e3e5; border: 2px dashed #6c757d; border-radius: 6px; padding: 16px; margin-top: 24px; text-align: center; color: #6c757d; }
+    .detail { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 16px; }
+    .detail ul { margin: 8px 0; padding-left: 20px; }
+  </style>
+</head>
+<body>
+
+  <div class="info-box">
+    <h2>Test Case: CT-1002 — Pre-Consent Tracking</h2>
+    <p><strong>Domain key:</strong> <code>sitepreconsent</code></p>
+    <p><strong>Purpose:</strong> Simulates a non-compliant site that fires trackers and sets cookies <em>before</em> the user has given any consent. Used to verify the scanner detects pre-consent tracking violations.</p>
+  </div>
+
+  <h1>Welcome to SitePreConsent</h1>
+  <p>This is a placeholder site representing a domain that loads tracking scripts on first visit, before the user interacts with any consent banner.</p>
+
+  <div class="placeholder-banner">
+    [PLACEHOLDER] Cookie Consent Banner would appear here — but trackers are already firing before it is shown.
+  </div>
+
+  <div class="detail">
+    <h3>What the scanner expects to find here</h3>
+    <ul>
+      <li>Banner present</li>
+      <li>On first visit trackers fired: Google Analytics, Facebook Pixel, Hotjar</li>
+      <li>On second visit trackers: Google Analytics still fires</li>
+      <li>Cookies set before consent: _ga, _fbp, _hjid</li>
+      <li>Total first-visit trackers: 3 (all third-party)</li>
+      <li>Total cookies: 5 (analytics: 3, advertising: 2)</li>
+    </ul>
+  </div>
+
+</body>
+</html>

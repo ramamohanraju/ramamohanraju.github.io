@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CT-1007 - Notice-Only Banner Site</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f9f9f9; }
+    .info-box { background: #fff3cd; border: 1px solid #ffc107; border-radius: 6px; padding: 20px; margin-bottom: 24px; }
+    .info-box h2 { margin-top: 0; color: #856404; }
+    h1 { color: #333; }
+    .placeholder-banner { background: #e2e3e5; border: 2px dashed #6c757d; border-radius: 6px; padding: 16px; margin-top: 24px; text-align: center; color: #6c757d; }
+    .detail { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 16px; }
+    .detail ul { margin: 8px 0; padding-left: 20px; }
+  </style>
+</head>
+<body>
+
+  <div class="info-box">
+    <h2>Test Case: CT-1007 — Notice-Only Banner</h2>
+    <p><strong>Domain key:</strong> <code>sitenoticeonly</code></p>
+    <p><strong>Purpose:</strong> Simulates a site that shows a cookie notice banner but offers only a close/dismiss button — no Accept All or Reject All. Trackers fire on first visit regardless of the user's dismissal action. Used to verify the scanner identifies the notice-only compliance type.</p>
+  </div>
+
+  <h1>Welcome to SiteNoticeOnly</h1>
+  <p>This is a placeholder site representing a domain with a notice-only cookie banner. The banner informs users but provides no meaningful consent choice.</p>
+
+  <div class="placeholder-banner">
+    [PLACEHOLDER] Notice-Only Cookie Banner would appear here: informational text + close button (no Accept All / Reject All).
+    Cookie Policy link present.
+  </div>
+
+  <div class="detail">
+    <h3>What the scanner expects to find here</h3>
+    <ul>
+      <li>Banner present, compliance type: <code>notice-only</code></li>
+      <li>Close button without consent: <strong>yes</strong></li>
+      <li>No Accept All / Reject All buttons</li>
+      <li>No preference center link</li>
+      <li>Cookie policy link found: yes</li>
+      <li>On first visit: Google Analytics fires</li>
+      <li>Total first-visit trackers: 1 (third-party)</li>
+    </ul>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CT-1006 - Cookie Wall Site</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f9f9f9; }
+    .info-box { background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 6px; padding: 20px; margin-bottom: 24px; }
+    .info-box h2 { margin-top: 0; color: #721c24; }
+    h1 { color: #333; }
+    .placeholder-banner { background: #e2e3e5; border: 2px dashed #6c757d; border-radius: 6px; padding: 16px; margin-top: 24px; text-align: center; color: #6c757d; }
+    .detail { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 16px; }
+    .detail ul { margin: 8px 0; padding-left: 20px; }
+  </style>
+</head>
+<body>
+
+  <div class="info-box">
+    <h2>Test Case: CT-1006 — Cookie Wall</h2>
+    <p><strong>Domain key:</strong> <code>sitecookiewall</code></p>
+    <p><strong>Purpose:</strong> Simulates a site that implements a cookie wall — the user cannot access site content without accepting cookies. There is no "Reject All" option and no preference center. Used to verify the scanner correctly detects cookie wall presence.</p>
+  </div>
+
+  <h1>Welcome to SiteCookieWall</h1>
+  <p>This is a placeholder site representing a domain that blocks access to content unless the user accepts all cookies (cookie wall pattern).</p>
+
+  <div class="placeholder-banner">
+    [PLACEHOLDER] Cookie Wall would appear here: Accept All button only (no Reject option). Cookie Policy link present.
+    No preference center. No manage preferences link. Access to content gated on acceptance.
+  </div>
+
+  <div class="detail">
+    <h3>What the scanner expects to find here</h3>
+    <ul>
+      <li>Banner present, compliance type: <code>opt-in</code></li>
+      <li>Cookie wall detected: <strong>yes</strong></li>
+      <li>No Reject All button</li>
+      <li>No preference center link</li>
+      <li>Cookie policy link found: yes</li>
+      <li>Autoblock script: no</li>
+      <li>On Accept All: Google Analytics tracker loaded</li>
+      <li>Total third-party trackers: 1</li>
+    </ul>
+  </div>
+
+</body>
+</html>

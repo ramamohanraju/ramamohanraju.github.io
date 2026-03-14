@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CT-1003 - Opt-Out Site with GCM Granted by Default</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f9f9f9; }
+    .info-box { background: #fff3cd; border: 1px solid #ffc107; border-radius: 6px; padding: 20px; margin-bottom: 24px; }
+    .info-box h2 { margin-top: 0; color: #856404; }
+    h1 { color: #333; }
+    .placeholder-banner { background: #e2e3e5; border: 2px dashed #6c757d; border-radius: 6px; padding: 16px; margin-top: 24px; text-align: center; color: #6c757d; }
+    .detail { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 16px; }
+    .detail ul { margin: 8px 0; padding-left: 20px; }
+  </style>
+</head>
+<body>
+
+  <div class="info-box">
+    <h2>Test Case: CT-1003 — Opt-Out with GCM Granted by Default</h2>
+    <p><strong>Domain key:</strong> <code>siteoptout</code></p>
+    <p><strong>Purpose:</strong> Simulates an opt-out site that uses Google Consent Mode v2 with all consent signals defaulted to <code>granted</code>. Used to verify the scanner detects GCM and flags that the default state is already permissive (no explicit user opt-in required).</p>
+  </div>
+
+  <h1>Welcome to SiteOptOut</h1>
+  <p>This is a placeholder site representing a domain with an opt-out consent model and GCM v2 defaults set to granted across all consent categories.</p>
+
+  <div class="placeholder-banner">
+    [PLACEHOLDER] Opt-Out Cookie Banner with Accept All / Reject All / Manage Preferences and Cookie Policy link would appear here.
+  </div>
+
+  <div class="detail">
+    <h3>What the scanner expects to find here</h3>
+    <ul>
+      <li>Banner present, compliance type: <code>opt-out</code></li>
+      <li>GCM v2 detected: yes, version 2.0</li>
+      <li>GCM default consent state: <code>analytics_storage: granted</code>, <code>ad_storage: granted</code>, <code>functionality_storage: granted</code>, <code>personalization_storage: granted</code></li>
+      <li>IAB TCF: not detected</li>
+      <li>GPC: not detected</li>
+      <li>US Privacy: not detected</li>
+    </ul>
+  </div>
+
+</body>
+</html>

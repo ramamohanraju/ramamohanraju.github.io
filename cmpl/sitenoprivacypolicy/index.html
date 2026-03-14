@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CT-1017 - Site with No Privacy Policy</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f9f9f9; }
+    .info-box { background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 6px; padding: 20px; margin-bottom: 24px; }
+    .info-box h2 { margin-top: 0; color: #721c24; }
+    h1 { color: #333; }
+    .placeholder-banner { background: #e2e3e5; border: 2px dashed #6c757d; border-radius: 6px; padding: 16px; margin-top: 24px; text-align: center; color: #6c757d; }
+    .detail { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 16px; }
+    .detail ul { margin: 8px 0; padding-left: 20px; }
+  </style>
+</head>
+<body>
+
+  <div class="info-box">
+    <h2>Test Case: CT-1017 — No Privacy Policy</h2>
+    <p><strong>Domain key:</strong> <code>sitenoprivacypolicy</code></p>
+    <p><strong>Purpose:</strong> Simulates a site that has a consent banner but is missing both a cookie policy link within the banner and an accessible privacy policy page. Used to verify the scanner flags missing privacy/cookie policy as a compliance finding.</p>
+  </div>
+
+  <h1>Welcome to SiteNoPrivacyPolicy</h1>
+  <p>This is a placeholder site representing a domain with a consent banner but no cookie policy link and no accessible privacy policy URL.</p>
+
+  <div class="placeholder-banner">
+    [PLACEHOLDER] Cookie Consent Banner with Accept All / Reject All / Manage Preferences would appear here.
+    No cookie policy link present in the banner. No privacy policy link in footer.
+  </div>
+
+  <div class="detail">
+    <h3>What the scanner expects to find here</h3>
+    <ul>
+      <li>Banner present</li>
+      <li>Preference center link found: yes</li>
+      <li>Accept All and Reject All buttons present</li>
+      <li>Cookie policy link found: <strong>no</strong></li>
+      <li>Autoblock script: no</li>
+      <li>Privacy policy: link found: <strong>false</strong>, accessible: <strong>false</strong></li>
+    </ul>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CT-1020 - Accessibility Violations Site</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f9f9f9; }
+    .info-box { background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 6px; padding: 20px; margin-bottom: 24px; }
+    .info-box h2 { margin-top: 0; color: #721c24; }
+    h1 { color: #333; }
+    .placeholder-banner { background: #e2e3e5; border: 2px dashed #6c757d; border-radius: 6px; padding: 16px; margin-top: 24px; text-align: center; color: #6c757d; }
+    .detail { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 16px; }
+    .detail ul { margin: 8px 0; padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background: #f0f0f0; }
+    .sev-error { color: #721c24; font-weight: bold; }
+    .sev-warning { color: #856404; }
+  </style>
+</head>
+<body>
+
+  <div class="info-box">
+    <h2>Test Case: CT-1020 — Accessibility Violations</h2>
+    <p><strong>Domain key:</strong> <code>siteaccessibility</code></p>
+    <p><strong>Purpose:</strong> Simulates a site whose consent banner has multiple accessibility violations: missing ARIA labels, incorrect ARIA roles, missing ARIA properties on checkboxes, tab focus disabled, and color contrast failures. Used to verify the scanner detects and reports all accessibility risk categories.</p>
+  </div>
+
+  <h1>Welcome to SiteAccessibility</h1>
+  <p>This is a placeholder site representing a domain where the cookie consent banner is inaccessible to users relying on screen readers or keyboard navigation.</p>
+
+  <div class="placeholder-banner">
+    [PLACEHOLDER] Inaccessible Cookie Consent Banner would appear here:
+    no aria-label on Accept button, no role="dialog", no aria-modal, no keyboard tab focus, poor color contrast on Reject button.
+  </div>
+
+  <div class="detail">
+    <h3>What the scanner expects to find here</h3>
+    <p>Banner present. Tab focusable: <strong>no</strong>.</p>
+    <table>
+      <tr><th>Risk Type</th><th>Element</th><th>Issue</th><th>Severity</th></tr>
+      <tr><td>ariaAttributes</td><td>button#accept-all</td><td>Missing aria-label</td><td class="sev-error">error</td></tr>
+      <tr><td>ariaAttributes</td><td>div#cookie-banner</td><td>Missing aria-describedby</td><td class="sev-warning">warning</td></tr>
+      <tr><td>ariaRoles</td><td>div.cookie-overlay</td><td>Should use role="dialog" with aria-modal="true"</td><td class="sev-error">error</td></tr>
+      <tr><td>ariaProperties</td><td>input[type=checkbox]</td><td>Missing aria-checked state management</td><td class="sev-warning">warning</td></tr>
+      <tr><td>colorContrast</td><td>button.reject-btn</td><td>Contrast ratio 2.85 (required 4.5); fg #999999 bg #ffffff</td><td class="sev-error">error</td></tr>
+    </table>
+    <p>Banner HTML: <code>&lt;div id="cookie-banner"&gt;&lt;button id="accept-all"&gt;Accept&lt;/button&gt;&lt;/div&gt;</code></p>
+  </div>
+
+</body>
+</html>

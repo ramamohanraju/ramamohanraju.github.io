@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CT-1014 - Dark Patterns Site</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f9f9f9; }
+    .info-box { background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 6px; padding: 20px; margin-bottom: 24px; }
+    .info-box h2 { margin-top: 0; color: #721c24; }
+    h1 { color: #333; }
+    .placeholder-banner { background: #e2e3e5; border: 2px dashed #6c757d; border-radius: 6px; padding: 16px; margin-top: 24px; text-align: center; color: #6c757d; }
+    .detail { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 16px; }
+    .detail ul { margin: 8px 0; padding-left: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+    th { background: #f0f0f0; }
+  </style>
+</head>
+<body>
+
+  <div class="info-box">
+    <h2>Test Case: CT-1014 — Dark Patterns</h2>
+    <p><strong>Domain key:</strong> <code>sitedarkpattern</code></p>
+    <p><strong>Purpose:</strong> Simulates a site that employs dark patterns in its consent UI: no Reject All button on the main banner, prominently highlighted Accept button with rejection buried in settings, and pre-ticked non-essential checkboxes in the preference center. Used to verify scanner dark-pattern detection.</p>
+  </div>
+
+  <h1>Welcome to SiteDarkPattern</h1>
+  <p>This is a placeholder site representing a domain with dark-pattern consent design that manipulates users toward accepting all cookies.</p>
+
+  <div class="placeholder-banner">
+    [PLACEHOLDER] Deceptive Cookie Consent Banner would appear here: Accept All (prominent), Manage Preferences (hidden link, no Reject All).
+    Preference center would have pre-ticked non-essential checkboxes.
+  </div>
+
+  <div class="detail">
+    <h3>What the scanner expects to find here</h3>
+    <p>Banner present, compliance type: <code>opt-in</code>. Dark patterns detected: <strong>yes</strong>.</p>
+    <table>
+      <tr><th>Pattern Type</th><th>Description</th><th>Severity</th></tr>
+      <tr><td>misleading-button-colors</td><td>Accept button is prominently highlighted; reject option is buried in settings</td><td>high</td></tr>
+      <tr><td>missing-reject-all</td><td>No "Reject All" button present on the main banner</td><td>high</td></tr>
+      <tr><td>pre-ticked-boxes</td><td>Non-essential cookie categories are pre-selected in the preference center</td><td>medium</td></tr>
+    </table>
+    <p>Elements: no Reject All button on banner; preference center link found; cookie policy link found; no autoblock.</p>
+  </div>
+
+</body>
+</html>

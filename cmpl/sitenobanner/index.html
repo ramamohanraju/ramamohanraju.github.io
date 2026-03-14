@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CT-1000 - Site With No Consent Banner</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f9f9f9; }
+    .info-box { background: #fff3cd; border: 1px solid #ffc107; border-radius: 6px; padding: 20px; margin-bottom: 24px; }
+    .info-box h2 { margin-top: 0; color: #856404; }
+    h1 { color: #333; }
+    .detail { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 16px; }
+    .detail ul { margin: 8px 0; padding-left: 20px; }
+  </style>
+</head>
+<body>
+
+  <div class="info-box">
+    <h2>Test Case: CT-1000 — No Consent Banner</h2>
+    <p><strong>Domain key:</strong> <code>sitenobanner</code></p>
+    <p><strong>Purpose:</strong> Simulates a site that has <em>no cookie consent banner at all</em>. Used to verify the scanner correctly identifies the absence of a banner and reports no consent mechanism, no trackers, and no cookies.</p>
+  </div>
+
+  <h1>Welcome to SiteNoBanner</h1>
+  <p>This is a placeholder site representing a domain that operates with no cookie consent banner and no tracking technologies.</p>
+
+  <div class="detail">
+    <h3>What the scanner expects to find here</h3>
+    <ul>
+      <li>No consent banner present</li>
+      <li>Compliance type: <code>unknown</code></li>
+      <li>No trackers (first visit, second visit, accept, reject, dismiss)</li>
+      <li>No cookies (before consent, after accept, after reject)</li>
+      <li>No preference center link, no cookie policy link, no accept/reject buttons</li>
+      <li>Total cookie count: 0</li>
+    </ul>
+  </div>
+
+  <p>This is a plain content page with no consent or tracking infrastructure.</p>
+
+</body>
+</html>

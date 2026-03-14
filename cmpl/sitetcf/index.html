@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CT-1012 - IAB TCF 2.2 Detected</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f9f9f9; }
+    .info-box { background: #d1ecf1; border: 1px solid #bee5eb; border-radius: 6px; padding: 20px; margin-bottom: 24px; }
+    .info-box h2 { margin-top: 0; color: #0c5460; }
+    h1 { color: #333; }
+    .placeholder-banner { background: #e2e3e5; border: 2px dashed #6c757d; border-radius: 6px; padding: 16px; margin-top: 24px; text-align: center; color: #6c757d; }
+    .detail { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 16px; }
+    .detail ul { margin: 8px 0; padding-left: 20px; }
+    code { background: #f0f0f0; padding: 2px 6px; border-radius: 3px; font-size: 0.9em; word-break: break-all; }
+  </style>
+</head>
+<body>
+
+  <div class="info-box">
+    <h2>Test Case: CT-1012 — IAB TCF 2.2 Detected</h2>
+    <p><strong>Domain key:</strong> <code>sitetcf</code> (also matches <code>sitetcstring</code>)</p>
+    <p><strong>Purpose:</strong> Simulates a site that implements the IAB Transparency &amp; Consent Framework (TCF) version 2.2. The site exposes the <code>__tcfapi</code> JavaScript API and a TC string indicating all purposes denied. Used to verify scanner TCF detection, version parsing, and purpose consent extraction.</p>
+  </div>
+
+  <h1>Welcome to SiteTCF</h1>
+  <p>This is a placeholder site representing a domain that implements IAB TCF 2.2 with the consent API exposed and a TC string reflecting all-denied purpose consents.</p>
+
+  <div class="placeholder-banner">
+    [PLACEHOLDER] IAB TCF 2.2 compliant Cookie Consent Banner would appear here. __tcfapi exposed in window scope.
+  </div>
+
+  <div class="detail">
+    <h3>What the scanner expects to find here</h3>
+    <ul>
+      <li>Banner present, compliance type: <code>opt-in</code></li>
+      <li>IAB TCF detected: <strong>yes</strong>, version: <code>2.2</code></li>
+      <li>tcfApiFound: <strong>yes</strong></li>
+      <li>Vendor list version: <code>320</code></li>
+      <li>TC String: <code>CPziCYAPziCYAC4AAAENCZCAANoAAAAAAAAAAAAAAAAA</code></li>
+      <li>Purpose consents (1,2,3,4,7,8,9,10): all <code>false</code></li>
+      <li>GPC, GCM, US Privacy: not detected</li>
+    </ul>
+  </div>
+
+</body>
+</html>

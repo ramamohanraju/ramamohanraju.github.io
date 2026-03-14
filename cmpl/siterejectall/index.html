@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CT-1004 - Reject All: Trackers Stop After Reject</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f9f9f9; }
+    .info-box { background: #d4edda; border: 1px solid #c3e6cb; border-radius: 6px; padding: 20px; margin-bottom: 24px; }
+    .info-box h2 { margin-top: 0; color: #155724; }
+    h1 { color: #333; }
+    .placeholder-banner { background: #e2e3e5; border: 2px dashed #6c757d; border-radius: 6px; padding: 16px; margin-top: 24px; text-align: center; color: #6c757d; }
+    .detail { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 16px; }
+    .detail ul { margin: 8px 0; padding-left: 20px; }
+  </style>
+</head>
+<body>
+
+  <div class="info-box">
+    <h2>Test Case: CT-1004 — Reject All: Trackers Stop After Reject</h2>
+    <p><strong>Domain key:</strong> <code>siterejectall</code></p>
+    <p><strong>Purpose:</strong> Simulates a well-behaved opt-in site where rejecting all consent completely stops all non-essential trackers and cookies. Used to verify the scanner confirms that reject-all is fully honored with no tracker leakage.</p>
+  </div>
+
+  <h1>Welcome to SiteRejectAll</h1>
+  <p>This is a placeholder site representing a domain where the "Reject All" consent choice is fully respected — no trackers or non-essential cookies persist after rejection.</p>
+
+  <div class="placeholder-banner">
+    [PLACEHOLDER] Cookie Consent Banner with Accept All / Reject All / Manage Preferences and Cookie Policy link would appear here.
+    Autoblock script active.
+  </div>
+
+  <div class="detail">
+    <h3>What the scanner expects to find here</h3>
+    <ul>
+      <li>Banner present, compliance type: <code>opt-in</code></li>
+      <li>Autoblock script: yes</li>
+      <li>No trackers on first visit (autoblock working)</li>
+      <li>On Accept All: Google Analytics + Facebook Pixel</li>
+      <li>On Reject All: no trackers (fully honored)</li>
+      <li>No cookies before consent</li>
+      <li>After reject: no cookies set</li>
+      <li>Total cookies: 3 (strictly_necessary: 1, analytics: 1, advertising: 1)</li>
+    </ul>
+  </div>
+
+</body>
+</html>
