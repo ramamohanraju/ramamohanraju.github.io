@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliance Test Sites Index</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f7fa; color: #333; padding: 2rem; }
+        h1 { text-align: center; margin-bottom: 0.5rem; color: #1a1a2e; font-size: 1.8rem; }
+        p.subtitle { text-align: center; color: #666; margin-bottom: 2rem; font-size: 0.95rem; }
+        table { width: 100%; max-width: 1100px; margin: 0 auto; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        thead { background: #1a1a2e; color: #fff; }
+        th { padding: 0.85rem 1rem; text-align: left; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        td { padding: 0.75rem 1rem; border-bottom: 1px solid #eee; font-size: 0.9rem; vertical-align: top; }
+        tr:last-child td { border-bottom: none; }
+        tbody tr:hover { background: #f0f4ff; }
+        td.id { white-space: nowrap; font-family: monospace; color: #555; font-size: 0.85rem; }
+        a { color: #2563eb; text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+        td.desc { color: #555; line-height: 1.4; }
+    </style>
+</head>
+<body>
+    <h1>Compliance Test Sites</h1>
+    <p class="subtitle">20 test sites for validating cookie consent and privacy compliance scenarios</p>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Site</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="id">CT-1000</td>
+                <td><a href="sitenobanner/">No Consent Banner</a></td>
+                <td class="desc">Detects complete absence of a consent banner mechanism</td>
+            </tr>
+            <tr>
+                <td class="id">CT-1001</td>
+                <td><a href="siteoptingpc/">Opt-In with Preference Center</a></td>
+                <td class="desc">Proper opt-in compliance with preference center and no pre-consent tracking</td>
+            </tr>
+            <tr>
+                <td class="id">CT-1002</td>
+                <td><a href="sitepreconsent/">Pre-Consent Tracking</a></td>
+                <td class="desc">Detects non-compliant pre-consent tracking and cookie setting</td>
+            </tr>
+            <tr>
+                <td class="id">CT-1003</td>
+                <td><a href="siteoptout/">Opt-Out with GCM Granted</a></td>
+                <td class="desc">Detects opt-out model with GCM v2 set to granted defaults</td>
+            </tr>
+            <tr>
+                <td class="id">CT-1004</td>
+                <td><a href="siterejectall/">Reject All &mdash; Trackers Stop</a></td>
+                <td class="desc">Verifies proper rejection of all trackers with no leakage after reject-all</td>
+            </tr>
+            <tr>
+                <td class="id">CT-1005</td>
+                <td><a href="siteacceptall/">Accept All &mdash; Tracker Leakage</a></td>
+                <td class="desc">Detects tracker leakage when user selects reject-all (e.g. Google Analytics continues to fire)</td>
+            </tr>
+            <tr>
+                <td class="id">CT-1006</td>
+                <td><a href="sitecookiewall/">Cookie Wall</a></td>
+                <td class="desc">Detects cookie wall where users cannot access content without accepting cookies</td>
+            </tr>
+            <tr>
+                <td class="id">CT-1007</td>
+                <td><a href="sitenoticeonly/">Notice-Only Banner</a></td>
+                <td class="desc">Detects notice-only banner without meaningful consent choices (only dismiss)</td>
+            </tr>
+            <tr>
+                <td class="id">CT-1008</td>
+                <td><a href="sitegeo/">Multi-Geo Detection</a></td>
+                <td class="desc">Tests jurisdiction-specific compliance requirements (GDPR/EU, CCPA/US, LGPD/BR)</td>
+            </tr>
+            <tr>
+                <td class="id">CT-1009</td>
+                <td><a href="sitetrackers/">Tracker Categorization</a></td>
+                <td class="desc">Tests correct categorization of trackers (analytics, advertising, functional, etc.)</td>
+            </tr>
+            <tr>
+                <td class="id">CT-1010</td>
+                <td><a href="sitegpc/">GPC Honored</a></td>
+                <td class="desc">Detects Global Privacy Control signal being honored (no trackers when GPC active)</td>
+            </tr>
+            <tr>
+                <td class="id">CT-1012</td>
+                <td><a href="sitetcf/">IAB TCF 2.2</a></td>
+                <td class="desc">Detects IAB Transparency &amp; Consent Framework v2.2 with TC string parsing</td>
+            </tr>
+            <tr>
+                <td class="id">CT-1013</td>
+                <td><a href="siteusprivacy/">US Privacy / CCPA</a></td>
+                <td class="desc">Detects US Privacy API, USP string, and CCPA "Do Not Sell" footer link</td>
+            </tr>
+            <tr>
+                <td class="id">CT-1014</td>
+                <td><a href="sitedarkpattern/">Dark Patterns</a></td>
+                <td class="desc">Detects deceptive UI patterns (missing reject-all, pre-ticked checkboxes, misleading colors)</td>
+            </tr>
+            <tr>
+                <td class="id">CT-1015</td>
+                <td><a href="sitegcm/">GCM v2 Denied Defaults</a></td>
+                <td class="desc">Detects Google Consent Mode v2 with privacy-safe denied default consent signals</td>
+            </tr>
+            <tr>
+                <td class="id">CT-1016</td>
+                <td><a href="siteautoblocking/">Auto-Blocking Validation</a></td>
+                <td class="desc">Tests proper autoblock script implementation preventing trackers before consent</td>
+            </tr>
+            <tr>
+                <td class="id">CT-1017</td>
+                <td><a href="sitenoprivacypolicy/">No Privacy Policy</a></td>
+                <td class="desc">Detects missing cookie policy link and privacy policy page</td>
+            </tr>
+            <tr>
+                <td class="id">CT-1018</td>
+                <td><a href="sitecookiedisclosure/">Cookie Disclosure</a></td>
+                <td class="desc">Enumerates cookies across all categories (analytics, advertising, functional, etc.)</td>
+            </tr>
+            <tr>
+                <td class="id">CT-1019</td>
+                <td><a href="sitedonotsell/">Do Not Sell Link</a></td>
+                <td class="desc">Detects CCPA "Do Not Sell or Share My Personal Information" link and US Privacy API</td>
+            </tr>
+            <tr>
+                <td class="id">CT-1020</td>
+                <td><a href="siteaccessibility/">Accessibility Violations</a></td>
+                <td class="desc">Detects accessibility issues in consent banners (missing ARIA labels, poor contrast)</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
