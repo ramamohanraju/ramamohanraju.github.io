@@ -1,7 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  fsdfdsfsfdsfdd
+  <script type="text/javascript" src="https://cdn-dev-intg-2.securiti.xyz/consent/auto_blocking/0ec23351-59a4-4543-ad68-78b005d75b25/71a4d0f0-034f-4dcc-9b89-d5638f244263.js"></script>
+
+
+    <!-- After adding this script, call setConsentBannerParams({uuid: <unique id> }) to set unique ID for a customer.  -->
+    <script>
+        (function () {
+            var s = document.createElement('script');
+            s.src = 'https://cdn-dev-intg-2.securiti.xyz/consent/cookie-consent-sdk-loader.js';
+            s.setAttribute('data-tenant-uuid', '0ec23351-59a4-4543-ad68-78b005d75b25');
+            s.setAttribute('data-domain-uuid', '71a4d0f0-034f-4dcc-9b89-d5638f244263');
+            s.setAttribute('data-backend-url', 'https://dev-intg-2.securiti.xyz');
+            s.setAttribute('data-skip-css', 'false');
+            s.defer = true;
+            var parent_node = document.head || document.body;
+            parent_node.appendChild(s);
+        })()
+    </script>
+    <!-- You may style the button by overriding class "cmp-revoke-consent" -->
+    <button class="cmp-revoke-consent">Manage Cookie Preferences</button>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CT-1001 - Opt-In Site with Preference Center</title>
