@@ -28,17 +28,16 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reject All Fail - Interaction-Triggered Cookie Test Site</title>
+  <title>Reject All Pass - Clean Cookie Test Site</title>
   <style>
     body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f9f9f9; color: #333; }
-    .info-box { background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 6px; padding: 20px; margin-bottom: 24px; }
-    .info-box h2 { margin-top: 0; color: #721c24; }
+    .info-box { background: #d4edda; border: 1px solid #c3e6cb; border-radius: 6px; padding: 20px; margin-bottom: 24px; }
+    .info-box h2 { margin-top: 0; color: #155724; }
     h1 { color: #333; }
     .placeholder-banner { background: #e2e3e5; border: 2px dashed #6c757d; border-radius: 6px; padding: 16px; margin-top: 24px; text-align: center; color: #6c757d; }
     .detail { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 16px; margin-top: 24px; }
     .detail ul { margin: 8px 0; padding-left: 20px; }
     code { background: #f0f0f0; padding: 1px 5px; border-radius: 3px; font-size: 0.9em; }
-    .stray { color: #721c24; font-weight: bold; }
   </style>
 
   <!-- Google Analytics (managed by CMP once consent code is added) -->
@@ -64,14 +63,13 @@
 <body>
 
   <div class="info-box">
-    <h2>Reject-All-Fail Test Site</h2>
-    <p><strong>Domain key:</strong> <code>reject-all-fail</code></p>
-    <p><strong>Purpose:</strong> A test site where one non-essential cookie is dropped <strong>only on the first user interaction</strong> (click / scroll / mousemove), rather than on page load. A passive scan that does not interact with the page does not observe this cookie, so it never enters the scanned cookie inventory — but any flow that clicks a button on the page will trigger it.</p>
-    <p><strong>The stray cookie:</strong> <code class="stray">_gcl_aw</code> (Google Ads style, advertising / non-essential, matches the <code>_gcl_*</code> pattern). It is set with a long expiry and is not tied to any consent category on the page, so it persists regardless of the consent choice.</p>
+    <h2>Reject-All-Pass Test Site</h2>
+    <p><strong>Domain key:</strong> <code>reject-all-pass</code></p>
+    <p><strong>Purpose:</strong> A clean counterpart to <code>reject-all-fail</code>. Every non-essential cookie on this site is tied to a declared consent category, so a reject-all choice leaves no non-essential cookies behind. There is no interaction-triggered stray cookie.</p>
   </div>
 
-  <h1>Welcome to Reject-All-Fail</h1>
-  <p>This is a placeholder site used to test how cookie-consent tooling handles a non-essential cookie that appears only after user interaction. Interact with the page (click anywhere) to trigger the stray cookie, then inspect cookies in DevTools.</p>
+  <h1>Welcome to Reject-All-Pass</h1>
+  <p>This is a placeholder site used to test how cookie-consent tooling handles a site with no stray, unmanaged cookies. Interact with the page and inspect cookies in DevTools — every non-essential cookie should be governed by the consent choice.</p>
 
   <div class="placeholder-banner">
     [PLACEHOLDER] Cookie Consent Banner with Accept All / Reject All / Manage Preferences and Cookie Policy link will appear here once the consent code is published.
@@ -101,11 +99,8 @@
   <script src="advertising.js"></script>
   <script src="functional.js"></script>
 
-  <!-- Stray cookie: set only on first user interaction -->
-  <script src="stray-cookie.js"></script>
-
   <footer style="margin-top: 40px; padding: 20px 0; border-top: 1px solid #ddd; text-align: center; font-size: 0.9em; color: #666;">
-    <a href="privacy-policy.html" style="color: #721c24;">Privacy Policy</a>
+    <a href="privacy-policy.html" style="color: #155724;">Privacy Policy</a>
   </footer>
 </body>
 </html>
