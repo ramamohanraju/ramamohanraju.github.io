@@ -81,7 +81,7 @@
   <div class="detail">
     <h3>Cookies on this page</h3>
     <ul>
-      <li>Strictly necessary (set on load): <code>PHPSESSID</code>, <code>csrf_token</code>, <code>cookieconsent_status</code></li>
+      <li>Strictly necessary (set on load): <code>PHPSESSID</code>, <code>csrf_token</code>, <code>zzzcookietest</code></li>
       <li>Analytics (set on load): <code>_ga</code>, <code>_gid</code></li>
       <li>Advertising (set on load): <code>_fbp</code>, <code>fr</code>, <code class="stray">randomRejectAllTest</code> (new, unmanaged — persists after Reject All)</li>
       <li>Functional (set on load): <code>lang</code>, <code>__stripe_mid</code></li>
@@ -93,7 +93,7 @@
   <script>
     document.cookie = 'PHPSESSID=sess_' + Math.random().toString(36).substr(2,16) + '; path=/; SameSite=Lax';
     document.cookie = 'csrf_token=tk_' + Math.random().toString(36).substr(2,24) + '; path=/; SameSite=Lax';
-    document.cookie = 'cookieconsent_status=dismiss; max-age=' + (365*86400) + '; path=/; SameSite=Lax';
+    document.cookie = 'zzzcookietest=dismiss; max-age=' + (365*86400) + '; path=/; SameSite=Lax';
   </script>
 
   <!-- Category scripts (set on load, to be managed by CMP) -->
