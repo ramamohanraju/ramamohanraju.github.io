@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unclassified Cookie - Cookie Test Site</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px; background: #f9f9f9; color: #333; }
+    .info-box { background: #d4edda; border: 1px solid #c3e6cb; border-radius: 6px; padding: 20px; margin-bottom: 24px; }
+    .info-box h2 { margin-top: 0; color: #155724; }
+    h1 { color: #333; }
+    .placeholder-banner { background: #e2e3e5; border: 2px dashed #6c757d; border-radius: 6px; padding: 16px; margin-top: 24px; text-align: center; color: #6c757d; }
+    .detail { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 16px; margin-top: 24px; }
+    .detail ul { margin: 8px 0; padding-left: 20px; }
+    code { background: #f0f0f0; padding: 1px 5px; border-radius: 3px; font-size: 0.9em; }
+  </style>
+
+  <!-- Google Analytics (managed by CMP once consent code is added) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- Facebook Pixel (managed by CMP once consent code is added) -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '000000000000000');
+    fbq('track', 'PageView');
+  </script>
+</head>
+<body>
+
+  <div class="info-box">
+    <h2>Unclassified-Cookie Test Site</h2>
+    <p><strong>Domain key:</strong> <code>unclassified-cookie</code></p>
+    <p><strong>Purpose:</strong> A test site for the unclassified-cookie scenario. One cookie with a proprietary name that matches no known cookie database is set on load, so the scanner finds it but cannot auto-categorize it — it lands in the <strong>Unclassified</strong> category.</p>
+  </div>
+
+  <h1>Welcome to Unclassified-Cookie</h1>
+  <p>This is a placeholder site used to test how cookie-consent tooling handles a cookie it cannot recognize. The cookie <code>unclassified_test</code> is set on page load with a name that does not match any known cookie, so it is reported under the Unclassified category.</p>
+
+  <div class="placeholder-banner">
+    [PLACEHOLDER] Cookie Consent Banner with Accept All / Reject All / Manage Preferences and Cookie Policy link will appear here once the consent code is published.
+    Autoblock script will be active for the page's declared categories only.
+  </div>
+
+  <div class="detail">
+    <h3>Cookies on this page</h3>
+    <ul>
+      <li>Strictly necessary (set on load): <code>PHPSESSID</code>, <code>csrf_token</code>, <code>zzzcookietest</code></li>
+      <li>Analytics (set on load): <code>_ga</code>, <code>_gid</code></li>
+      <li>Advertising (set on load): <code>_fbp</code>, <code>fr</code></li>
+      <li>Functional (set on load): <code>lang</code>, <code>__stripe_mid</code></li>
+      <li>Unclassified (set on load): <code>unclassified_test</code> (proprietary name — not in any known cookie database)</li>
+    </ul>
+  </div>
+
+  <!-- Strictly necessary cookies (always set on load) -->
+  <script>
+    document.cookie = 'PHPSESSID=sess_' + Math.random().toString(36).substr(2,16) + '; path=/; SameSite=Lax';
+    document.cookie = 'csrf_token=tk_' + Math.random().toString(36).substr(2,24) + '; path=/; SameSite=Lax';
+    document.cookie = 'zzzcookietest=dismiss; max-age=' + (365*86400) + '; path=/; SameSite=Lax';
+  </script>
+
+  <!-- Category scripts (set on load, to be managed by CMP) -->
+  <script src="analytics.js"></script>
+  <script src="advertising.js"></script>
+  <script src="functional.js"></script>
+
+  <!-- Unclassified cookie: proprietary name that matches no known cookie
+       database, so the scanner finds it but reports it as Unclassified. -->
+  <script src="unclassified.js"></script>
+
+  <footer style="margin-top: 40px; padding: 20px 0; border-top: 1px solid #ddd; text-align: center; font-size: 0.9em; color: #666;">
+    <a href="privacy-policy.html" style="color: #155724;">Privacy Policy</a>
+  </footer>
+</body>
+</html>
