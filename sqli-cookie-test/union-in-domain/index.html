@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UNION in Domain — Cookie Test</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <style>
+    .kv { margin: 1.5rem 0; }
+    .kv div { margin: 0.35rem 0; }
+    .kv code { word-break: break-all; background:#f4f4f6; padding:2px 4px; border-radius:4px; }
+  </style>
+</head>
+<body>
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">UNION in Domain</h1>
+      <p class="hero-description">Sets one cookie with SQL-ish characters in its attributes.</p>
+    </div>
+  </section>
+
+  <div class="main-container">
+    <section class="content-section">
+      <div class="kv">
+        <div><strong>Case:</strong> <code id="case-id"></code></div>
+        <div><strong>Cookie name:</strong> <code id="case-name"></code></div>
+        <div><strong>Domain:</strong> <code id="case-domain"></code></div>
+      </div>
+    </section>
+  </div>
+
+  <script>window.SQLI_CASE = "union-in-domain";</script>
+  <script src="../case-cookie.js"></script>
+</body>
+</html>

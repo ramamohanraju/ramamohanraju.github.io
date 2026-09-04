@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie SQLi Test</title>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <style>
+    .cases { list-style: none; padding: 0; }
+    .cases li { border: 1px solid #e5e7eb; border-radius: 8px; padding: 0.75rem 1rem; margin: 0.5rem 0; }
+    .cases code { background:#f4f4f6; padding:2px 4px; border-radius:4px; }
+    .cases p { margin: 0.25rem 0 0; color: #666; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Cookie SQLi Test</h1>
+      <p class="hero-description">
+        Each case sets a cookie with SQL-ish characters in its Domain or name, to test how
+        a cookie scanner handles malformed cookie attributes.
+      </p>
+    </div>
+  </section>
+
+  <div class="main-container">
+    <section class="content-section">
+      <p class="section-description">
+        The case URLs below are intentionally not linked. Copy a URL and open it directly so
+        each case stays isolated.
+      </p>
+      <ul class="cases">
+        <li><code>/sqli-cookie-test/union-in-domain/</code><p>UNION SELECT in the Domain attribute.</p></li>
+        <li><code>/sqli-cookie-test/single-quote-in-domain/</code><p>Lone quote in the Domain attribute.</p></li>
+        <li><code>/sqli-cookie-test/boolean-in-domain/</code><p>Boolean expression in the Domain attribute.</p></li>
+        <li><code>/sqli-cookie-test/comment-in-domain/</code><p>Quote plus SQL comment in the Domain attribute.</p></li>
+        <li><code>/sqli-cookie-test/stacked-in-domain/</code><p>Stacked-query style payload in the Domain attribute.</p></li>
+        <li><code>/sqli-cookie-test/high-level-provider/</code><p>Multi-level host with a payload.</p></li>
+        <li><code>/sqli-cookie-test/quote-in-name/</code><p>SQL-ish characters in the cookie name.</p></li>
+        <li><code>/sqli-cookie-test/benign-control/</code><p>A normal cookie as a control.</p></li>
+      </ul>
+    </section>
+  </div>
+</body>
+</html>
