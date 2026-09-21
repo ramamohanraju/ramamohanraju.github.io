@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Site URLs</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f5f7fa; color: #333; padding: 2rem 1rem; }
+    .wrap { max-width: 1100px; margin: 0 auto; }
+    h1 { text-align: center; margin-bottom: 0.4rem; color: #1a1a2e; font-size: 1.7rem; }
+    p.subtitle { text-align: center; color: #666; margin-bottom: 2rem; font-size: 0.93rem; }
+    h2 { font-size: 1.05rem; color: #1a1a2e; margin: 2rem 0 0.6rem; display: flex; align-items: baseline; gap: 0.6rem; flex-wrap: wrap; }
+    h2 .count { font-weight: 400; color: #888; font-size: 0.85rem; }
+    h2 button { margin-left: auto; }
+    table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+    thead { background: #1a1a2e; color: #fff; }
+    th { padding: 0.7rem 0.9rem; text-align: left; font-weight: 600; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
+    td { padding: 0.6rem 0.9rem; border-bottom: 1px solid #eee; font-size: 0.88rem; vertical-align: top; }
+    tr:last-child td { border-bottom: none; }
+    tbody tr:hover { background: #f0f4ff; }
+    td.id { white-space: nowrap; font-family: ui-monospace, Menlo, monospace; color: #555; font-size: 0.82rem; width: 1%; }
+    td.name a { color: #2563eb; text-decoration: none; font-weight: 500; }
+    td.name a:hover { text-decoration: underline; }
+    td.name .note { display: block; color: #777; font-size: 0.8rem; margin-top: 2px; }
+    td.url { white-space: nowrap; }
+    td.url code { font-family: ui-monospace, Menlo, monospace; font-size: 0.79rem; color: #444; background: #f4f5f7; padding: 2px 6px; border-radius: 3px; user-select: all; }
+    button.copy, button.copyall { font: inherit; font-size: 0.75rem; margin-left: 0.5rem; padding: 2px 9px; border: 1px solid #c7ccd6; background: #fff; color: #444; border-radius: 4px; cursor: pointer; }
+    button.copy:hover, button.copyall:hover { background: #eef2ff; border-color: #2563eb; color: #2563eb; }
+    button.copied { background: #d4edda; border-color: #28a745; color: #155724; }
+    .setup { background: #fff8e1; border: 1px solid #ffe08a; border-radius: 8px; padding: 1rem 1.2rem; margin: 1.5rem 0; font-size: 0.88rem; color: #6b5300; line-height: 1.5; }
+    .setup strong { color: #5a4500; }
+    .setup ul { margin: 0.5rem 0 0 1.2rem; }
+    .setup li { margin-bottom: 0.3rem; }
+    @media (max-width: 760px) {
+      body { padding: 1rem 0.5rem; }
+      td.url { white-space: normal; word-break: break-all; }
+      td.url code { font-size: 0.73rem; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <h1>Test Site URLs</h1>
+  <p class="subtitle">37 scannable test sites, ready to register. Click a URL to select it, or use the copy buttons.</p>
+
+  <div class="setup">
+    <strong>Two entries need more than a plain registration:</strong>
+    <ul>
+      <li><strong>CT-1011</strong> &mdash; register all three cross-domain properties as separate domains, then link them into one cross-domain consent group and turn on the banner text, the group title and description, and showing the covered domains in the preference center.</li>
+      <li><strong>CT-1021</strong> &mdash; register the rogue and compliant variants as two separate domains. They only differ after a consent decision is recorded, so scanning both is what makes the comparison meaningful.</li>
+    </ul>
+  </div>
+
+  <h2>Compliance test cases <span class="count">25 urls</span><button class="copyall" type="button" data-section="ct">copy all</button></h2>
+  <table id="ct">
+    <thead><tr><th>ID</th><th>Site</th><th>URL</th></tr></thead>
+    <tbody>
+            <tr>
+                <td class="id">CT-1000</td>
+                <td class="name"><a href="/cmpl/sitenobanner/">No Consent Banner</a><span class="note">No banner mechanism at all</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/sitenobanner/">https://ramamohanraju.github.io/cmpl/sitenobanner/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/sitenobanner/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1001</td>
+                <td class="name"><a href="/cmpl/siteoptingpc/">Opt-In with Preference Center</a><span class="note">Clean opt-in, no pre-consent tracking</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/siteoptingpc/">https://ramamohanraju.github.io/cmpl/siteoptingpc/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/siteoptingpc/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1002</td>
+                <td class="name"><a href="/cmpl/sitepreconsent/">Pre-Consent Tracking</a><span class="note">Trackers and cookies before any choice</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/sitepreconsent/">https://ramamohanraju.github.io/cmpl/sitepreconsent/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/sitepreconsent/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1003</td>
+                <td class="name"><a href="/cmpl/siteoptout/">Opt-Out with GCM Granted</a><span class="note">Opt-out model, GCM v2 granted by default</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/siteoptout/">https://ramamohanraju.github.io/cmpl/siteoptout/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/siteoptout/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1004</td>
+                <td class="name"><a href="/cmpl/siterejectall/">Reject All &mdash; Trackers Stop</a><span class="note">Rejection fully honored</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/siterejectall/">https://ramamohanraju.github.io/cmpl/siterejectall/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/siterejectall/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1005</td>
+                <td class="name"><a href="/cmpl/siteacceptall/">Accept All &mdash; Tracker Leakage</a><span class="note">Trackers survive reject-all</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/siteacceptall/">https://ramamohanraju.github.io/cmpl/siteacceptall/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/siteacceptall/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1006</td>
+                <td class="name"><a href="/cmpl/sitecookiewall/">Cookie Wall</a><span class="note">Content gated behind acceptance</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/sitecookiewall/">https://ramamohanraju.github.io/cmpl/sitecookiewall/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/sitecookiewall/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1007</td>
+                <td class="name"><a href="/cmpl/sitenoticeonly/">Notice-Only Banner</a><span class="note">Dismiss only, no real choice</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/sitenoticeonly/">https://ramamohanraju.github.io/cmpl/sitenoticeonly/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/sitenoticeonly/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1008</td>
+                <td class="name"><a href="/cmpl/sitegeo/">Multi-Geo Detection</a><span class="note">Jurisdiction-specific behaviour</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/sitegeo/">https://ramamohanraju.github.io/cmpl/sitegeo/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/sitegeo/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1009</td>
+                <td class="name"><a href="/cmpl/sitetrackers/">Tracker Categorization</a><span class="note">Trackers across every category</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/sitetrackers/">https://ramamohanraju.github.io/cmpl/sitetrackers/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/sitetrackers/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1010</td>
+                <td class="name"><a href="/cmpl/sitegpc/">GPC Honored</a><span class="note">GPC signal respected</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/sitegpc/">https://ramamohanraju.github.io/cmpl/sitegpc/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/sitegpc/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1011</td>
+                <td class="name"><a href="/cmpl/sitecrossdomain/">Cross-Domain Consent &mdash; primary</a><span class="note">Shared consent scope disclosed</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/sitecrossdomain/">https://ramamohanraju.github.io/cmpl/sitecrossdomain/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/sitecrossdomain/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1011</td>
+                <td class="name"><a href="/cmpl/sitecrossdomain/peer-shop/">Cross-Domain Consent &mdash; shop peer</a><span class="note">Same consent group</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/sitecrossdomain/peer-shop/">https://ramamohanraju.github.io/cmpl/sitecrossdomain/peer-shop/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/sitecrossdomain/peer-shop/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1011</td>
+                <td class="name"><a href="/cmpl/sitecrossdomain/peer-blog/">Cross-Domain Consent &mdash; blog peer</a><span class="note">Same consent group</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/sitecrossdomain/peer-blog/">https://ramamohanraju.github.io/cmpl/sitecrossdomain/peer-blog/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/sitecrossdomain/peer-blog/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1012</td>
+                <td class="name"><a href="/cmpl/sitetcf/">IAB TCF 2.2</a><span class="note">TC string present and parseable</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/sitetcf/">https://ramamohanraju.github.io/cmpl/sitetcf/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/sitetcf/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1013</td>
+                <td class="name"><a href="/cmpl/siteusprivacy/">US Privacy / CCPA</a><span class="note">USP string and Do Not Sell link</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/siteusprivacy/">https://ramamohanraju.github.io/cmpl/siteusprivacy/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/siteusprivacy/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1014</td>
+                <td class="name"><a href="/cmpl/sitedarkpattern/">Dark Patterns</a><span class="note">Deceptive consent UI</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/sitedarkpattern/">https://ramamohanraju.github.io/cmpl/sitedarkpattern/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/sitedarkpattern/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1015</td>
+                <td class="name"><a href="/cmpl/sitegcm/">GCM v2 Denied Defaults</a><span class="note">Privacy-safe GCM defaults</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/sitegcm/">https://ramamohanraju.github.io/cmpl/sitegcm/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/sitegcm/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1016</td>
+                <td class="name"><a href="/cmpl/siteautoblocking/">Auto-Blocking Validation</a><span class="note">Autoblock holds tags pre-consent</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/siteautoblocking/">https://ramamohanraju.github.io/cmpl/siteautoblocking/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/siteautoblocking/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1017</td>
+                <td class="name"><a href="/cmpl/sitenoprivacypolicy/">No Privacy Policy</a><span class="note">Policy link missing</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/sitenoprivacypolicy/">https://ramamohanraju.github.io/cmpl/sitenoprivacypolicy/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/sitenoprivacypolicy/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1018</td>
+                <td class="name"><a href="/cmpl/sitecookiedisclosure/">Cookie Disclosure</a><span class="note">Full cookie enumeration</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/sitecookiedisclosure/">https://ramamohanraju.github.io/cmpl/sitecookiedisclosure/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/sitecookiedisclosure/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1019</td>
+                <td class="name"><a href="/cmpl/sitedonotsell/">Do Not Sell Link</a><span class="note">CCPA opt-out link present</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/sitedonotsell/">https://ramamohanraju.github.io/cmpl/sitedonotsell/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/sitedonotsell/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1020</td>
+                <td class="name"><a href="/cmpl/siteaccessibility/">Accessibility Violations</a><span class="note">ARIA and contrast issues</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/siteaccessibility/">https://ramamohanraju.github.io/cmpl/siteaccessibility/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/siteaccessibility/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1021</td>
+                <td class="name"><a href="/cmpl/siterefiring/">Sustained Re-Firing &mdash; rogue</a><span class="note">Vendor resumes after rejection</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/siterefiring/">https://ramamohanraju.github.io/cmpl/siterefiring/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/siterefiring/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="id">CT-1021</td>
+                <td class="name"><a href="/cmpl/siterefiring/compliant/">Sustained Re-Firing &mdash; compliant</a><span class="note">Vendor stops for good</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/cmpl/siterefiring/compliant/">https://ramamohanraju.github.io/cmpl/siterefiring/compliant/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/cmpl/siterefiring/compliant/">copy</button></td>
+            </tr>
+    </tbody>
+  </table>
+
+  <h2>Cookie classification cases <span class="count">4 urls</span><button class="copyall" type="button" data-section="cls">copy all</button></h2>
+  <table id="cls">
+    <thead><tr><th>Site</th><th>URL</th></tr></thead>
+    <tbody>
+            <tr>
+                <td class="name"><a href="/compliance/reject-all-pass/">Reject All Pass</a><span class="note">Clean baseline, no stray cookie</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/compliance/reject-all-pass/">https://ramamohanraju.github.io/compliance/reject-all-pass/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/compliance/reject-all-pass/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="name"><a href="/compliance/reject-all-fail/">Reject All Fail</a><span class="note">Interaction-triggered stray cookie</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/compliance/reject-all-fail/">https://ramamohanraju.github.io/compliance/reject-all-fail/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/compliance/reject-all-fail/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="name"><a href="/compliance/undisclosed-cookie/">Undisclosed Cookie</a><span class="note">Cookie absent from the disclosure list</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/compliance/undisclosed-cookie/">https://ramamohanraju.github.io/compliance/undisclosed-cookie/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/compliance/undisclosed-cookie/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="name"><a href="/compliance/unclassified-cookie/">Unclassified Cookie</a><span class="note">Cookie in no category</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/compliance/unclassified-cookie/">https://ramamohanraju.github.io/compliance/unclassified-cookie/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/compliance/unclassified-cookie/">copy</button></td>
+            </tr>
+    </tbody>
+  </table>
+
+  <h2>Cookie value edge cases <span class="count">8 urls</span><button class="copyall" type="button" data-section="edge">copy all</button></h2>
+  <table id="edge">
+    <thead><tr><th>Site</th><th>URL</th></tr></thead>
+    <tbody>
+            <tr>
+                <td class="name"><a href="/sqli-cookie-test/benign-control/">Benign Control</a><span class="note">Baseline for the set</span></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/sqli-cookie-test/benign-control/">https://ramamohanraju.github.io/sqli-cookie-test/benign-control/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/sqli-cookie-test/benign-control/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="name"><a href="/sqli-cookie-test/quote-in-name/">Quote in Cookie Name</a></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/sqli-cookie-test/quote-in-name/">https://ramamohanraju.github.io/sqli-cookie-test/quote-in-name/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/sqli-cookie-test/quote-in-name/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="name"><a href="/sqli-cookie-test/single-quote-in-domain/">Single Quote in Domain</a></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/sqli-cookie-test/single-quote-in-domain/">https://ramamohanraju.github.io/sqli-cookie-test/single-quote-in-domain/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/sqli-cookie-test/single-quote-in-domain/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="name"><a href="/sqli-cookie-test/boolean-in-domain/">Boolean in Domain</a></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/sqli-cookie-test/boolean-in-domain/">https://ramamohanraju.github.io/sqli-cookie-test/boolean-in-domain/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/sqli-cookie-test/boolean-in-domain/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="name"><a href="/sqli-cookie-test/comment-in-domain/">Comment in Domain</a></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/sqli-cookie-test/comment-in-domain/">https://ramamohanraju.github.io/sqli-cookie-test/comment-in-domain/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/sqli-cookie-test/comment-in-domain/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="name"><a href="/sqli-cookie-test/union-in-domain/">UNION in Domain</a></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/sqli-cookie-test/union-in-domain/">https://ramamohanraju.github.io/sqli-cookie-test/union-in-domain/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/sqli-cookie-test/union-in-domain/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="name"><a href="/sqli-cookie-test/stacked-in-domain/">Stacked Query in Domain</a></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/sqli-cookie-test/stacked-in-domain/">https://ramamohanraju.github.io/sqli-cookie-test/stacked-in-domain/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/sqli-cookie-test/stacked-in-domain/">copy</button></td>
+            </tr>
+            <tr>
+                <td class="name"><a href="/sqli-cookie-test/high-level-provider/">High-Level Provider Host</a></td>
+                <td class="url"><code data-url="https://ramamohanraju.github.io/sqli-cookie-test/high-level-provider/">https://ramamohanraju.github.io/sqli-cookie-test/high-level-provider/</code><button class="copy" type="button" data-url="https://ramamohanraju.github.io/sqli-cookie-test/high-level-provider/">copy</button></td>
+            </tr>
+    </tbody>
+  </table>
+
+</div>
+
+<script>
+  function flash(btn, label) {
+    var original = btn.textContent;
+    btn.textContent = label;
+    btn.classList.add('copied');
+    setTimeout(function () { btn.textContent = original; btn.classList.remove('copied'); }, 1200);
+  }
+
+  function copy(text, btn, label) {
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(function () { flash(btn, label); }, function () { fallback(text, btn, label); });
+    } else {
+      fallback(text, btn, label);
+    }
+  }
+
+  // clipboard API needs a secure context and permission; a hidden textarea always works.
+  function fallback(text, btn, label) {
+    var ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.position = 'fixed';
+    ta.style.opacity = '0';
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand('copy'); flash(btn, label); } catch (e) { flash(btn, 'failed'); }
+    document.body.removeChild(ta);
+  }
+
+  document.addEventListener('click', function (e) {
+    var one = e.target.closest('button.copy');
+    if (one) { copy(one.getAttribute('data-url'), one, 'copied'); return; }
+
+    var all = e.target.closest('button.copyall');
+    if (all) {
+      var table = document.getElementById(all.getAttribute('data-section'));
+      var urls = Array.prototype.map.call(table.querySelectorAll('code[data-url]'), function (c) {
+        return c.getAttribute('data-url');
+      });
+      copy(urls.join('\n'), all, urls.length + ' copied');
+    }
+  });
+</script>
+
+</body>
+</html>
