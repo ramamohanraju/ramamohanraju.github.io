@@ -15,7 +15,7 @@
 
   var EMBED_SRC = 'https://www.youtube.com/embed/aqz-KE-bpKQ';
 
-  if (window.__consentState && window.__consentState.fingerprint()) return;
+  if (window.__consentState && window.__consentState.decidedAtLoad) return;
 
   function insert() {
     var slot = document.getElementById('vendor-embed-slot');

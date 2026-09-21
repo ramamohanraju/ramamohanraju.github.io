@@ -32,7 +32,7 @@
   }
 
   function record(phase, detail) {
-    log.push({ at: new Date().toISOString().substr(11, 8), phase: phase, detail: detail });
+    log.push({ at: consentState.stamp(), phase: phase, detail: detail });
     render();
   }
 
@@ -43,9 +43,7 @@
     record(phase, url);
   }
 
-  var baseline = consentState.fingerprint();
-
-  if (baseline) {
+  if (consentState.decidedAtLoad) {
     // A decision is already on file. Nothing is scheduled, now or later.
     record('load', 'consent decision already on file, vendor stays dormant');
     return;
@@ -55,7 +53,7 @@
   var preDecisionTimer = setInterval(function () { beacon('pre-decision'); }, PRE_DECISION_INTERVAL_MS);
 
   var pollTimer = setInterval(function () {
-    if (consentState.fingerprint() === baseline) return;
+    if (!consentState.hasDecision()) return;
     clearInterval(preDecisionTimer);
     clearInterval(pollTimer);
     record('decision', 'consent decision recorded, vendor stopped permanently');

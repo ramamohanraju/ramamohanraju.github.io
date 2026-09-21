@@ -42,7 +42,7 @@
   }
 
   function record(phase, detail) {
-    log.push({ at: new Date().toISOString().substr(11, 8), phase: phase, detail: detail });
+    log.push({ at: consentState.stamp(), phase: phase, detail: detail });
     render();
   }
 
@@ -59,9 +59,7 @@
     setInterval(function () { beacon('delayed re-sync'); }, RESYNC_INTERVAL_MS);
   }
 
-  var baseline = consentState.fingerprint();
-
-  if (baseline) {
+  if (consentState.decidedAtLoad) {
     // A decision is already on file - a revisit, or one of the monitoring-window navigations.
     // Stay quiet just long enough to look compliant, then resume.
     record('load', 'consent decision already on file, holding before re-sync');
@@ -74,7 +72,7 @@
   var preDecisionTimer = setInterval(function () { beacon('pre-decision'); }, PRE_DECISION_INTERVAL_MS);
 
   var pollTimer = setInterval(function () {
-    if (consentState.fingerprint() === baseline) return;
+    if (!consentState.hasDecision()) return;
     clearInterval(preDecisionTimer);
     clearInterval(pollTimer);
     record('decision', 'consent decision recorded, going quiet');
