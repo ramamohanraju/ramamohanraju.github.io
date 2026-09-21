@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- ==========================================================================
+       CMP SDK SNIPPET GOES HERE
+
+       Register this page as a domain in your consent admin portal, then paste
+       the auto-blocking script and the consent SDK loader for it here.
+
+       CT-1011 only evaluates when the CMP config served to this page exposes a
+       cross-domain consent block, so all three properties in this folder must be
+       registered as separate domains and then linked into ONE cross-domain
+       consent group:
+
+         /cmpl/sitecrossdomain/             <- this page (primary property)
+         /cmpl/sitecrossdomain/peer-shop/
+         /cmpl/sitecrossdomain/peer-blog/
+       ========================================================================== -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CT-1011 - Cross-Domain Consent Validation (Primary Property)</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 860px; margin: 40px auto; padding: 0 20px; background: #f9f9f9; }
+    .info-box { background: #e7e3f7; border: 1px solid #cfc6ee; border-radius: 6px; padding: 20px; margin-bottom: 24px; }
+    .info-box h2 { margin-top: 0; color: #43348a; }
+    h1 { color: #333; }
+    .placeholder-banner { background: #e2e3e5; border: 2px dashed #6c757d; border-radius: 6px; padding: 16px; margin-top: 24px; text-align: center; color: #6c757d; }
+    .detail { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 16px; margin-bottom: 16px; }
+    .detail ul, .detail ol { margin: 8px 0; padding-left: 20px; }
+    .detail li { margin-bottom: 6px; }
+    .props { display: flex; gap: 12px; flex-wrap: wrap; margin: 16px 0; }
+    .props a { flex: 1 1 220px; display: block; background: #fff; border: 1px solid #ddd; border-left: 4px solid #6c5ce7; border-radius: 6px; padding: 12px 14px; color: #43348a; text-decoration: none; }
+    .props a:hover { background: #f4f2fd; }
+    .props strong { display: block; font-size: 1.02em; margin-bottom: 4px; }
+    .props span { color: #666; font-size: 0.86em; }
+    code { background: #f0f0f0; padding: 1px 5px; border-radius: 3px; font-size: 0.9em; }
+    .note { background: #fff8e1; border: 1px solid #ffe08a; border-radius: 6px; padding: 14px 16px; margin-bottom: 16px; font-size: 0.92em; color: #6b5300; }
+    footer { margin-top: 40px; padding: 20px 0; border-top: 1px solid #ddd; text-align: center; font-size: 0.9em; color: #666; }
+  </style>
+</head>
+<body>
+
+  <div class="info-box">
+    <h2>Test Case: CT-1011 &mdash; Cross-Domain Consent Validation</h2>
+    <p><strong>Domain key:</strong> <code>sitecrossdomain</code> (primary property)</p>
+    <p><strong>Purpose:</strong> Simulates a group of properties that share one consent record. The test checks that a shared consent scope is actually disclosed to the visitor &mdash; on the banner <em>and</em> in the preference center &mdash; and that the preference center names and links every property the shared record covers, instead of referring to them generically as "our family of sites".</p>
+  </div>
+
+  <h1>Welcome to SiteCrossDomain</h1>
+  <p>This property is the primary member of a consent group. A consent decision taken here is meant to apply to the sibling properties below as well, which is precisely the scope that has to be disclosed before the decision is taken.</p>
+
+  <div class="props">
+    <a href="peer-shop/"><strong>Shop property &rarr;</strong><span>Second member of the same consent group</span></a>
+    <a href="peer-blog/"><strong>Blog property &rarr;</strong><span>Third member of the same consent group</span></a>
+  </div>
+
+  <div class="placeholder-banner">
+    [PLACEHOLDER] Cookie consent banner renders here once the CMP SDK snippet is added to the page head.
+  </div>
+
+  <div class="detail">
+    <h3>Setup required before scanning</h3>
+    <ol>
+      <li>Register all three property URLs in the consent admin portal as separate domains.</li>
+      <li>Create one cross-domain consent group and add all three domains to it.</li>
+      <li>Turn on the group's <em>additional banner text</em> so the banner itself states that the choice applies across the group.</li>
+      <li>Turn on <em>show covered domains in the preference center</em> so the preference center enumerates and links each member.</li>
+      <li>Give the group a title and description that spell out the shared scope.</li>
+      <li>Paste each property's SDK snippet into its own page head, then scan.</li>
+    </ol>
+  </div>
+
+  <div class="detail">
+    <h3>What the scanner expects to find here</h3>
+    <ul>
+      <li>CMP config exposes a cross-domain consent block, enabled, listing the peer properties</li>
+      <li>Banner body text discloses that consent reaches beyond this property</li>
+      <li>Preference center opens, and its text discloses the same shared scope</li>
+      <li>Preference center names <em>and</em> links every covered property, not a generic phrase</li>
+      <li>Expected result: <strong>pass</strong></li>
+    </ul>
+  </div>
+
+  <div class="detail">
+    <h3>Variants this site can produce</h3>
+    <ul>
+      <li><strong>Fail &mdash; banner silent:</strong> turn the additional banner text off, leave the preference center disclosure on.</li>
+      <li><strong>Fail &mdash; preference center silent:</strong> clear the group title and description.</li>
+      <li><strong>Fail &mdash; domains not enumerated:</strong> leave the disclosure wording on but turn off showing the covered domains in the preference center, so no member is named or linked.</li>
+      <li><strong>Not applicable:</strong> disable the cross-domain consent group. Consent is then scoped to this property alone and there is no shared scope to disclose.</li>
+      <li><strong>Partially performed:</strong> scan a property whose CMP does not publish a cross-domain consent block at all. Absence of a sharing relationship cannot be confirmed, so the test degrades rather than passing as not applicable.</li>
+    </ul>
+  </div>
+
+  <div class="note">
+    <strong>Single-host caveat.</strong> All three properties are served from the same host here, so this setup exercises the full disclosure and enumeration logic but not a genuine cookie handoff between two different registrable domains. For that, host one member on a separate domain and add it to the same group.
+  </div>
+
+  <!-- Strictly necessary cookies (always set) -->
+  <script>
+    document.cookie = 'PHPSESSID=sess_' + Math.random().toString(36).substr(2,16) + '; path=/; SameSite=Lax';
+    document.cookie = 'csrf_token=tk_' + Math.random().toString(36).substr(2,24) + '; path=/; SameSite=Lax';
+  </script>
+
+  <!-- Category scripts (to be managed by CMP) -->
+  <script src="analytics.js"></script>
+  <script src="advertising.js"></script>
+  <script src="functional.js"></script>
+
+  <footer>
+    <a href="privacy-policy.html" style="color: #43348a;">Privacy Policy</a>
+  </footer>
+</body>
+</html>

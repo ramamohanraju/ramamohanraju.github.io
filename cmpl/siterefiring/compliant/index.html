@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- ==========================================================================
+       CMP SDK SNIPPET GOES HERE
+
+       Register this page as its own domain in the consent admin portal - separate
+       from the rogue variant one level up - then paste its auto-blocking script
+       and consent SDK loader here.
+       ========================================================================== -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CT-1021 - Sustained Third-Party Re-Firing (Compliant Vendor)</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 860px; margin: 40px auto; padding: 0 20px; background: #f9f9f9; }
+    .info-box { background: #d4edda; border: 1px solid #c3e6cb; border-radius: 6px; padding: 20px; margin-bottom: 24px; }
+    .info-box h2 { margin-top: 0; color: #155724; }
+    h1 { color: #333; }
+    .placeholder-banner { background: #e2e3e5; border: 2px dashed #6c757d; border-radius: 6px; padding: 16px; margin-top: 24px; text-align: center; color: #6c757d; }
+    .detail { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 16px; margin-bottom: 16px; }
+    .detail ul { margin: 8px 0; padding-left: 20px; }
+    .detail li { margin-bottom: 6px; }
+    #vendor-activity-log { list-style: none; padding-left: 0; font-size: 0.86em; }
+    #vendor-activity-log li { padding: 3px 0; border-bottom: 1px dotted #eee; word-break: break-all; }
+    #vendor-embed-slot { margin: 16px 0; }
+    code { background: #f0f0f0; padding: 1px 5px; border-radius: 3px; font-size: 0.9em; }
+    .timeline { border-left: 3px solid #28a745; padding-left: 16px; margin: 8px 0; }
+    .timeline p { margin: 6px 0; }
+    a { color: #155724; }
+    footer { margin-top: 40px; padding: 20px 0; border-top: 1px solid #ddd; text-align: center; font-size: 0.9em; color: #666; }
+  </style>
+</head>
+<body>
+
+  <div class="info-box">
+    <h2>Test Case: CT-1021 &mdash; Compliant Control</h2>
+    <p><strong>Domain key:</strong> <code>siterefiring-compliant</code></p>
+    <p><strong>Purpose:</strong> The control case for the rogue variant. The vendor here is identical up to the moment a consent decision is recorded &mdash; same endpoints, same pre-decision baseline &mdash; and then shuts down for good, re-arming nothing on any later page load. Any difference the scan reports between the two sites is attributable to post-rejection behaviour alone.</p>
+  </div>
+
+  <h1>SiteReFiring &mdash; Compliant</h1>
+  <p>Reject cookies here and the vendor stops, permanently. The activity log below should record nothing further, on this page load or any that follow.</p>
+
+  <div class="placeholder-banner">
+    [PLACEHOLDER] Cookie consent banner renders here once the CMP SDK snippet is added to the page head.
+  </div>
+
+  <div class="detail">
+    <h3>Vendor behaviour on this page</h3>
+    <div class="timeline">
+      <p><strong>Before any choice</strong> &mdash; beacons every 15 seconds, plus the same third-party video embed as the rogue variant.</p>
+      <p><strong>At the moment of the decision</strong> &mdash; everything stops, permanently.</p>
+      <p><strong>On every page load after that</strong> &mdash; the vendor sees a decision already on file and schedules nothing at all.</p>
+    </div>
+  </div>
+
+  <div class="detail">
+    <h3>Live vendor activity</h3>
+    <ul id="vendor-activity-log"><li>waiting for the first beacon&hellip;</li></ul>
+  </div>
+
+  <div class="detail">
+    <h3>Third-party embed</h3>
+    <p>Loaded only while no consent decision is on file, so the scan inventory picks up non-essential cookies set on the vendor's own domain.</p>
+    <div id="vendor-embed-slot"></div>
+  </div>
+
+  <div class="detail">
+    <h3>What the scanner expects to find here</h3>
+    <ul>
+      <li>Banner present, with a reject-all choice, so the reject-all state is reached</li>
+      <li>Post-rejection monitoring window runs: 3 navigations and at least 3 minutes</li>
+      <li>No monitored third-party vendor active at any point after rejection</li>
+      <li>Expected result: <strong>pass</strong> &mdash; no delayed or scheduled re-syncs detected</li>
+    </ul>
+  </div>
+
+  <p><a href="../">&larr; Back to the rogue variant</a></p>
+
+  <!-- Strictly necessary cookies (always set) -->
+  <script>
+    document.cookie = 'PHPSESSID=sess_' + Math.random().toString(36).substr(2,16) + '; path=/; SameSite=Lax';
+    document.cookie = 'csrf_token=tk_' + Math.random().toString(36).substr(2,24) + '; path=/; SameSite=Lax';
+  </script>
+
+  <!-- Category scripts (to be managed by CMP) -->
+  <script src="../analytics.js"></script>
+  <script src="../advertising.js"></script>
+  <script src="../functional.js"></script>
+
+  <!-- Vendor simulation -->
+  <script src="../consent-state.js"></script>
+  <script src="../vendor-embed.js"></script>
+  <script src="vendor-resync.js"></script>
+
+  <footer>
+    <a href="../privacy-policy.html">Privacy Policy</a>
+  </footer>
+</body>
+</html>

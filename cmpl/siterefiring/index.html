@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <!-- ==========================================================================
+       CMP SDK SNIPPET GOES HERE
+
+       Register this page as a domain in your consent admin portal, then paste
+       the auto-blocking script and the consent SDK loader for it here.
+
+       CT-1021 is only evaluated in the reject-all state, so the banner must
+       offer a reject-all choice. Auto-blocking can be on - the re-firing vendor
+       on this page deliberately bypasses tag-level blocking.
+       ========================================================================== -->
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CT-1021 - Sustained Third-Party Re-Firing (Rogue Vendor)</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 860px; margin: 40px auto; padding: 0 20px; background: #f9f9f9; }
+    .info-box { background: #f8d7da; border: 1px solid #f5c6cb; border-radius: 6px; padding: 20px; margin-bottom: 24px; }
+    .info-box h2 { margin-top: 0; color: #721c24; }
+    h1 { color: #333; }
+    .placeholder-banner { background: #e2e3e5; border: 2px dashed #6c757d; border-radius: 6px; padding: 16px; margin-top: 24px; text-align: center; color: #6c757d; }
+    .detail { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 16px; margin-bottom: 16px; }
+    .detail ul, .detail ol { margin: 8px 0; padding-left: 20px; }
+    .detail li { margin-bottom: 6px; }
+    #vendor-activity-log { list-style: none; padding-left: 0; font-size: 0.86em; }
+    #vendor-activity-log li { padding: 3px 0; border-bottom: 1px dotted #eee; word-break: break-all; }
+    #vendor-embed-slot { margin: 16px 0; }
+    code { background: #f0f0f0; padding: 1px 5px; border-radius: 3px; font-size: 0.9em; }
+    .timeline { border-left: 3px solid #dc3545; padding-left: 16px; margin: 8px 0; }
+    .timeline p { margin: 6px 0; }
+    a { color: #721c24; }
+    footer { margin-top: 40px; padding: 20px 0; border-top: 1px solid #ddd; text-align: center; font-size: 0.9em; color: #666; }
+  </style>
+</head>
+<body>
+
+  <div class="info-box">
+    <h2>Test Case: CT-1021 &mdash; Sustained Third-Party Re-Firing Detection</h2>
+    <p><strong>Domain key:</strong> <code>siterefiring</code> (rogue vendor)</p>
+    <p><strong>Purpose:</strong> Simulates a third-party vendor that honours a rejection only for as long as anyone is watching. It falls silent the moment consent is rejected, so a point-in-time check taken straight after the click reports a clean pass &mdash; and then it resumes calling home a little later, and keeps doing so on every page the visitor opens afterwards, with no new interaction to justify it.</p>
+  </div>
+
+  <h1>Welcome to SiteReFiring</h1>
+  <p>This page carries one badly behaved vendor. Rejecting cookies here does stop it &mdash; briefly. Watch the activity log below for a minute or two after making a choice.</p>
+
+  <div class="placeholder-banner">
+    [PLACEHOLDER] Cookie consent banner renders here once the CMP SDK snippet is added to the page head.
+  </div>
+
+  <div class="detail">
+    <h3>Vendor behaviour on this page</h3>
+    <div class="timeline">
+      <p><strong>Before any choice</strong> &mdash; beacons every 15 seconds, establishing the baseline the test measures against, plus a third-party video embed that sets cookies on the vendor's own domain.</p>
+      <p><strong>At the moment of rejection</strong> &mdash; everything stops. Nothing fires for the next 40 seconds.</p>
+      <p><strong>40 seconds later</strong> &mdash; beacons resume every 25 seconds and never stop again.</p>
+      <p><strong>On every page load after that</strong> &mdash; quiet for 25 seconds, then beaconing resumes, so each navigation in the monitoring window repeats the pattern.</p>
+    </div>
+    <p>The beacons use <code>Image()</code> rather than injected script or iframe tags, so tag-level auto-blocking does not stop them.</p>
+  </div>
+
+  <div class="detail">
+    <h3>Live vendor activity</h3>
+    <ul id="vendor-activity-log"><li>waiting for the first beacon&hellip;</li></ul>
+  </div>
+
+  <div class="detail">
+    <h3>Third-party embed</h3>
+    <p>Loaded only while no consent decision is on file, so the scan inventory picks up non-essential cookies set on the vendor's own domain.</p>
+    <div id="vendor-embed-slot"></div>
+  </div>
+
+  <div class="detail">
+    <h3>What the scanner expects to find here</h3>
+    <ul>
+      <li>Banner present, with a reject-all choice, so the reject-all state is reached</li>
+      <li>Post-rejection monitoring window runs: 3 navigations and at least 3 minutes</li>
+      <li>At least one third-party vendor domain active before rejection and again inside the window</li>
+      <li>Expected result: <strong>fail</strong> &mdash; sustained re-firing detected</li>
+    </ul>
+  </div>
+
+  <div class="detail">
+    <h3>Control case</h3>
+    <p>The <a href="compliant/">compliant variant</a> is identical up to the moment of the decision &mdash; same vendors, same baseline &mdash; and then stops for good. Register it as its own domain and scan both to compare a pass against a fail.</p>
+  </div>
+
+  <!-- Strictly necessary cookies (always set) -->
+  <script>
+    document.cookie = 'PHPSESSID=sess_' + Math.random().toString(36).substr(2,16) + '; path=/; SameSite=Lax';
+    document.cookie = 'csrf_token=tk_' + Math.random().toString(36).substr(2,24) + '; path=/; SameSite=Lax';
+  </script>
+
+  <!-- Category scripts (to be managed by CMP) -->
+  <script src="analytics.js"></script>
+  <script src="advertising.js"></script>
+  <script src="functional.js"></script>
+
+  <!-- Vendor simulation -->
+  <script src="consent-state.js"></script>
+  <script src="vendor-embed.js"></script>
+  <script src="vendor-resync.js"></script>
+
+  <footer>
+    <a href="privacy-policy.html">Privacy Policy</a>
+  </footer>
+</body>
+</html>

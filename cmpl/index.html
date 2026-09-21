@@ -23,7 +23,7 @@
 </head>
 <body>
     <h1>Compliance Test Sites</h1>
-    <p class="subtitle">20 test sites for validating cookie consent and privacy compliance scenarios</p>
+    <p class="subtitle">22 test sites for validating cookie consent and privacy compliance scenarios</p>
     <table>
         <thead>
             <tr>
@@ -89,6 +89,11 @@
                 <td class="desc">Detects Global Privacy Control signal being honored (no trackers when GPC active)</td>
             </tr>
             <tr>
+                <td class="id">CT-1011</td>
+                <td><a href="sitecrossdomain/">Cross-Domain Consent</a></td>
+                <td class="desc">Consent shared across a group of properties &mdash; checks the banner and preference center both disclose the shared scope, and that every covered property is named and linked</td>
+            </tr>
+            <tr>
                 <td class="id">CT-1012</td>
                 <td><a href="sitetcf/">IAB TCF 2.2</a></td>
                 <td class="desc">Detects IAB Transparency &amp; Consent Framework v2.2 with TC string parsing</td>
@@ -132,6 +137,11 @@
                 <td class="id">CT-1020</td>
                 <td><a href="siteaccessibility/">Accessibility Violations</a></td>
                 <td class="desc">Detects accessibility issues in consent banners (missing ARIA labels, poor contrast)</td>
+            </tr>
+            <tr>
+                <td class="id">CT-1021</td>
+                <td><a href="siterefiring/">Sustained Third-Party Re-Firing</a></td>
+                <td class="desc">A vendor that falls silent at reject-all and resumes beaconing minutes later with no new user action; includes a compliant control variant</td>
             </tr>
         </tbody>
     </table>
