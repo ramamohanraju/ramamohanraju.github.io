@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Long Cookie Names — Cookie Test</title>
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <style>
+    table.cases { width: 100%; border-collapse: collapse; margin: 1.5rem 0; font-size: 0.9rem; }
+    table.cases th, table.cases td { text-align: left; padding: 6px 8px; border-bottom: 1px solid #e3e3e8; vertical-align: top; }
+    table.cases td.num { font-variant-numeric: tabular-nums; }
+    table.cases code { word-break: break-all; background: #f4f4f6; padding: 2px 4px; border-radius: 4px; }
+    .ok { color: #1a7f37; font-weight: 600; }
+    .no { color: #b42318; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-title">Long Cookie Names</h1>
+      <p class="hero-description">Sets first-party cookies whose names run from just over 1 KB up to the browser's ~4 KB cookie limit.</p>
+    </div>
+  </section>
+
+  <div class="main-container">
+    <section class="content-section">
+      <p>Cookies are scoped to this page's path, so they never show up on the sibling test sites.</p>
+      <table class="cases">
+        <thead><tr><th>Case</th><th>Name bytes</th><th>Set?</th><th>Name (head … tail)</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </section>
+  </div>
+
+  <script>
+    (function () {
+      var PATH = "/cookie-edge-test/long-name/";
+      var MAX_AGE = 60 * 60 * 24 * 365;
+
+      // Deterministic, cookie-token-safe filler: "0123456789abcdef" repeated.
+      function filler(len) {
+        var unit = "0123456789abcdef", s = "";
+        while (s.length < len) s += unit;
+        return s.slice(0, len);
+      }
+      function name(prefix, total, suffix) {
+        suffix = suffix || "";
+        return prefix + filler(total - prefix.length - suffix.length) + suffix;
+      }
+
+      var cases = [
+        { id: "control",       note: "short control cookie",                         name: "short_control" },
+        { id: "over-1k",       note: "just over 1024 bytes",                         name: name("lc_over1k_", 1100) },
+        { id: "over-btree",    note: "over the 2704-byte btree row limit",           name: name("lc_overbtree_", 3000) },
+        { id: "near-4k",       note: "near the browser's 4096-byte name+value cap",  name: name("lc_near4k_", 4000) },
+        // 2000-byte names that differ only in the last 5 bytes: identical once cut to 1024.
+        { id: "collide-a",     note: "same as collide-b except the tail",       name: name("lc_collide_", 2000, "_tailA") },
+        { id: "collide-b",     note: "same as collide-a except the tail",       name: name("lc_collide_", 2000, "_tailB") }
+      ];
+
+      cases.forEach(function (c) {
+        document.cookie = c.name + "=1; path=" + PATH + "; max-age=" + MAX_AGE + "; SameSite=Lax";
+      });
+      var jar = "; " + document.cookie + ";";
+
+      var rows = document.getElementById("rows");
+      cases.forEach(function (c) {
+        var set = jar.indexOf("; " + c.name + "=") !== -1;
+        var shown = c.name.length > 60 ? c.name.slice(0, 28) + " … " + c.name.slice(-24) : c.name;
+        var tr = document.createElement("tr");
+        tr.innerHTML =
+          "<td>" + c.id + "<br><small>" + c.note + "</small></td>" +
+          "<td class=\"num\">" + c.name.length + "</td>" +
+          "<td class=\"" + (set ? "ok\">yes" : "no\">no") + "</td>" +
+          "<td><code></code></td>";
+        tr.querySelector("code").textContent = shown;
+        rows.appendChild(tr);
+      });
+    })();
+  </script>
+</body>
+</html>
