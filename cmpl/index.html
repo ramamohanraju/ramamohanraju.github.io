@@ -20,11 +20,12 @@
         a { color: #2563eb; text-decoration: none; font-weight: 500; }
         a:hover { text-decoration: underline; }
         td.desc { color: #555; line-height: 1.4; }
+        td.desc code { background: #eef1f5; padding: 1px 4px; border-radius: 3px; font-size: 0.85em; }
     </style>
 </head>
 <body>
     <h1>Compliance Test Sites</h1>
-    <p class="subtitle">22 test sites for validating cookie consent and privacy compliance scenarios</p>
+    <p class="subtitle">23 test sites for validating cookie consent and privacy compliance scenarios</p>
     <table>
         <thead>
             <tr>
@@ -143,6 +144,11 @@
                 <td class="id">CT-1021</td>
                 <td><a href="siterefiring/">Sustained Third-Party Re-Firing</a></td>
                 <td class="desc">A vendor that falls silent at reject-all and resumes beaconing minutes later with no new user action; includes a compliant control variant</td>
+            </tr>
+            <tr>
+                <td class="id">LATE-01</td>
+                <td><a href="sitelatebanner/">Late-Loading Cookie Banner</a></td>
+                <td class="desc">A compliant opt-in banner injected 15s after load, past the window a scanner typically looks in; <a href="sitelatebanner/instant.html">instant.html</a> is the same site with no delay, and <code>?delay=&lt;ms&gt;</code> sets any other</td>
             </tr>
         </tbody>
     </table>

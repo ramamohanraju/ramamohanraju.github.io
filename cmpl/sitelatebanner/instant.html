@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instant Cookie Banner (control)</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 0 20px 160px; background: #f9f9f9; }
+    .info-box { background: #fff3cd; border: 1px solid #ffeeba; border-radius: 6px; padding: 20px; margin-bottom: 24px; }
+    .info-box h2 { margin-top: 0; color: #856404; }
+    h1 { color: #333; }
+    .detail { background: #fff; border: 1px solid #ddd; border-radius: 6px; padding: 16px; }
+    .detail ul { margin: 8px 0; padding-left: 20px; }
+    code { background: #eef1f5; padding: 1px 5px; border-radius: 3px; }
+    #cmp-status { margin-top: 24px; padding: 14px 16px; border-radius: 6px; background: #e2e3e5; color: #41464b; font-family: monospace; }
+  </style>
+</head>
+<body>
+
+  <div class="info-box">
+    <h2>Fixture: Instant Cookie Banner (control)</h2>
+    <p><strong>Domain key:</strong> <code>sitelatebanner</code></p>
+    <p><strong>Purpose:</strong> The control for the late-banner fixture. Identical site and identical
+    banner, shown immediately on load, so a scan of this page and a scan of
+    <a href="./">index.html</a> differ in one variable only: when the banner appears.</p>
+    <p><strong>Delay:</strong> none. Override per load with <code>?delay=&lt;ms&gt;</code> if you want
+    this page to behave like the late one.</p>
+  </div>
+
+  <h1>Welcome to SiteLateBanner (instant)</h1>
+  <p>The same compliant opt-in site, with the banner rendered as soon as the page loads. Every
+  compliance check should pass here no matter how long the scanner waits.</p>
+
+  <div class="detail">
+    <h3>What the scanner should find here</h3>
+    <ul>
+      <li>Banner present, with the markup and JavaScript API of a well-known hosted CMP (shape only &mdash; this is a local simulation, not that product)</li>
+      <li>Compliance type: opt-in; no analytics or advertising cookies before consent</li>
+      <li>Accept All sets <code>_ga</code>, <code>_gid</code>, <code>_fbp</code>, <code>fr</code></li>
+      <li>Reject All sets none of them and clears any that exist</li>
+      <li>Banner comes back on a revisit without consent, and stays away once consent is stored</li>
+      <li>Cookie Policy, Privacy Policy and a preference centre are all reachable from the banner</li>
+    </ul>
+  </div>
+
+  <div id="cmp-status">Consent banner loads immediately on this page.</div>
+
+  <!-- Strictly necessary cookies - always set, no consent needed -->
+  <script>
+    document.cookie = 'PHPSESSID=sess_' + Math.random().toString(36).substr(2,16) + '; path=/; SameSite=Lax';
+    document.cookie = 'csrf_token=tk_' + Math.random().toString(36).substr(2,24) + '; path=/; SameSite=Lax';
+  </script>
+
+  <!-- The CMP itself. Nothing consent-related exists on the page until this fires. -->
+  <script src="cmp-late.js" data-delay="0"></script>
+
+  <script>
+    (function () {
+      var status = document.getElementById('cmp-status');
+      var delayMs = parseInt(document.documentElement.getAttribute('data-cmp-delay-ms'), 10) || 0;
+      var loadedAt = Date.now();
+      var timer = setInterval(function () {
+        var elapsed = Math.round((Date.now() - loadedAt) / 1000);
+        if (document.querySelector('.cky-consent-container') || window.performBannerAction) {
+          status.textContent = 'Consent banner loaded after ' + (delayMs / 1000) + 's (page has been open ' + elapsed + 's).';
+          clearInterval(timer);
+          return;
+        }
+        status.textContent = 'No consent banner yet - ' + elapsed + 's elapsed, banner is due at ' + (delayMs / 1000) + 's.';
+      }, 500);
+    })();
+  </script>
+
+  <footer style="margin-top: 40px; padding: 20px 0; border-top: 1px solid #ddd; text-align: center; font-size: 0.9em; color: #666;">
+    <a href="privacy-policy.html" style="color: #0c5460;">Privacy Policy</a> &middot;
+    <a href="cookie-policy.html" style="color: #0c5460;">Cookie Policy</a>
+  </footer>
+</body>
+</html>
