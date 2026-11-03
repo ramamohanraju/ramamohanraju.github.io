@@ -1,0 +1,50 @@
+<!--
+  ============================================================================
+  PASTE YOUR CONSENT CODE BELOW THIS COMMENT.
+  ============================================================================
+
+  This file is a fragment, not a page. It has no <html>/<head>/<body> - it holds
+  nothing but the consent snippet, verbatim, exactly as it was copied from the
+  CMP console. Both index.html and instant.html read this one file, so the
+  snippet is pasted once and both pages pick it up.
+
+  cmp-late-hosted.js fetches this file at the delay mark, then:
+    - recreates every <script> in it as a live script, in document order,
+      waiting for each src'd one to load before starting the next, so the
+      snippet runs exactly as it would have if it had been written inline;
+    - appends any non-script markup (e.g. a "manage preferences" button) into
+      #consent-host near the end of the body.
+
+  So paste the whole block as given, <script> tags and all. Nothing needs
+  rewriting, unwrapping or converting to a .js file.
+
+  A hosted CMP snippet usually looks something like this:
+
+  <script>
+  (function () {
+      var s = document.createElement('script');
+      s.src = 'https://<YOUR-CDN-HOST>/<YOUR-SDK-LOADER>.js';
+      s.setAttribute('data-tenant-uuid', '<YOUR-TENANT-UUID>');
+      s.setAttribute('data-domain-uuid', '<YOUR-DOMAIN-UUID>');
+      s.setAttribute('data-backend-url', 'https://<YOUR-BACKEND-HOST>');
+      s.defer = true;
+      (document.head || document.body).appendChild(s);
+  })()
+  </script>
+
+  <button class="cmp-revoke-consent">Manage Cookie Preferences</button>
+
+  ----------------------------------------------------------------------------
+  Paste a real snippet here - a consent snippet is public by design, served to
+  every visitor of the site it runs on, identifiers and all.
+
+  The fixture reads nothing out of it. The CMP global it exposes is discovered
+  at runtime, so no part of this fixture needs to know which CMP it is. If
+  detection ever picks the wrong object, set SDK_GLOBAL at the top of
+  cmp-late-hosted.js to the global's name.
+  ----------------------------------------------------------------------------
+-->
+
+<!-- ===================== PASTE STARTS HERE ===================== -->
+
+<!-- ====================== PASTE ENDS HERE ====================== -->

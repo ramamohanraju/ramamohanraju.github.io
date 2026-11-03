@@ -150,6 +150,11 @@
                 <td><a href="sitelatebanner/">Late-Loading Cookie Banner</a></td>
                 <td class="desc">A compliant opt-in banner injected 15s after load, past the window a scanner typically looks in; <a href="sitelatebanner/instant.html">instant.html</a> is the same site with no delay, and <code>?delay=&lt;ms&gt;</code> sets any other</td>
             </tr>
+            <tr>
+                <td class="id">LATE-02</td>
+                <td><a href="sitelatebannersdk/">Late-Loading Cookie Banner (hosted CMP)</a></td>
+                <td class="desc">The same late-injection premise as LATE-01 but running the real hosted CMP snippet instead of a local look-alike, so detection goes through the provider's own selectors and SDK probe; <a href="sitelatebannersdk/instant.html">instant.html</a> is the no-delay control, and <code>?delay=&lt;ms&gt;</code> sets any other</td>
+            </tr>
         </tbody>
     </table>
 </body>
