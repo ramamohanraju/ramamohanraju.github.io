@@ -26,6 +26,11 @@
   // to the global's name to pin it down if detection ever picks the wrong object.
   var SDK_GLOBAL = null;  // an object with .onReady(cb); cb receives the sdk
 
+  // How long to keep looking for that global after the snippet's own scripts have run. A hosted
+  // snippet is usually a few lines that append the real loader to <head>, so the SDK does not
+  // exist yet at the moment the snippet finishes - it appears a network round trip later.
+  var SDK_WAIT_MS = 20000;
+
   // Globals present before the snippet runs. Anything the snippet adds is a candidate; everything
   // the page already had is not, which is what keeps detection from latching onto an unrelated
   // library.
@@ -241,33 +246,73 @@
     }, 250);
   }
 
-  function wireSdk() {
-    detectGlobals();
+  // Two things have to happen before the SDK can be used, and the snippet reports neither.
+  //
+  // First, the snippet's own scripts finishing is not the CMP being there: a hosted snippet is
+  // typically a few lines that append the real loader to <head> and return, so the global appears
+  // a network round trip later, not when the snippet returns.
+  //
+  // Second - and this is the part worth knowing - the global appearing is not the SDK being
+  // ready either. It is published early, while the SDK is still fetching its configuration, and
+  // an onReady() callback registered during that window is dropped on the floor: it is not
+  // queued, it never fires, and the only trace is an 'Invalid event received' line in the
+  // console. Registering once, as soon as the global exists, is therefore a coin flip.
+  //
+  // So registration is retried until a callback actually comes back. Once the SDK is ready the
+  // very next onReady() invokes its callback synchronously, which makes the retry cheap: the
+  // first attempt after readiness wins, and attempts before it cost nothing but a console line.
+  function awaitSdkReady() {
+    return new Promise(function (resolve) {
+      var deadline = Date.now() + SDK_WAIT_MS;
+      var settled = false;
 
-    if (!sdkApi()) {
-      clearInterval(ticker);
-      setStatus('Snippet ran at ' + elapsed() + 's but it exposed no SDK global with an onReady() ' +
-        'method - check the identifiers and host in ' + SNIPPET_URL + ', or set SDK_GLOBAL ' +
-        'explicitly if this CMP names its API something detection missed.', 'error');
+      function settle(value) {
+        if (settled) return;
+        settled = true;
+        resolve(value);
+      }
+
+      (function attempt() {
+        if (settled) return;
+        detectGlobals();
+        var api = sdkApi();
+        if (api) {
+          try {
+            api.onReady(function (sdk) { settle(sdk || api); });
+          } catch (e) { /* not ready yet - fall through and try again */ }
+        }
+        if (settled) return;
+        if (Date.now() >= deadline) return settle(null);
+        setTimeout(attempt, 250);
+      })();
+    });
+  }
+
+  function wireSdk(sdk) {
+    clearInterval(ticker);
+
+    if (!sdk) {
+      setStatus('Snippet ran at ' + elapsed() + 's but no SDK became ready within ' +
+        (SDK_WAIT_MS / 1000) + 's - ' + (sdkApi()
+          ? 'the global ' + SDK_GLOBAL + ' is on the page but its onReady() never called back.'
+          : 'no global with an onReady() method ever appeared. Check the identifiers and host in ' +
+            SNIPPET_URL + ', or set SDK_GLOBAL explicitly if this CMP names its API something ' +
+            'detection missed.'), 'error');
       return;
     }
 
     sdkReady = true;
+    setStatus('Consent SDK ready ' + elapsed() + 's after page open (snippet injected at ' +
+      (delayMs / 1000) + 's). Waiting for a choice.', 'loaded');
 
-    clearInterval(ticker);
-    setStatus('Consent SDK loaded after ' + (delayMs / 1000) + 's (page has been open ' + elapsed() + 's). Waiting for the banner.', 'loaded');
-
-    // Fires on every choice, including one restored from a previous visit.
-    sdkApi().onReady(function (sdk) {
-      // A returning visitor already has consent stored - honour it without waiting for a click.
-      applyConsent(sdk);
-      watchConsent(sdk);
-    });
+    // A returning visitor already has consent stored - honour it without waiting for a click.
+    applyConsent(sdk);
+    watchConsent(sdk);
   }
 
   function start() {
     snapshotGlobals();
-    injectSnippet().then(wireSdk).catch(function (err) {
+    injectSnippet().then(awaitSdkReady).then(wireSdk).catch(function (err) {
       clearInterval(ticker);
       setStatus('Consent snippet failed to load: ' + err.message, 'error');
       console.error('[late-banner fixture]', err);
